@@ -447,6 +447,16 @@
                     <span class="subject-badge" id="badge-islamiyat">New</span>
                 </div>
             </div>
+
+            <div class="subject-card" onclick="startQuiz('general_science')">
+                <div class="subject-icon">🔬</div>
+                <h3 class="subject-title">General Science</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Energy, Computer IT, Space, and Quantum Physics essentials.</p>
+                <div class="subject-meta">
+                    <span>90+ Questions</span>
+                    <span class="subject-badge" id="badge-general_science">New</span>
+                </div>
+            </div>
         </div>
 
         <div class="stats-container" id="stats-bar">
@@ -756,6 +766,94 @@
                     { text: "How many idols were in Kaaba before conquest?", options: ["300", "360", "400", "500"], correct: "360" },
                     { text: "Which companion was titled 'The Lion of Allah'?", options: ["Ali", "Hamza", "Khalid", "Abu Bakr"], correct: "Hamza" },
                     { text: "Surah Al-Hujurat deals with?", options: ["Family laws", "Social ethics & manners", "Jihad", "Trade"], correct: "Social ethics & manners" }
+                ]
+            },
+            general_science: {
+                title: "General Science",
+                questions: [
+                    { text: "Positively charged particles in the center of an atom are called?", options: ["Electrons", "Protons", "Neutrons", "Ions"], correct: "Protons" },
+                    { text: "Negatively charged particles that orbit the nucleus are?", options: ["Protons", "Neutrons", "Electrons", "Positrons"], correct: "Electrons" },
+                    { text: "In a neutral atom, number of electrons equals?", options: ["Number of neutrons", "Mass number", "Atomic number", "Number of ions"], correct: "Atomic number" },
+                    { text: "Mass number (A) is sum of?", options: ["Protons + Electrons", "Neutrons + Electrons", "Protons + Neutrons", "Protons only"], correct: "Protons + Neutrons" },
+                    { text: "Isotopes have same number of ?", options: ["Protons", "Neutrons", "Electrons", "Mass number"], correct: "Protons" },
+                    { text: "How many neutrons in Protium (Hydrogen-1)?", options: ["0", "1", "2", "3"], correct: "0" },
+                    { text: "Who discovered radioactivity in 1896?", options: ["Marie Curie", "Ernest Rutherford", "Henry Becquerel", "Niels Bohr"], correct: "Henry Becquerel" },
+                    { text: "Alpha particle is identical to nucleus of?", options: ["Hydrogen", "Helium", "Lithium", "Beryllium"], correct: "Helium" },
+                    { text: "Which radiation has highest penetrating power?", options: ["Alpha", "Beta", "Gamma", "X-rays"], correct: "Gamma" },
+                    { text: "What stops alpha particles?", options: ["Aluminum", "Lead", "Paper/Skin", "Water"], correct: "Paper/Skin" },
+                    { text: "Beta particles are high-speed?", options: ["Protons", "Neutrons", "Electrons", "Helium nuclei"], correct: "Electrons" },
+                    { text: "Gamma rays are?", options: ["Helium nuclei", "High-speed electrons", "Electromagnetic radiation", "Neutrons"], correct: "Electromagnetic radiation" },
+                    { text: "What is used to block gamma radiation?", options: ["Paper", "Aluminum", "Lead & concrete", "Water"], correct: "Lead & concrete" },
+                    { text: "Nuclear fission is splitting of heavy nucleus into?", options: ["Protons only", "Lighter nuclei", "Electrons", "Gamma rays"], correct: "Lighter nuclei" },
+                    { text: "Chain reaction in uranium is controlled by?", options: ["Heavy water", "Cadmium rods", "Graphite", "Boron rods"], correct: "Cadmium rods" },
+                    { text: "Einstein's mass-energy equivalence relates?", options: ["Fusion only", "Mass converted to energy", "Energy to mass", "Both"], correct: "Mass converted to energy" },
+                    { text: "Critical mass refers to?", options: ["Minimum uranium for chain reaction", "Maximum uranium", "Energy released", "Type of neutron"], correct: "Minimum uranium for chain reaction" },
+                    { text: "Pakistan's first nuclear power plant was built in Karachi with cooperation of?", options: ["USA", "China", "Canada", "Russia"], correct: "Canada" },
+                    { text: "First artificially produced element was?", options: ["Plutonium", "Technetium", "Neptunium", "Curium"], correct: "Technetium" },
+                    { text: "Atomic number of Oganesson is?", options: ["114", "116", "118", "120"], correct: "118" },
+                    { text: "Which synthetic element is used in smoke detectors?", options: ["Curium", "Americium-241", "Berkelium", "Californium"], correct: "Americium-241" },
+                    { text: "Protoplasm is found in?", options: ["Non-living matter", "Outside the cell", "Inside the cell", "Nucleus only"], correct: "Inside the cell" },
+                    { text: "Sum of constructive and destructive reactions in protoplasm is?", options: ["Growth", "Metabolism", "Respiration", "Reproduction"], correct: "Metabolism" },
+                    { text: "Who proposed the Theory of Spontaneous Generation?", options: ["Redi", "Pasteur", "Aristotle", "Miller"], correct: "Aristotle" },
+                    { text: "Miller's experiment (1953) produced?", options: ["Proteins", "Amino Acids", "Nucleic Acids", "Glucose"], correct: "Amino Acids" },
+                    { text: "Earth's early atmosphere contained?", options: ["Oxygen, Nitrogen", "Methane, Ammonia, Water vapor", "Carbon dioxide only", "Helium"], correct: "Methane, Ammonia, Water vapor" },
+                    { text: "Powerhouse of the cell is?", options: ["Nucleus", "Ribosome", "Mitochondria", "Lysosome"], correct: "Mitochondria" },
+                    { text: "Basic structural unit of all living organisms is?", options: ["Tissue", "Organ", "Cell", "Organelle"], correct: "Cell" },
+                    { text: "Semi-permeable membrane allows passage by?", options: ["Active transport only", "Osmosis/Diffusion", "Phagocytosis", "Endocytosis"], correct: "Osmosis/Diffusion" },
+                    { text: "DNA is found exclusively in?", options: ["Cytoplasm", "Nucleus", "Cell wall", "Vacuole"], correct: "Nucleus" },
+                    { text: "Human chromosomes number is?", options: ["23", "46", "48", "24"], correct: "46" },
+                    { text: "Which organelle is absent in plant cells but present in animal cells?", options: ["Plastids", "Centrosome", "Vacuole", "Cell wall"], correct: "Centrosome" },
+                    { text: "Movement of water across a membrane is called?", options: ["Diffusion", "Osmosis", "Active transport", "Phagocytosis"], correct: "Osmosis" },
+                    { text: "WHO defines health as state of complete?", options: ["Absence of disease", "Physical, mental, social well-being", "Physical fitness", "Mental stability"], correct: "Physical, mental, social well-being" },
+                    { text: "Deficiency of Vitamin A causes?", options: ["Rickets", "Scurvy", "Night blindness", "Anemia"], correct: "Night blindness" },
+                    { text: "Vitamin C deficiency causes?", options: ["Beri-beri", "Scurvy", "Pellagra", "Goiter"], correct: "Scurvy" },
+                    { text: "Vitamin D is essential for absorption of?", options: ["Iron", "Calcium & Phosphorus", "Iodine", "Sodium"], correct: "Calcium & Phosphorus" },
+                    { text: "Insulin is secreted by?", options: ["Thyroid", "Pancreas", "Adrenal", "Pituitary"], correct: "Pancreas" },
+                    { text: "Master gland (pituitary) is located?", options: ["Neck", "Above kidneys", "Below brain", "Chest"], correct: "Below brain" },
+                    { text: "Normal human body temperature is?", options: ["36°C", "37°C", "38°C", "39°C"], correct: "37°C" },
+                    { text: "Universal Donor blood group is?", options: ["A+", "O-", "AB+", "B-"], correct: "O-" },
+                    { text: "Ability to do work is called?", options: ["Force", "Power", "Energy", "Pressure"], correct: "Energy" },
+                    { text: "Energy stored in a stretched spring is?", options: ["Kinetic", "Elastic potential", "Gravitational", "Chemical"], correct: "Elastic potential" },
+                    { text: "Law of Conservation of Energy states energy is?", options: ["Created", "Destroyed", "Converted", "Lost"], correct: "Converted" },
+                    { text: "SI unit of energy is?", options: ["Watt", "Newton", "Joule", "Calorie"], correct: "Joule" },
+                    { text: "Which is a renewable energy source?", options: ["Coal", "Natural gas", "Solar", "Petroleum"], correct: "Solar" },
+                    { text: "Photovoltaic cells convert solar energy into?", options: ["Heat", "Electrical", "Chemical", "Mechanical"], correct: "Electrical" },
+                    { text: "Biogas is produced from?", options: ["Plastic", "Animal dung", "Metal", "Glass"], correct: "Animal dung" },
+                    { text: "Wind turbines convert kinetic energy into?", options: ["Heat", "Electrical", "Sound", "Light"], correct: "Electrical" },
+                    { text: "Geothermal energy comes from?", options: ["Sun", "Earth's internal heat", "Moon", "Ocean tides"], correct: "Earth's internal heat" },
+                    { text: "One kilowatt-hour (1 unit) = ? Joules", options: ["3.6 × 10⁶ J", "1000 J", "3600 J", "10⁶ J"], correct: "3.6 × 10⁶ J" },
+                    { text: "Primary component of natural gas is?", options: ["Ethane", "Propane", "Methane", "Butane"], correct: "Methane" },
+                    { text: "Largest gas field in Pakistan is?", options: ["Mari", "Sui", "Qadirpur", "Uch"], correct: "Sui" },
+                    { text: "Sui gas field discovered in?", options: ["1947", "1952", "1955", "1960"], correct: "1952" },
+                    { text: "Which city first received Sui gas in 1956?", options: ["Lahore", "Karachi", "Quetta", "Islamabad"], correct: "Karachi" },
+                    { text: "Manchar Lake is located near?", options: ["Karachi", "Dadu", "Quetta", "Islamabad"], correct: "Dadu" },
+                    { text: "Tarbela Dam built on river?", options: ["Jhelum", "Chenab", "Indus", "Ravi"], correct: "Indus" },
+                    { text: "Brain of computer is?", options: ["Monitor", "CPU", "Keyboard", "Mouse"], correct: "CPU" },
+                    { text: "ALU stands for?", options: ["Arithmetic Logic Unit", "Array Logic Unit", "Automatic Logic Unit", "Address Logic Unit"], correct: "Arithmetic Logic Unit" },
+                    { text: "Volatile memory that loses data when power off is?", options: ["ROM", "RAM", "Hard disk", "SSD"], correct: "RAM" },
+                    { text: "Smallest unit of data is?", options: ["Byte", "Bit", "Nibble", "Word"], correct: "Bit" },
+                    { text: "1 Byte = ? bits", options: ["4", "8", "16", "32"], correct: "8" },
+                    { text: "LASER stands for?", options: ["Light Amplification by Stimulated Emission of Radiation", "Light Amplitude by Stimulated Energy", "Laser Amplification of Solar Energy", "Light Absorption by Stimulated Emission"], correct: "Light Amplification by Stimulated Emission of Radiation" },
+                    { text: "First working laser (1960) was?", options: ["He-Ne", "Ruby", "CO2", "Diode"], correct: "Ruby" },
+                    { text: "Which laser is used in barcode scanners?", options: ["CO2", "Ruby", "He-Ne", "Excimer"], correct: "He-Ne" },
+                    { text: "Which laser is used for industrial cutting and welding?", options: ["He-Ne", "Ruby", "CO2", "Dye"], correct: "CO2" },
+                    { text: "The periodic rise and fall of sea levels is called?", options: ["Waves", "Tides", "Currents", "Tsunami"], correct: "Tides" },
+                    { text: "Which celestial body has greatest influence on Earth's tides?", options: ["Sun", "Moon", "Mars", "Jupiter"], correct: "Moon" },
+                    { text: "Spring tides occur during?", options: ["New & Full Moon", "First & Third Quarter", "Waxing Gibbous", "Waning Crescent"], correct: "New & Full Moon" },
+                    { text: "Neap tides occur when Sun and Moon are at?", options: ["0°", "90°", "180°", "45°"], correct: "90°" },
+                    { text: "Which planet is known as Red Planet?", options: ["Venus", "Mars", "Jupiter", "Saturn"], correct: "Mars" },
+                    { text: "Largest planet in solar system is?", options: ["Saturn", "Jupiter", "Neptune", "Uranus"], correct: "Jupiter" },
+                    { text: "Planet with prominent ring system is?", options: ["Jupiter", "Saturn", "Uranus", "Neptune"], correct: "Saturn" },
+                    { text: "Which planet was demoted to dwarf planet in 2006?", options: ["Ceres", "Pluto", "Eris", "Makemake"], correct: "Pluto" },
+                    { text: "Discrete packets of light energy are called?", options: ["Electrons", "Photons", "Protons", "Neutrons"], correct: "Photons" },
+                    { text: "Energy of a photon is given by?", options: ["E = mc²", "E = hf", "E = 1/2 mv²", "E = hλ"], correct: "E = hf" },
+                    { text: "Planck's constant (h) value is?", options: ["6.63 × 10⁻³⁴ J·s", "3 × 10⁸ m/s", "1.6 × 10⁻¹⁹ J", "9.1 × 10⁻³¹ kg"], correct: "6.63 × 10⁻³⁴ J·s" },
+                    { text: "Photoelectric effect was explained by Einstein in?", options: ["1895", "1905", "1915", "1921"], correct: "1905" },
+                    { text: "Work function is minimum energy to?", options: ["Absorb photon", "Emit electron", "Split atom", "Create nucleus"], correct: "Emit electron" },
+                    { text: "De Broglie wavelength formula is?", options: ["λ = h/p", "λ = hf", "λ = c/f", "λ = mv/h"], correct: "λ = h/p" },
+                    { text: "Heisenberg uncertainty principle relates?", options: ["Mass & Energy", "Position & Momentum", "Time & Distance", "Force & Acceleration"], correct: "Position & Momentum" },
+                    { text: "X-rays were discovered by?", options: ["Becquerel", "Roentgen", "Curie", "Rutherford"], correct: "Roentgen" },
+                    { text: "The wave nature of electrons was confirmed by?", options: ["Davisson-Germer experiment", "Millikan oil drop", "Young's double slit", "Compton scattering"], correct: "Davisson-Germer experiment" }
                 ]
             }
         };
