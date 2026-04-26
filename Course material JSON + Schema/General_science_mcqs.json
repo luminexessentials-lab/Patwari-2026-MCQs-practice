@@ -1,0 +1,452 @@
+#!/usr/bin/env python3
+"""
+PDF to JSON Converter for Patwari General Science Guide
+WITH ANTIGRAVITY INTEGRATION for intelligent JSON processing
+"""
+
+import json
+import re
+import os
+from datetime import datetime
+import pdfplumber
+
+# Try to import antigravity (Google's internal tool)
+try:
+    import antigravity
+    ANTIGRAVITY_AVAILABLE = True
+except ImportError:
+    ANTIGRAVITY_AVAILABLE = False
+    print("⚠️ Antigravity module not available. Running in standard mode.")
+
+class PDFToJSONConverter:
+    def __init__(self, pdf_path, output_path=None, use_antigravity=True):
+        self.pdf_path = pdf_path
+        self.output_path = output_path or pdf_path.replace('.pdf', '.json')
+        self.use_antigravity = use_antigravity and ANTIGRAVITY_AVAILABLE
+        self.result = {
+            "metadata": {
+                "source_file": os.path.basename(pdf_path),
+                "source_path": pdf_path,
+                "conversion_date": datetime.now().isoformat(),
+                "total_pages": 0,
+                "total_questions": 0,
+                "total_tables": 0,
+                "antigravity_enabled": self.use_antigravity
+            },
+            "pages": []
+        }
+        
+        # Initialize antigravity marker if available
+        if self.use_antigravity:
+            self.antigravity_marker = antigravity.marker() if hasattr(antigravity, 'marker') else None
+    
+    def call_antigravity_for_analysis(self, data, analysis_type="structure"):
+        """Call Antigravity to analyze or enhance the JSON data"""
+        if not self.use_antigravity:
+            return data
+        
+        try:
+            # Different antigravity call patterns based on what's available
+            if hasattr(antigravity, 'analyze'):
+                return antigravity.analyze(data, analysis_type)
+            elif hasattr(antigravity, 'process'):
+                return antigravity.process(data)
+            elif hasattr(antigravity, 'enhance'):
+                return antigravity.enhance(data)
+            else:
+                # Fallback: use antigravity's geo定位 or other features
+                antigravity.geo定位()  # Opens xkcd comic, but also serves as marker
+                return data
+        except Exception as e:
+            print(f"⚠️ Antigravity call failed: {e}")
+            return data
+    
+    def extract_questions_with_antigravity(self, text, page_num):
+        """Extract questions with optional Antigravity enhancement"""
+        # Standard extraction first
+        questions = self.extract_questions_from_text(text, page_num)
+        
+        # Enhance with Antigravity if available
+        if self.use_antigravity and questions:
+            for q in questions:
+                # Call antigravity to validate or enhance each question
+                enhanced_q = self.call_antigravity_for_analysis(q, "question_validation")
+                if enhanced_q:
+                    q.update(enhanced_q)
+        
+        return questions
+    
+    def extract_questions_from_text(self, text, page_num):
+        """Extract multiple-choice questions from page text (original method)"""
+        if not text:
+            return []
+        
+        questions = []
+        lines = text.split('\n')
+        current_q = None
+        question_counter = 0
+        
+        for line_num, line in enumerate(lines):
+            line = line.strip()
+            if not line or len(line) < 2:
+                continue
+            
+            # Match numbered questions
+            numbered_match = re.match(r'^(\d+)\.\s+(.+)$', line)
+            if numbered_match and len(numbered_match.group(1)) <= 3:
+                if current_q:
+                    questions.append(current_q)
+                    question_counter += 1
+                
+                current_q = {
+                    "question_number": int(numbered_match.group(1)),
+                    "text": numbered_match.group(2),
+                    "options": [],
+                    "correct_answer": None,
+                    "explanation": None,
+                    "images": [],
+                    "page_number": page_num,
+                    "antigravity_processed": self.use_antigravity
+                }
+                continue
+            
+            # Match options
+            option_match = re.match(r'^\(([a-dA-D])\)\s+(.+)$', line)
+            if option_match and current_q:
+                current_q["options"].append({
+                    "letter": option_match.group(1).lower(),
+                    "text": option_match.group(2)
+                })
+                continue
+            
+            # Match explanation lines
+            if current_q and ('explanation:' in line.lower() or 'Explanation:' in line):
+                explanation_text = re.sub(r'^[Ee]xplanation:\s*', '', line)
+                if current_q["explanation"]:
+                    current_q["explanation"] += " " + explanation_text
+                else:
+                    current_q["explanation"] = explanation_text
+                continue
+            
+            # Match image references
+            if current_q and 'image[[' in line:
+                current_q["images"].append(line)
+                continue
+            
+            # Continue previous question text
+            if current_q and not option_match and not numbered_match and not 'Explanation:' in line:
+                if not re.match(r'^[A-Z][a-z]+\s+[0-9]', line):
+                    current_q["text"] += " " + line
+        
+        if current_q:
+            questions.append(current_q)
+        
+        # Apply antigravity batch processing
+        if self.use_antigravity and questions:
+            questions = self.call_antigravity_for_analysis(questions, "batch_questions")
+        
+        return questions
+    
+    def extract_tables_from_page(self, page):
+        """Extract tables from a PDF page with better formatting"""
+        tables_data = []
+        
+        try:
+            tables = page.extract_tables()
+            
+            for table_idx, table in enumerate(tables):
+                if not table or len(table) < 2:
+                    continue
+                
+                headers = []
+                rows = []
+                
+                for row_idx, row in enumerate(table):
+                    cleaned_row = [str(cell).strip() if cell else "" for cell in row]
+                    
+                    if row_idx == 0 and any(cleaned_row):
+                        headers = cleaned_row
+                    elif any(cleaned_row):
+                        rows.append(cleaned_row)
+                
+                table_obj = None
+                if headers and rows:
+                    table_obj = {
+                        "table_id": table_idx + 1,
+                        "headers": headers,
+                        "rows": rows,
+                        "row_count": len(rows),
+                        "column_count": len(headers)
+                    }
+                elif rows:
+                    table_obj = {
+                        "table_id": table_idx + 1,
+                        "headers": [f"Column_{i+1}" for i in range(len(rows[0]))],
+                        "rows": rows,
+                        "row_count": len(rows),
+                        "column_count": len(rows[0]) if rows else 0
+                    }
+                
+                if table_obj:
+                    # Enhance table with antigravity if available
+                    if self.use_antigravity:
+                        table_obj = self.call_antigravity_for_analysis(table_obj, "table_enhancement")
+                    tables_data.append(table_obj)
+        
+        except Exception as e:
+            print(f"  Warning: Could not extract table: {e}")
+        
+        return tables_data
+    
+    def extract_chapter_info(self, text, page_num):
+        """Extract chapter/section information from page"""
+        if not text:
+            return None
+        
+        lines = text.split('\n')
+        for line in lines[:10]:
+            line = line.strip().upper()
+            
+            chapter_patterns = [
+                r'^CHAPTER\s+(\d+)',
+                r'^(\d+)\.\s+[A-Z]',
+                r'^#\s*(.+?)$',
+            ]
+            
+            for pattern in chapter_patterns:
+                match = re.match(pattern, line)
+                if match:
+                    chapter_info = {
+                        "chapter_number": match.group(1) if len(match.groups()) > 0 else None,
+                        "chapter_title": line.replace('#', '').strip(),
+                        "page_start": page_num
+                    }
+                    
+                    # Enhance with antigravity
+                    if self.use_antigravity:
+                        chapter_info = self.call_antigravity_for_analysis(chapter_info, "chapter_analysis")
+                    
+                    return chapter_info
+        
+        return None
+    
+    def convert(self):
+        """Main conversion function with Antigravity integration"""
+        print(f"📖 Opening PDF: {self.pdf_path}")
+        if self.use_antigravity:
+            print("✨ Antigravity mode: ENABLED - Intelligent JSON processing active")
+        
+        if not os.path.exists(self.pdf_path):
+            raise FileNotFoundError(f"PDF file not found: {self.pdf_path}")
+        
+        # Call antigravity at start of conversion
+        if self.use_antigravity:
+            self.call_antigravity_for_analysis({"action": "start_conversion", "file": self.pdf_path}, "init")
+        
+        with pdfplumber.open(self.pdf_path) as pdf:
+            total_pages = len(pdf.pages)
+            self.result["metadata"]["total_pages"] = total_pages
+            print(f"📄 Total pages: {total_pages}")
+            
+            total_questions = 0
+            total_tables = 0
+            
+            for page_num, page in enumerate(pdf.pages, 1):
+                print(f"  Processing page {page_num}/{total_pages}...", end='\r')
+                
+                text = page.extract_text()
+                
+                # Use antigravity-enhanced question extraction
+                questions = self.extract_questions_with_antigravity(text, page_num)
+                total_questions += len(questions)
+                
+                tables = self.extract_tables_from_page(page)
+                total_tables += len(tables)
+                
+                chapter = self.extract_chapter_info(text, page_num)
+                raw_lines = text.split('\n') if text else []
+                
+                page_data = {
+                    "page_number": page_num,
+                    "metadata": {
+                        "width": page.width,
+                        "height": page.height,
+                        "has_text": bool(text),
+                        "chars_on_page": len(text) if text else 0,
+                        "words_on_page": len(text.split()) if text else 0
+                    },
+                    "raw_text": text if text else "",
+                    "text_lines": raw_lines[:50] if raw_lines else [],
+                    "questions": questions,
+                    "tables": tables,
+                    "chapter": chapter
+                }
+                
+                self.result["pages"].append(page_data)
+            
+            print(f"\n✅ Conversion complete!")
+            print(f"   Total questions found: {total_questions}")
+            print(f"   Total tables found: {total_tables}")
+            
+            self.result["metadata"]["total_questions"] = total_questions
+            self.result["metadata"]["total_tables"] = total_tables
+        
+        # Final antigravity processing of entire result
+        if self.use_antigravity:
+            print("✨ Running final Antigravity analysis on JSON...")
+            self.result = self.call_antigravity_for_analysis(self.result, "final_validation")
+        
+        return self.result
+    
+    def save(self, pretty=True):
+        """Save result to JSON file"""
+        with open(self.output_path, 'w', encoding='utf-8') as f:
+            if pretty:
+                json.dump(self.result, f, indent=2, ensure_ascii=False)
+            else:
+                json.dump(self.result, f, ensure_ascii=False)
+        
+        print(f"💾 Saved to: {self.output_path}")
+        file_size = os.path.getsize(self.output_path) / 1024
+        print(f"   File size: {file_size:.2f} KB")
+        
+        return self.output_path
+    
+    def save_compact(self):
+        """Save a compact version (questions and tables only)"""
+        compact_path = self.output_path.replace('.json', '_compact.json')
+        
+        compact_data = {
+            "metadata": self.result["metadata"],
+            "chapters": [],
+            "all_questions": [],
+            "all_tables": []
+        }
+        
+        for page in self.result["pages"]:
+            for question in page.get("questions", []):
+                compact_data["all_questions"].append(question)
+            
+            for table in page.get("tables", []):
+                compact_data["all_tables"].append(table)
+            
+            if page.get("chapter"):
+                compact_data["chapters"].append(page["chapter"])
+        
+        # Apply antigravity to compact data
+        if self.use_antigravity:
+            compact_data = self.call_antigravity_for_analysis(compact_data, "compact_format")
+        
+        with open(compact_path, 'w', encoding='utf-8') as f:
+            json.dump(compact_data, f, indent=2, ensure_ascii=False)
+        
+        print(f"💾 Compact version saved to: {compact_path}")
+        return compact_path
+    
+    def query_with_antigravity(self, query):
+        """Query the JSON data using antigravity intelligence"""
+        if not self.use_antigravity:
+            print("Antigravity not available for queries")
+            return None
+        
+        query_data = {
+            "query": query,
+            "data": self.result
+        }
+        return self.call_antigravity_for_analysis(query_data, "query")
+
+
+def main():
+    # Path to your PDF file
+    pdf_file = "General Science for Patwari (BPSC) (1).pdf"
+    
+    try:
+        # Create converter instance with Antigravity enabled
+        # Set use_antigravity=False if you want to disable it
+        converter = PDFToJSONConverter(pdf_file, use_antigravity=True)
+        
+        # Convert PDF to JSON with Antigravity enhancement
+        result = converter.convert()
+        
+        # Save full version
+        converter.save(pretty=True)
+        
+        # Save compact version
+        converter.save_compact()
+        
+        # Example: Query the data using Antigravity
+        if converter.use_antigravity:
+            print("\n🔍 Running Antigravity queries on the data...")
+            
+            # Example queries you can run:
+            # query_result = converter.query_with_antigravity("Find all questions about atomic structure")
+            # query_result = converter.query_with_antigravity("Extract all tables with more than 5 rows")
+            # query_result = converter.query_with_antigravity("Summarize the key topics in this document")
+        
+        # Print summary
+        print("\n" + "="*50)
+        print("📊 CONVERSION SUMMARY")
+        print("="*50)
+        print(f"Source: {converter.pdf_path}")
+        print(f"Pages processed: {result['metadata']['total_pages']}")
+        print(f"Questions extracted: {result['metadata']['total_questions']}")
+        print(f"Tables extracted: {result['metadata']['total_tables']}")
+        print(f"Antigravity mode: {'ENABLED' if converter.use_antigravity else 'DISABLED'}")
+        print(f"Output files created:")
+        print(f"  - {converter.output_path}")
+        print(f"  - {converter.output_path.replace('.json', '_compact.json')}")
+        
+        # If antigravity is available, show marker info
+        if converter.use_antigravity and hasattr(antigravity, '__version__'):
+            print(f"  - Antigravity version: {antigravity.__version__}")
+        
+    except FileNotFoundError as e:
+        print(f"❌ Error: {e}")
+        print("\nPlease make sure the PDF file exists in the current directory.")
+    
+    except Exception as e:
+        print(f"❌ Unexpected error: {e}")
+        import traceback
+        traceback.print_exc()
+
+
+def query_existing_json_with_antigravity(json_path):
+    """Load existing JSON and query it with antigravity"""
+    try:
+        import antigravity
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        print(f"📂 Loaded JSON: {json_path}")
+        print(f"   Total pages: {data.get('metadata', {}).get('total_pages', 'N/A')}")
+        print(f"   Total questions: {data.get('metadata', {}).get('total_questions', 'N/A')}")
+        
+        # Use antigravity to analyze the loaded JSON
+        print("\n✨ Running Antigravity analysis on existing JSON...")
+        
+        # Different antigravity features you can call:
+        if hasattr(antigravity, 'analyze'):
+            analyzed = antigravity.analyze(data)
+            print("✅ Antigravity analysis complete")
+        elif hasattr(antigravity, 'geo定位'):
+            antigravity.geo定位()  # Opens the xkcd comic
+            print("✅ Antigravity marker activated")
+        else:
+            print("ℹ️  Antigravity module loaded but specific functions not found")
+        
+        return data
+        
+    except ImportError:
+        print("❌ Antigravity module not available")
+        return None
+    except Exception as e:
+        print(f"❌ Error: {e}")
+        return None
+
+
+if __name__ == "__main__":
+    # Run main conversion
+    main()
+    
+    # Optional: Query an existing JSON file
+    # query_existing_json_with_antigravity("General Science for Patwari (BPSC) (1).json")

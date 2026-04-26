@@ -1,0 +1,356 @@
+{
+    "english": {
+        "title": "English",
+        "icon": "📘",
+        "modules": {
+            "idioms": {
+                "title": "IDIOMS AND PHRASES",
+                "questions": [
+                    {
+                        "text": "A person who is considered a disgrace to their family or group is called: (Source: SSC Text Book; Balochistan Board)",
+                        "options": [
+                            "A bird's eye view",
+                            "black sheep",
+                            "man of letters",
+                            "A white elephant"
+                        ],
+                        "correct": "black sheep",
+                        "explain": "According to\" is a phrasal preposition meaning in a way at home in"
+                    },
+                    {
+                        "text": "that matches or follows a particular system or plan_ Which phrase means to repeat an action multiple time? (Source: SSC Text Book; Balochistan Board) (a) At all",
+                        "options": [
+                            "Again and again According to",
+                            "A man of letters",
+                            "black sheep",
+                            "white elephant (6) man of parts (c) bird's eye view (d) rainy day",
+                            "red letter day bird's eye view maiden speech black sheep"
+                        ],
+                        "correct": "A man of letters",
+                        "explain": "'A man of parts describes an individual who possesses many different skills or a great deal of ability in various areas Khan r 10_ To see a whole city from a high position like a helicopter is called a: (Source: SSC Text Book; Balochistan Board)"
+                    },
+                    {
+                        "text": "13_ \"Mr: Akram is in English: (Meaning he is proficient) (Source: SSC Text Book; Balochistan Board) at all at home in according to again and again",
+                        "options": [
+                            "red letter day maiden speech bone of contention",
+                            "bird's eye view"
+                        ],
+                        "correct": "bird's eye view",
+                        "explain": "\"Maiden\" is used here to signify the very first instance of an event; such as a formal speech:"
+                    },
+                    {
+                        "text": "He arrived to help me at the very last moment: He came at the: (Source: SSC Text Book, Balochistan Board)",
+                        "options": [
+                            "eleventh hour",
+                            "bed of roses burning question chance"
+                        ],
+                        "correct": "eleventh hour",
+                        "explain": "\"At the eleventh hour\" is an idiom meaning at the latest possible time or the last minute. broke"
+                    }
+                ]
+            },
+            "letter_writing": {
+                "title": "LETTER WRITING METHODS",
+                "questions": [
+                    {
+                        "text": "Letters are fundamentally classified into how many main types? (Source: Balochistan Text Book)",
+                        "options": [
+                            "One Two Three Four",
+                            "Salutation Subscription Heading Body",
+                            "Above the address Below the address In the middle of the address At the end of the letter",
+                            "Salutation Super-scription Heading",
+                            "Dear Sir (c) My dear Friend (d) Respected Sir"
+                        ],
+                        "correct": "Above the address Below the address In the middle of the address At the end of the letter",
+                        "explain": ""
+                    },
+                    {
+                        "text": "Which of these is a formal letter? (Source: SSC Text Book; Balochistan Board)",
+                        "options": [
+                            "Letter to a cousin",
+                            "Letter to an Editor Letter to a sister Letter to a grandmother",
+                            "Cold, Clear; Complex Clear; Concise, Courteous Casual, Colourful, Creative",
+                            "Cute, Calm, Clever"
+                        ],
+                        "correct": "Letter to an Editor Letter to a sister Letter to a grandmother",
+                        "explain": ""
+                    },
+                    {
+                        "text": "In the subscription Yours truly; the first letter of the second word should be: (Source: SSC Text Book, Balochistan Board)",
+                        "options": [
+                            "Capitalized Kha bozar",
+                            "Small (lowercase) Bolded",
+                            "Italicized"
+                        ],
+                        "correct": "Small (lowercase) Bolded",
+                        "explain": ""
+                    },
+                    {
+                        "text": "Which part of the letter creates the first impression on the reader? (Source: SSC Text Book; Balochistan Board)",
+                        "options": [
+                            "The signature",
+                            "The heading and layout The second paragraph The envelope color"
+                        ],
+                        "correct": "The heading and layout The second paragraph The envelope color",
+                        "explain": ""
+                    }
+                ]
+            },
+            "voice": {
+                "title": "ACTIVE AND PASSIVE VOICE",
+                "questions": [
+                    {
+                        "text": "Which helping verbs are used in the Passive Voice of Present Indefinite Tense? (Source: Balochistan Text Book) was, were is, am, are has, have do, does",
+                        "options": [
+                            "His lesson was learned by him. His lesson is learned by him.",
+                            "He is learned by his lesson:",
+                            "His lesson has been learned by him:"
+                        ],
+                        "correct": "His lesson was learned by him. His lesson is learned by him.",
+                        "explain": "In interrogative sentences, the helping verb (Is/Am/Are) is placed at the beginning of the sentence"
+                    },
+                    {
+                        "text": "Choose the correct passive voice: \"He keeps me waiting:'",
+                        "options": [
+                            "am kept - waiting by him: (b) Me is kept waiting by him.",
+                            "was kept waiting by him. (d) He is kept waiting by me"
+                        ],
+                        "correct": "am kept - waiting by him: (b) Me is kept waiting by him.",
+                        "explain": "The object \"me\" changes to the subject \"I;' which takes the helping verb am"
+                    }
+                ]
+            },
+            "vocabulary": {
+                "title": "ENGLISH-URDU VOCABULARY",
+                "questions": [
+                    {
+                        "text": "(Chikoo)",
+                        "options": [
+                            "Camel",
+                            "Nightingale",
+                            "Woodpecker Hoopoe",
+                            "Swallow",
+                            "Decr Ibex Rabbit",
+                            "Jackal Khar' 8 16) Which bird is known as 1st\" (Chakor) in English? (Source: Balochistan Text Book) Quail Greek Partridge Pheasant Pigeon"
+                        ],
+                        "correct": "Nightingale",
+                        "explain": ""
+                    },
+                    {
+                        "text": "Pot Basin",
+                        "options": [
+                            "1jsck4 4Y (Palna Panghora)",
+                            "j (Maiz)"
+                        ],
+                        "correct": "j (Maiz)",
+                        "explain": ""
+                    },
+                    {
+                        "text": "Knee Ankle Shin Thigh",
+                        "options": [
+                            "6j4l (Airi) sLi Talwa) bC 4Ayl (Angotha ~ Takhna)",
+                            ",4 (Paneer) (C) su (Lassi) (d) 419 (Doodh)"
+                        ],
+                        "correct": ",4 (Paneer) (C) su (Lassi) (d) 419 (Doodh)",
+                        "explain": ""
+                    },
+                    {
+                        "text": "53' (Achar)",
+                        "options": [
+                            "Ojse 54 (Bewa aurat) (b) 46 _5#60p18 /13i) (Randwa) (c) ISlais (Kunwara) (d Ljx (Burha)",
+                            "&_laS (Kunwari)"
+                        ],
+                        "correct": "&_laS (Kunwari)",
+                        "explain": ""
+                    },
+                    {
+                        "text": "Beta) sile: (Bhai)",
+                        "options": [
+                            "ju] (Lchsan) S)-l (Adrak) j4 (Piyaz) Jli (Aloo)",
+                            "Brinjal"
+                        ],
+                        "correct": "Brinjal",
+                        "explain": ""
+                    },
+                    {
+                        "text": "3su (Suraj Mukhi) (d) Jais (Kanwal)",
+                        "options": [
+                            "&; (Mooli)",
+                            "Marigold Rose Khan 8 bo Lily",
+                            "~_al (Adrak) ju (Lehsan)"
+                        ],
+                        "correct": "Marigold Rose Khan 8 bo Lily",
+                        "explain": ""
+                    },
+                    {
+                        "text": "Tadpole\" is the young-one of: (Balochistan Board) Fish Frog Snake Bird",
+                        "options": [
+                            "Bark Mew Purr Roar",
+                            "Hiss"
+                        ],
+                        "correct": "Hiss",
+                        "explain": ""
+                    }
+                ]
+            }
+        }
+    },
+    "islamiyat": {
+        "title": "Islamiyat",
+        "icon": "📖",
+        "modules": {
+            "quran": {
+                "title": "Quran & Tafsir",
+                "questions": [
+                    {
+                        "text": "What is the meaning of 'Al-Furqan'?",
+                        "options": [
+                            "Light",
+                            "Wisdom",
+                            "Distinguisher b/w truth & falsehood",
+                            "Guidance"
+                        ],
+                        "correct": "Distinguisher b/w truth & falsehood",
+                        "tag": "quran"
+                    },
+                    {
+                        "text": "In which month was Quran revealed?",
+                        "options": [
+                            "Rajab",
+                            "Muharram",
+                            "Shawwal",
+                            "Ramadan"
+                        ],
+                        "correct": "Ramadan",
+                        "tag": "quran"
+                    },
+                    {
+                        "text": "Total number of Surahs in Quran?",
+                        "options": [
+                            "66",
+                            "104",
+                            "114",
+                            "144"
+                        ],
+                        "correct": "114",
+                        "tag": "quran"
+                    },
+                    {
+                        "text": "Longest Surah of Quran?",
+                        "options": [
+                            "Al-Imran",
+                            "Al-Baqarah",
+                            "An-Nisa",
+                            "Al-Maidah"
+                        ],
+                        "correct": "Al-Baqarah",
+                        "tag": "quran"
+                    }
+                ]
+            },
+            "seerat": {
+                "title": "Seerat & Sahaba",
+                "questions": [
+                    {
+                        "text": "First Masjid built in Madinah?",
+                        "options": [
+                            "Quba",
+                            "Nabavi",
+                            "Qiblatain",
+                            "Khief"
+                        ],
+                        "correct": "Quba",
+                        "tag": "seerat"
+                    },
+                    {
+                        "text": "Sahabi known as 'Saifullah' (Sword of Allah)?",
+                        "options": [
+                            "Khalid bin Walid",
+                            "Ali",
+                            "Hamza",
+                            "Abu Ubaidah"
+                        ],
+                        "correct": "Khalid bin Walid",
+                        "tag": "seerat"
+                    }
+                ]
+            }
+        }
+    },
+    "science": {
+        "title": "General Science",
+        "icon": "🔬",
+        "modules": {
+            "atomic": {
+                "title": "Atomic & Radioactivity",
+                "questions": [
+                    {
+                        "text": "Positively charged particles in the center of an atom are called?",
+                        "options": [
+                            "Electrons",
+                            "Protons",
+                            "Neutrons",
+                            "Ions"
+                        ],
+                        "correct": "Protons",
+                        "tag": "atomic"
+                    },
+                    {
+                        "text": "Negatively charged particles that orbit the nucleus are?",
+                        "options": [
+                            "Protons",
+                            "Neutrons",
+                            "Electrons",
+                            "Positrons"
+                        ],
+                        "correct": "Electrons",
+                        "tag": "atomic"
+                    }
+                ]
+            },
+            "biology": {
+                "title": "Cell Biology & Health",
+                "questions": [
+                    {
+                        "text": "Powerhouse of the cell is?",
+                        "options": [
+                            "Nucleus",
+                            "Ribosome",
+                            "Mitochondria",
+                            "Lysosome"
+                        ],
+                        "correct": "Mitochondria",
+                        "tag": "biology"
+                    },
+                    {
+                        "text": "Normal human body temperature is?",
+                        "options": [
+                            "36°C",
+                            "37°C",
+                            "38°C",
+                            "39°C"
+                        ],
+                        "correct": "37°C",
+                        "tag": "biology"
+                    }
+                ]
+            },
+            "computer": {
+                "title": "Computer & Laser",
+                "questions": [
+                    {
+                        "text": "Brain of computer is?",
+                        "options": [
+                            "Monitor",
+                            "CPU",
+                            "Keyboard",
+                            "Mouse"
+                        ],
+                        "correct": "CPU",
+                        "tag": "computer"
+                    }
+                ]
+            }
+        }
+    }
+}

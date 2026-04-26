@@ -1,0 +1,953 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Atomic Structure and Radioactivity",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          155.111328125,
+          92.09375
+        ],
+        [
+          442.41943359375,
+          90.44921875
+        ],
+        [
+          442.41943359375,
+          109.15997314453125
+        ],
+        [
+          153.947265625,
+          109.15997314453125
+        ]
+      ]
+    },
+    {
+      "title": "Section 2: Radioactivity and Nuclear Science",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          72.0,
+          456.7685546875
+        ],
+        [
+          351.7570495605469,
+          455.1240234375
+        ],
+        [
+          351.7570495605469,
+          470.9202880859375
+        ],
+        [
+          71.298828125,
+          472.3916015625
+        ]
+      ]
+    },
+    {
+      "title": "14. The process in which a heavy nucleus splits into two\nlighter nuclei is called:",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          89.923828125,
+          110.8056640625
+        ],
+        [
+          481.0561218261719,
+          109.361328125
+        ],
+        [
+          481.0561218261719,
+          143.319091796875
+        ],
+        [
+          89.923828125,
+          143.896484375
+        ]
+      ]
+    },
+    {
+      "title": "15. The isotope used for the treatment of cancer is:",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          90.0,
+          221.189453125
+        ],
+        [
+          443.99310302734375,
+          219.544921875
+        ],
+        [
+          443.99310302734375,
+          235.88623046875
+        ],
+        [
+          89.6328125,
+          235.990234375
+        ]
+      ]
+    },
+    {
+      "title": "16. Carbon-14 dating is used to determine the age of:",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          90.0,
+          314.10546875
+        ],
+        [
+          457.1927490234375,
+          312.4609375
+        ],
+        [
+          457.1927490234375,
+          328.453369140625
+        ],
+        [
+          89.6328125,
+          328.90625
+        ]
+      ]
+    },
+    {
+      "title": "17. Alpha particles are identical to the nucleus of:",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          90.0,
+          406.6103515625
+        ],
+        [
+          433.89520263671875,
+          404.9658203125
+        ],
+        [
+          433.89520263671875,
+          421.0205078125
+        ],
+        [
+          89.05078125,
+          421.0205078125
+        ]
+      ]
+    },
+    {
+      "title": "18. The SI unit of radioactivity is the:",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          90.0,
+          498.7041015625
+        ],
+        [
+          347.57135009765625,
+          497.0595703125
+        ],
+        [
+          347.57135009765625,
+          513.5875854492188
+        ],
+        [
+          89.341796875,
+          514.3271484375
+        ]
+      ]
+    },
+    {
+      "title": "19. Nuclear Fusion occurs naturally in:",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          90.0,
+          591.6201171875
+        ],
+        [
+          361.5908508300781,
+          589.9755859375
+        ],
+        [
+          361.5908508300781,
+          606.1547698974609
+        ],
+        [
+          89.6328125,
+          607.2431640625
+        ]
+      ]
+    },
+    {
+      "title": "20. Which material is commonly used as a moderator in\nnuclear reactors?",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          89.923828125,
+          682.48046875
+        ],
+        [
+          474.8525085449219,
+          680.8359375
+        ],
+        [
+          474.8525085449219,
+          717.2353363037109
+        ],
+        [
+          88.759765625,
+          717.2353363037109
+        ]
+      ]
+    },
+    {
+      "title": "28. An atom becomes a positive ion (cation) by:",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          90.0,
+          147.5966796875
+        ],
+        [
+          402.661376953125,
+          145.9521484375
+        ],
+        [
+          402.661376953125,
+          161.83251953125
+        ],
+        [
+          89.05078125,
+          161.83251953125
+        ]
+      ]
+    },
+    {
+      "title": "29. The atomic mass (A) of an element is the sum of:",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          89.341796875,
+          240.1015625
+        ],
+        [
+          435.3257751464844,
+          238.45703125
+        ],
+        [
+          435.3257751464844,
+          254.399658203125
+        ],
+        [
+          88.177734375,
+          254.90234375
+        ]
+      ]
+    },
+    {
+      "title": "30. Which shell is closest to the nucleus?",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          89.923828125,
+          332.6064453125
+        ],
+        [
+          363.5257568359375,
+          330.9619140625
+        ],
+        [
+          363.5257568359375,
+          346.96673583984375
+        ],
+        [
+          88.759765625,
+          346.96673583984375
+        ]
+      ]
+    },
+    {
+      "title": "31. The time required for half of the radioactive nuclei to decay\nis called:",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          89.923828125,
+          425.5339050292969
+        ],
+        [
+          522.017822265625,
+          425.111328125
+        ],
+        [
+          522.017822265625,
+          458.0473327636719
+        ],
+        [
+          88.759765625,
+          458.0473327636719
+        ]
+      ]
+    },
+    {
+      "title": "32. Beta (\\beta) particles are actually:",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          90.0,
+          535.7060546875
+        ],
+        [
+          350.7414245605469,
+          534.0615234375
+        ],
+        [
+          350.7414245605469,
+          550.6144714355469
+        ],
+        [
+          89.05078125,
+          551.3291015625
+        ]
+      ]
+    },
+    {
+      "title": "33. Which radiation is the most penetrating?",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          90.0,
+          627.388671875
+        ],
+        [
+          400.1501159667969,
+          625.744140625
+        ],
+        [
+          400.1501159667969,
+          643.1816253662109
+        ],
+        [
+          89.05078125,
+          643.833984375
+        ]
+      ]
+    },
+    {
+      "title": "34. Radioactive isotopes used in medicine are called:",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          89.923828125,
+          721.126953125
+        ],
+        [
+          458.03997802734375,
+          719.482421875
+        ],
+        [
+          458.03997802734375,
+          735.927734375
+        ],
+        [
+          88.759765625,
+          737.572265625
+        ]
+      ]
+    },
+    {
+      "title": "97. Isotopes have different:",
+      "heading_level": null,
+      "page_id": 14,
+      "polygon": [
+        [
+          89.05078125,
+          110.18359375
+        ],
+        [
+          285.3853759765625,
+          108.5390625
+        ],
+        [
+          285.3853759765625,
+          124.80615234375
+        ],
+        [
+          87.88671875,
+          124.984375
+        ]
+      ]
+    },
+    {
+      "title": "98. The moderator in a reactor slows down:",
+      "heading_level": null,
+      "page_id": 14,
+      "polygon": [
+        [
+          89.6328125,
+          203.099609375
+        ],
+        [
+          392.677001953125,
+          201.455078125
+        ],
+        [
+          392.677001953125,
+          217.37255859375
+        ],
+        [
+          88.46875,
+          217.37255859375
+        ]
+      ]
+    },
+    {
+      "title": "99. An example of a natural radioactive element is:",
+      "heading_level": null,
+      "page_id": 14,
+      "polygon": [
+        [
+          89.341796875,
+          295.6044921875
+        ],
+        [
+          440.1534423828125,
+          293.9599609375
+        ],
+        [
+          440.1534423828125,
+          309.93994140625
+        ],
+        [
+          88.177734375,
+          311.2275390625
+        ]
+      ]
+    },
+    {
+      "title": "100. The mass number is written as a:",
+      "heading_level": null,
+      "page_id": 14,
+      "polygon": [
+        [
+          90.0,
+          387.6982421875
+        ],
+        [
+          348.39117431640625,
+          386.0537109375
+        ],
+        [
+          348.39117431640625,
+          402.5072937011719
+        ],
+        [
+          89.923828125,
+          402.5072937011719
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          311
+        ],
+        [
+          "Line",
+          35
+        ],
+        [
+          "TableCell",
+          22
+        ],
+        [
+          "Text",
+          18
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Form",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          323
+        ],
+        [
+          "Line",
+          36
+        ],
+        [
+          "ListItem",
+          32
+        ],
+        [
+          "ListGroup",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          331
+        ],
+        [
+          "Line",
+          37
+        ],
+        [
+          "ListItem",
+          28
+        ],
+        [
+          "ListGroup",
+          8
+        ],
+        [
+          "SectionHeader",
+          7
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          363
+        ],
+        [
+          "Line",
+          37
+        ],
+        [
+          "ListItem",
+          32
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          345
+        ],
+        [
+          "Line",
+          37
+        ],
+        [
+          "ListItem",
+          28
+        ],
+        [
+          "SectionHeader",
+          7
+        ],
+        [
+          "ListGroup",
+          7
+        ],
+        [
+          "Text",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          347
+        ],
+        [
+          "TableCell",
+          108
+        ],
+        [
+          "Line",
+          37
+        ],
+        [
+          "Form",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 6,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          335
+        ],
+        [
+          "TableCell",
+          38
+        ],
+        [
+          "Line",
+          37
+        ],
+        [
+          "Form",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 7,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          327
+        ],
+        [
+          "TableCell",
+          38
+        ],
+        [
+          "Line",
+          37
+        ],
+        [
+          "Form",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 8,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          299
+        ],
+        [
+          "TableCell",
+          70
+        ],
+        [
+          "Line",
+          36
+        ],
+        [
+          "Text",
+          3
+        ],
+        [
+          "Form",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 9,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          377
+        ],
+        [
+          "Line",
+          37
+        ],
+        [
+          "ListItem",
+          31
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 10,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          349
+        ],
+        [
+          "TableCell",
+          76
+        ],
+        [
+          "Line",
+          36
+        ],
+        [
+          "Form",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 11,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          325
+        ],
+        [
+          "Line",
+          36
+        ],
+        [
+          "Text",
+          12
+        ],
+        [
+          "ListItem",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 12,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          351
+        ],
+        [
+          "TableCell",
+          76
+        ],
+        [
+          "Line",
+          37
+        ],
+        [
+          "Form",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 13,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          291
+        ],
+        [
+          "TableCell",
+          74
+        ],
+        [
+          "Line",
+          36
+        ],
+        [
+          "Form",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 14,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          171
+        ],
+        [
+          "Line",
+          19
+        ],
+        [
+          "ListItem",
+          14
+        ],
+        [
+          "SectionHeader",
+          4
+        ],
+        [
+          "ListGroup",
+          4
+        ],
+        [
+          "Text",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data\\Atomic Structure and Radioactivity"
+}
