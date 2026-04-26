@@ -281,142 +281,1197 @@
         "title": "General Science",
         "icon": "🔬",
         "modules": {
+            "energy_procurement": {
+                "title": "Energy and its Procurement",
+                "questions": [
+                    {
+                        "text": "Ability to do work is called?",
+                        "options": [
+                            "Force",
+                            "Power",
+                            "Energy",
+                            "Pressure"
+                        ],
+                        "correct": "Energy"
+                    },
+                    {
+                        "text": "Energy stored in a stretched spring is?",
+                        "options": [
+                            "Kinetic",
+                            "Elastic potential",
+                            "Gravitational",
+                            "Chemical"
+                        ],
+                        "correct": "Elastic potential"
+                    },
+                    {
+                        "text": "Law of Conservation of Energy states energy is?",
+                        "options": [
+                            "Created",
+                            "Destroyed",
+                            "Converted",
+                            "Lost"
+                        ],
+                        "correct": "Converted"
+                    },
+                    {
+                        "text": "SI unit of energy is?",
+                        "options": [
+                            "Watt",
+                            "Newton",
+                            "Joule",
+                            "Calorie"
+                        ],
+                        "correct": "Joule"
+                    },
+                    {
+                        "text": "Geothermal energy comes from?",
+                        "options": [
+                            "Sun",
+                            "Earth's internal heat",
+                            "Moon",
+                            "Ocean tides"
+                        ],
+                        "correct": "Earth's internal heat"
+                    },
+                    {
+                        "text": "One kilowatt-hour (1 unit) = ? Joules",
+                        "options": [
+                            "3.6 × 10⁶ J",
+                            "1000 J",
+                            "3600 J",
+                            "10⁶ J"
+                        ],
+                        "correct": "3.6 × 10⁶ J"
+                    }
+                ]
+            },
             "atomic": {
                 "title": "Structure of the Atom and Radioactivity",
                 "questions": [
                     {
-                        "text": "The word 'atom' is derived from the Greek word 'Atomos,' which means:",
-                        "options": ["Tiny particle", "Invisible", "Indivisible", "Hard sphere"],
-                        "correct": "Indivisible",
-                        "explain": "Atomos in Greek means something that cannot be divided."
+                        "text": "Positively charged particles in the center of an atom are called?",
+                        "options": [
+                            "Electrons",
+                            "Protons",
+                            "Neutrons",
+                            "Ions"
+                        ],
+                        "correct": "Protons"
+                    },
+                    {
+                        "text": "Negatively charged particles that orbit the nucleus are?",
+                        "options": [
+                            "Protons",
+                            "Neutrons",
+                            "Electrons",
+                            "Positrons"
+                        ],
+                        "correct": "Electrons"
+                    },
+                    {
+                        "text": "In a neutral atom, number of electrons equals?",
+                        "options": [
+                            "Number of neutrons",
+                            "Mass number",
+                            "Atomic number",
+                            "Number of ions"
+                        ],
+                        "correct": "Atomic number"
+                    },
+                    {
+                        "text": "Mass number (A) is sum of?",
+                        "options": [
+                            "Protons + Electrons",
+                            "Neutrons + Electrons",
+                            "Protons + Neutrons",
+                            "Protons only"
+                        ],
+                        "correct": "Protons + Neutrons"
+                    },
+                    {
+                        "text": "Isotopes have same number of ?",
+                        "options": [
+                            "Protons",
+                            "Neutrons",
+                            "Electrons",
+                            "Mass number"
+                        ],
+                        "correct": "Protons"
+                    },
+                    {
+                        "text": "How many neutrons in Protium (Hydrogen-1)?",
+                        "options": [
+                            "0",
+                            "1",
+                            "2",
+                            "3"
+                        ],
+                        "correct": "0"
+                    },
+                    {
+                        "text": "Who discovered radioactivity in 1896?",
+                        "options": [
+                            "Marie Curie",
+                            "Ernest Rutherford",
+                            "Henry Becquerel",
+                            "Niels Bohr"
+                        ],
+                        "correct": "Henry Becquerel"
+                    },
+                    {
+                        "text": "Alpha particle is identical to nucleus of?",
+                        "options": [
+                            "Hydrogen",
+                            "Helium",
+                            "Lithium",
+                            "Beryllium"
+                        ],
+                        "correct": "Helium"
+                    },
+                    {
+                        "text": "Which radiation has highest penetrating power?",
+                        "options": [
+                            "Alpha",
+                            "Beta",
+                            "Gamma",
+                            "X-rays"
+                        ],
+                        "correct": "Gamma"
+                    },
+                    {
+                        "text": "What stops alpha particles?",
+                        "options": [
+                            "Aluminum",
+                            "Lead",
+                            "Paper/Skin",
+                            "Water"
+                        ],
+                        "correct": "Paper/Skin"
+                    },
+                    {
+                        "text": "Beta particles are high-speed?",
+                        "options": [
+                            "Protons",
+                            "Neutrons",
+                            "Electrons",
+                            "Helium nuclei"
+                        ],
+                        "correct": "Electrons"
+                    },
+                    {
+                        "text": "Gamma rays are?",
+                        "options": [
+                            "Helium nuclei",
+                            "High-speed electrons",
+                            "Electromagnetic radiation",
+                            "Neutrons"
+                        ],
+                        "correct": "Electromagnetic radiation"
+                    },
+                    {
+                        "text": "What is used to block gamma radiation?",
+                        "options": [
+                            "Paper",
+                            "Aluminum",
+                            "Lead & concrete",
+                            "Water"
+                        ],
+                        "correct": "Lead & concrete"
+                    },
+                    {
+                        "text": "Nuclear fission is splitting of heavy nucleus into?",
+                        "options": [
+                            "Protons only",
+                            "Lighter nuclei",
+                            "Electrons",
+                            "Gamma rays"
+                        ],
+                        "correct": "Lighter nuclei"
+                    },
+                    {
+                        "text": "Chain reaction in uranium is controlled by?",
+                        "options": [
+                            "Heavy water",
+                            "Cadmium rods",
+                            "Graphite",
+                            "Boron rods"
+                        ],
+                        "correct": "Cadmium rods"
+                    },
+                    {
+                        "text": "Einstein's mass-energy equivalence relates?",
+                        "options": [
+                            "Fusion only",
+                            "Mass converted to energy",
+                            "Energy to mass",
+                            "Both"
+                        ],
+                        "correct": "Mass converted to energy"
+                    },
+                    {
+                        "text": "Critical mass refers to?",
+                        "options": [
+                            "Minimum uranium for chain reaction",
+                            "Maximum uranium",
+                            "Energy released",
+                            "Type of neutron"
+                        ],
+                        "correct": "Minimum uranium for chain reaction"
+                    },
+                    {
+                        "text": "Pakistan's first nuclear power plant was built in Karachi with cooperation of?",
+                        "options": [
+                            "USA",
+                            "China",
+                            "Canada",
+                            "Russia"
+                        ],
+                        "correct": "Canada"
+                    },
+                    {
+                        "text": "The word \\",
+                        "options": [
+                            "Tiny particle",
+                            "Invisible",
+                            "Indivisible",
+                            "Hard sphere"
+                        ],
+                        "correct": "Indivisible"
                     },
                     {
                         "text": "The subatomic particle with a negative charge is the:",
-                        "options": ["Proton", "Electron", "Neutron", "Positron"],
-                        "correct": "Electron",
-                        "explain": "Electrons are negatively charged particles that orbit the nucleus."
+                        "options": [
+                            "Proton",
+                            "Electron",
+                            "Neutron",
+                            "Positron"
+                        ],
+                        "correct": "Electron"
                     },
                     {
                         "text": "The mass of an atom is primarily concentrated in the:",
-                        "options": ["Shells", "Nucleus", "Orbitals", "Electrons"],
-                        "correct": "Nucleus",
-                        "explain": "Protons and neutrons, which carry almost all the mass, are located in the nucleus."
+                        "options": [
+                            "Shells",
+                            "Nucleus",
+                            "Orbitals",
+                            "Electrons"
+                        ],
+                        "correct": "Nucleus"
                     },
                     {
                         "text": "Who discovered the nucleus through the Gold Foil experiment?",
-                        "options": ["J.J. Thomson", "John Dalton", "Ernest Rutherford", "Neils Bohr"],
-                        "correct": "Ernest Rutherford",
-                        "explain": "Rutherford's gold foil experiment led to the discovery of the dense central nucleus."
+                        "options": [
+                            "J.J. Thomson",
+                            "John Dalton",
+                            "Ernest Rutherford",
+                            "Neils Bohr"
+                        ],
+                        "correct": "Ernest Rutherford"
                     },
                     {
                         "text": "The maximum number of electrons that can be accommodated in the 'L' shell is:",
-                        "options": ["2", "8", "18", "32"],
-                        "correct": "8",
-                        "explain": "Using the 2n² formula, for L-shell (n=2), max electrons = 2(2)² = 8."
+                        "options": [
+                            "2",
+                            "8",
+                            "18",
+                            "32"
+                        ],
+                        "correct": "8"
                     },
                     {
                         "text": "Neutrons were discovered by:",
-                        "options": ["James Chadwick", "Rutherford", "Dalton", "Goldstein"],
-                        "correct": "James Chadwick",
-                        "explain": "James Chadwick discovered the neutron in 1932."
+                        "options": [
+                            "Rutherford",
+                            "James Chadwick",
+                            "Dalton",
+                            "Goldstein"
+                        ],
+                        "correct": "James Chadwick"
                     },
                     {
                         "text": "The atomic number (Z) represents the number of:",
-                        "options": ["Protons", "Neutrons", "Protons + Neutrons", "Electrons in outermost shell"],
-                        "correct": "Protons",
-                        "explain": "The atomic number is the number of protons in the nucleus of an atom."
+                        "options": [
+                            "Protons",
+                            "Neutrons",
+                            "Protons + Neutrons",
+                            "Electrons in the outermost shell"
+                        ],
+                        "correct": "Protons"
                     },
                     {
                         "text": "Isotopes are atoms of the same element with different numbers of:",
-                        "options": ["Protons", "Electrons", "Neutrons", "Positrons"],
-                        "correct": "Neutrons",
-                        "explain": "Isotopes have the same atomic number but different mass numbers due to neutrons."
+                        "options": [
+                            "Protons",
+                            "Electrons",
+                            "Neutrons",
+                            "Positrons"
+                        ],
+                        "correct": "Neutrons"
+                    },
+                    {
+                        "text": "The formula to find the maximum electrons in a shell is:",
+                        "options": [
+                            "n²",
+                            "2n²",
+                            "2n",
+                            "n+2"
+                        ],
+                        "correct": "2n²"
+                    },
+                    {
+                        "text": "Which particle is nearly 1836 times lighter than a proton?",
+                        "options": [
+                            "Neutron",
+                            "Electron",
+                            "Alpha particle",
+                            "Hydrogen nucleus"
+                        ],
+                        "correct": "Electron"
                     },
                     {
                         "text": "Natural radioactivity was discovered by:",
-                        "options": ["Marie Curie", "Henri Becquerel", "Ernest Rutherford", "Enrico Fermi"],
-                        "correct": "Henri Becquerel",
-                        "explain": "Henri Becquerel discovered radioactivity in 1896 while working with uranium salts."
+                        "options": [
+                            "Marie Curie",
+                            "Henri Becquerel",
+                            "Ernest Rutherford",
+                            "Enrico Fermi"
+                        ],
+                        "correct": "Henri Becquerel"
                     },
                     {
                         "text": "Which of the following radiations has the highest ionizing power?",
-                        "options": ["Alpha rays", "Beta rays", "Gamma rays", "X-rays"],
-                        "correct": "Alpha rays",
-                        "explain": "Alpha particles are relatively heavy and double-charged, giving them high ionizing power."
+                        "options": [
+                            "Alpha (α) rays",
+                            "Beta (β) rays",
+                            "Gamma (γ) rays",
+                            "X-rays"
+                        ],
+                        "correct": "Alpha (α) rays"
+                    },
+                    {
+                        "text": "Which radiation consists of high-energy electromagnetic waves?",
+                        "options": [
+                            "Alpha",
+                            "Beta",
+                            "Gamma",
+                            "Cathode rays"
+                        ],
+                        "correct": "Gamma"
                     },
                     {
                         "text": "The process in which a heavy nucleus splits into two lighter nuclei is called:",
-                        "options": ["Nuclear Fission", "Nuclear Fusion", "Chain Reaction", "Radioactive Decay"],
-                        "correct": "Nuclear Fission",
-                        "explain": "Fission is the splitting of a heavy nucleus into smaller ones with energy release."
+                        "options": [
+                            "Nuclear Fission",
+                            "Nuclear Fusion",
+                            "Chain Reaction",
+                            "Radioactive Decay"
+                        ],
+                        "correct": "Nuclear Fission"
                     },
                     {
                         "text": "The isotope used for the treatment of cancer is:",
-                        "options": ["Iodine-131", "Cobalt-60", "Carbon-14", "Uranium-235"],
-                        "correct": "Cobalt-60",
-                        "explain": "Cobalt-60 produces gamma rays used to treat cancer (radiotherapy)."
+                        "options": [
+                            "Iodine-131",
+                            "Cobalt-60",
+                            "Carbon-14",
+                            "Uranium-235"
+                        ],
+                        "correct": "Cobalt-60"
                     },
                     {
                         "text": "Carbon-14 dating is used to determine the age of:",
-                        "options": ["Rocks", "Fossils", "Planets", "Ocean water"],
-                        "correct": "Fossils",
-                        "explain": "Carbon-14 dating estimates the age of organic materials like fossils."
+                        "options": [
+                            "Rocks",
+                            "Fossils",
+                            "Planets",
+                            "Ocean water"
+                        ],
+                        "correct": "Fossils"
                     },
                     {
                         "text": "Alpha particles are identical to the nucleus of:",
-                        "options": ["Hydrogen", "Helium", "Lithium", "Carbon"],
-                        "correct": "Helium",
-                        "explain": "An alpha particle consists of 2 protons and 2 neutrons, same as a Helium nucleus."
+                        "options": [
+                            "Hydrogen",
+                            "Helium",
+                            "Lithium",
+                            "Carbon"
+                        ],
+                        "correct": "Helium"
                     },
                     {
                         "text": "The SI unit of radioactivity is the:",
-                        "options": ["Curie", "Becquerel", "Roentgen", "Rad"],
-                        "correct": "Becquerel",
-                        "explain": "The Becquerel (Bq) is the SI unit, named after Henri Becquerel."
+                        "options": [
+                            "Curie",
+                            "Becquerel",
+                            "Roentgen",
+                            "Rad"
+                        ],
+                        "correct": "Becquerel"
                     },
                     {
                         "text": "Nuclear Fusion occurs naturally in:",
-                        "options": ["Nuclear reactors", "The Sun and Stars", "Volcanic eruptions", "Chemical laboratories"],
-                        "correct": "The Sun and Stars",
-                        "explain": "Fusion of hydrogen into helium is the primary energy source for stars."
+                        "options": [
+                            "Nuclear reactors",
+                            "The Sun and Stars",
+                            "Volcanic eruptions",
+                            "Chemical laboratories"
+                        ],
+                        "correct": "The Sun and Stars"
                     },
                     {
                         "text": "Which material is commonly used as a moderator in nuclear reactors?",
-                        "options": ["Iron", "Lead", "Graphite or Heavy Water", "Boron"],
-                        "correct": "Graphite or Heavy Water",
-                        "explain": "Moderators slow down neutrons to sustain a chain reaction."
-                    }
-                ]
-            },
-            "biology": {
-                "title": "The Cellular Basis of Life",
-                "questions": [
-                    {
-                        "text": "Powerhouse of the cell is?",
                         "options": [
-                            "Nucleus",
-                            "Ribosome",
-                            "Mitochondria",
-                            "Lysosome"
+                            "Iron",
+                            "Lead",
+                            "Graphite / Heavy water",
+                            "Copper"
                         ],
-                        "correct": "Mitochondria",
-                        "tag": "biology"
+                        "correct": "Graphite / Heavy water"
                     },
                     {
-                        "text": "Normal human body temperature is?",
+                        "text": "An atom becomes a positive ion (cation) by:",
                         "options": [
-                            "36°C",
-                            "37°C",
-                            "38°C",
-                            "39°C"
+                            "Losing electrons",
+                            "Gaining electrons",
+                            "Gaining protons",
+                            "Losing neutrons"
                         ],
-                        "correct": "37°C",
-                        "tag": "biology"
+                        "correct": "Losing electrons"
+                    },
+                    {
+                        "text": "The atomic mass (A) of an element is the sum of:",
+                        "options": [
+                            "Protons and electrons",
+                            "Protons and neutrons",
+                            "Electrons and neutrons",
+                            "Protons only"
+                        ],
+                        "correct": "Protons and neutrons"
+                    },
+                    {
+                        "text": "Which shell is closest to the nucleus?",
+                        "options": [
+                            "K-shell",
+                            "L-shell",
+                            "M-shell",
+                            "N-shell"
+                        ],
+                        "correct": "K-shell"
+                    },
+                    {
+                        "text": "The time required for half of the radioactive nuclei to decay is called:",
+                        "options": [
+                            "Mean life",
+                            "Half-life",
+                            "Decay constant",
+                            "Full life"
+                        ],
+                        "correct": "Half-life"
+                    },
+                    {
+                        "text": "Beta (β) particles are actually:",
+                        "options": [
+                            "Protons",
+                            "Fast-moving electrons",
+                            "Helium nuclei",
+                            "Neutrons"
+                        ],
+                        "correct": "Fast-moving electrons"
+                    },
+                    {
+                        "text": "Which radiation is the most penetrating?",
+                        "options": [
+                            "Alpha",
+                            "Beta",
+                            "Gamma",
+                            "UV rays"
+                        ],
+                        "correct": "Gamma"
+                    },
+                    {
+                        "text": "Radioactive isotopes used in medicine are called:",
+                        "options": [
+                            "Radiopharmaceuticals",
+                            "Biological tracers",
+                            "Chemical catalysts",
+                            "Nuclear fuels"
+                        ],
+                        "correct": "Radiopharmaceuticals"
+                    },
+                    {
+                        "text": "The process of estimating the age of non-living things like rocks is:",
+                        "options": [
+                            "Carbon dating",
+                            "Uranium dating",
+                            "Nitrogen dating",
+                            "Fossil dating"
+                        ],
+                        "correct": "Uranium dating"
+                    },
+                    {
+                        "text": "In a nuclear reactor, the 'Coolant' is used to:",
+                        "options": [
+                            "Stop the reaction",
+                            "Absorb and transfer heat",
+                            "Increase the speed of neutrons",
+                            "Shield radiation"
+                        ],
+                        "correct": "Absorb and transfer heat"
+                    },
+                    {
+                        "text": "Which isotope is used to check the functioning of the thyroid gland?",
+                        "options": [
+                            "Iodine-131",
+                            "Phosphorus-32",
+                            "Carbon-12",
+                            "Iron-59"
+                        ],
+                        "correct": "Iodine-131"
+                    },
+                    {
+                        "text": "The fuel used in most nuclear power plants is:",
+                        "options": [
+                            "Coal",
+                            "Hydrogen",
+                            "Uranium-235",
+                            "Helium"
+                        ],
+                        "correct": "Uranium-235"
+                    },
+                    {
+                        "text": "Alpha decay reduces the atomic number of an element by:",
+                        "options": [
+                            "2",
+                            "4",
+                            "1",
+                            "0"
+                        ],
+                        "correct": "2"
+                    },
+                    {
+                        "text": "Gamma rays have a charge of:",
+                        "options": [
+                            "+2",
+                            "-1",
+                            "0 (Neutral)",
+                            "+1"
+                        ],
+                        "correct": "0 (Neutral)"
+                    },
+                    {
+                        "text": "The charge on an alpha particle is:",
+                        "options": [
+                            "Positive",
+                            "Negative",
+                            "Neutral",
+                            "Variable"
+                        ],
+                        "correct": "Positive"
+                    },
+                    {
+                        "text": "The number of neutrons in Tritium (₁³H) is:",
+                        "options": [
+                            "1",
+                            "2",
+                            "3",
+                            "0"
+                        ],
+                        "correct": "2"
+                    },
+                    {
+                        "text": "Which ray is used to sterilize medical instruments?",
+                        "options": [
+                            "Alpha",
+                            "Beta",
+                            "Gamma",
+                            "Cathode"
+                        ],
+                        "correct": "Gamma"
+                    },
+                    {
+                        "text": "A device used to detect radiation is the:",
+                        "options": [
+                            "Geiger-Muller Counter",
+                            "Barometer",
+                            "Voltmeter",
+                            "Galvanometer"
+                        ],
+                        "correct": "Geiger-Muller Counter"
+                    },
+                    {
+                        "text": "When a Beta particle is emitted, the atomic number:",
+                        "options": [
+                            "Increases by 1",
+                            "Decreases by 1",
+                            "Stays the same",
+                            "Decreases by 2"
+                        ],
+                        "correct": "Increases by 1"
+                    },
+                    {
+                        "text": "What is the mass number of an atom with 8 protons and 9 neutrons?",
+                        "options": [
+                            "8",
+                            "9",
+                            "17",
+                            "1"
+                        ],
+                        "correct": "17"
+                    },
+                    {
+                        "text": "Isotopes have the same:",
+                        "options": [
+                            "Chemical properties",
+                            "Physical properties",
+                            "Atomic mass",
+                            "Number of neutrons"
+                        ],
+                        "correct": "Chemical properties"
+                    },
+                    {
+                        "text": "In the notation ᴬZ X, 'A' stands for:",
+                        "options": [
+                            "Atomic number",
+                            "Mass number",
+                            "Atomic volume",
+                            "Avogadro's number"
+                        ],
+                        "correct": "Mass number"
+                    },
+                    {
+                        "text": "Heavy water is:",
+                        "options": [
+                            "H₂O",
+                            "D₂O",
+                            "T₂O",
+                            "CO₂"
+                        ],
+                        "correct": "D₂O"
+                    },
+                    {
+                        "text": "Nuclear waste is usually buried in:",
+                        "options": [
+                            "Forests",
+                            "Rivers",
+                            "Deep underground / Salt mines",
+                            "Atmosphere"
+                        ],
+                        "correct": "Deep underground / Salt mines"
+                    },
+                    {
+                        "text": "Which scientist compared the atom to 'plum pudding'?",
+                        "options": [
+                            "Neils Bohr",
+                            "J.J. Thomson",
+                            "John Dalton",
+                            "James Chadwick"
+                        ],
+                        "correct": "J.J. Thomson"
+                    },
+                    {
+                        "text": "The region around the nucleus where the probability of finding an electron is high:",
+                        "options": [
+                            "Shell",
+                            "Orbital",
+                            "Path",
+                            "Core"
+                        ],
+                        "correct": "Orbital"
+                    },
+                    {
+                        "text": "In the 'N' shell, the value of 'n' is:",
+                        "options": [
+                            "1",
+                            "2",
+                            "3",
+                            "4"
+                        ],
+                        "correct": "4"
+                    },
+                    {
+                        "text": "If an atom has 11 protons and 12 neutrons, its atomic number is:",
+                        "options": [
+                            "11",
+                            "12",
+                            "23",
+                            "1"
+                        ],
+                        "correct": "11"
+                    },
+                    {
+                        "text": "The simplest atom that contains no neutrons in its most common isotope is:",
+                        "options": [
+                            "Hydrogen",
+                            "Helium",
+                            "Lithium",
+                            "Beryllium"
+                        ],
+                        "correct": "Hydrogen"
+                    },
+                    {
+                        "text": "Cathode rays are composed of:",
+                        "options": [
+                            "Protons",
+                            "Electrons",
+                            "Neutrons",
+                            "Positrons"
+                        ],
+                        "correct": "Electrons"
+                    },
+                    {
+                        "text": "Canal rays (Positive rays) were discovered by:",
+                        "options": [
+                            "J.J. Thomson",
+                            "Goldstein",
+                            "Dalton",
+                            "Bohr"
+                        ],
+                        "correct": "Goldstein"
+                    },
+                    {
+                        "text": "The valency of an atom with 7 electrons in its outermost shell is usually:",
+                        "options": [
+                            "1",
+                            "7",
+                            "8",
+                            "0"
+                        ],
+                        "correct": "1"
+                    },
+                    {
+                        "text": "Which isotope is used to study the process of photosynthesis?",
+                        "options": [
+                            "Carbon-12",
+                            "Carbon-14",
+                            "Iodine-131",
+                            "Cobalt-60"
+                        ],
+                        "correct": "Carbon-14"
+                    },
+                    {
+                        "text": "An alpha particle carries a charge of:",
+                        "options": [
+                            "+1",
+                            "+2",
+                            "-1",
+                            "0"
+                        ],
+                        "correct": "+2"
+                    },
+                    {
+                        "text": "The conversion of a stable nucleus into an unstable one by bombardment is:",
+                        "options": [
+                            "Natural radioactivity",
+                            "Artificial radioactivity",
+                            "Fission",
+                            "Fusion"
+                        ],
+                        "correct": "Artificial radioactivity"
+                    },
+                    {
+                        "text": "The most dangerous radiation if accidentally swallowed or inhaled is:",
+                        "options": [
+                            "Alpha (due to high ionization)",
+                            "Beta",
+                            "Gamma",
+                            "X-rays"
+                        ],
+                        "correct": "Alpha (due to high ionization)"
+                    },
+                    {
+                        "text": "Which of the following is used as a safety shield in nuclear plants?",
+                        "options": [
+                            "Aluminum",
+                            "Iron",
+                            "Lead and Concrete",
+                            "Wood"
+                        ],
+                        "correct": "Lead and Concrete"
+                    },
+                    {
+                        "text": "The energy released in the Sun is due to:",
+                        "options": [
+                            "Fission of Uranium",
+                            "Fusion of Hydrogen into Helium",
+                            "Burning of Coal",
+                            "Chemical combustion"
+                        ],
+                        "correct": "Fusion of Hydrogen into Helium"
+                    },
+                    {
+                        "text": "A chain reaction is controlled in a nuclear reactor using:",
+                        "options": [
+                            "Graphite rods",
+                            "Boron or Cadmium rods",
+                            "Iron rods",
+                            "Water pipes"
+                        ],
+                        "correct": "Boron or Cadmium rods"
+                    },
+                    {
+                        "text": "Radioactive isotopes used to trace the path of an element in a system are:",
+                        "options": [
+                            "Tracers",
+                            "Moderators",
+                            "Coolants",
+                            "Shields"
+                        ],
+                        "correct": "Tracers"
+                    },
+                    {
+                        "text": "The mass of an alpha particle is approximately:",
+                        "options": [
+                            "1 amu",
+                            "2 amu",
+                            "4 amu",
+                            "0 amu"
+                        ],
+                        "correct": "4 amu"
+                    },
+                    {
+                        "text": "Which rays are not deflected by electric or magnetic fields?",
+                        "options": [
+                            "Alpha rays",
+                            "Beta rays",
+                            "Gamma rays",
+                            "Cathode rays"
+                        ],
+                        "correct": "Gamma rays"
+                    },
+                    {
+                        "text": "Half-life of Carbon-14 is approximately:",
+                        "options": [
+                            "100 years",
+                            "1500 years",
+                            "5730 years",
+                            "25000 years"
+                        ],
+                        "correct": "5730 years"
+                    },
+                    {
+                        "text": "The unit of absorbed radiation dose is:",
+                        "options": [
+                            "Curie",
+                            "Gray (or Rad)",
+                            "Becquerel",
+                            "Newton"
+                        ],
+                        "correct": "Gray (or Rad)"
+                    },
+                    {
+                        "text": "Deuterium is an isotope of Hydrogen containing:",
+                        "options": [
+                            "1 proton",
+                            "1 neutron",
+                            "1 proton",
+                            "2 neutrons",
+                            "2 protons",
+                            "1 neutron",
+                            "1 proton",
+                            "0 neutrons"
+                        ],
+                        "correct": "1 proton, 1 neutron"
+                    },
+                    {
+                        "text": "The sum of the number of protons and neutrons is the:",
+                        "options": [
+                            "Atomic number",
+                            "Mass number",
+                            "Relative atomic mass",
+                            "Valency"
+                        ],
+                        "correct": "Mass number"
+                    },
+                    {
+                        "text": "Atoms of different elements having the same mass number are:",
+                        "options": [
+                            "Isotopes",
+                            "Isobars",
+                            "Isotones",
+                            "Isomers"
+                        ],
+                        "correct": "Isobars"
+                    },
+                    {
+                        "text": "The maximum number of electrons in the 'K' shell is:",
+                        "options": [
+                            "2",
+                            "8",
+                            "18",
+                            "32"
+                        ],
+                        "correct": "2"
+                    },
+                    {
+                        "text": "Which radiation has the least ionizing power?",
+                        "options": [
+                            "Alpha",
+                            "Beta",
+                            "Gamma",
+                            "X-ray"
+                        ],
+                        "correct": "Gamma"
+                    },
+                    {
+                        "text": "Radioactivity is a property of the:",
+                        "options": [
+                            "Electrons",
+                            "Shells",
+                            "Nucleus",
+                            "Chemical bonds"
+                        ],
+                        "correct": "Nucleus"
+                    },
+                    {
+                        "text": "An electron has a mass of approximately:",
+                        "options": [
+                            "9.11×10⁻³¹ kg",
+                            "1.67×10⁻²⁷ kg",
+                            "1.67×10⁻²⁴ kg",
+                            "9.11×10⁻²⁷ kg"
+                        ],
+                        "correct": "9.11×10⁻³¹ kg"
+                    },
+                    {
+                        "text": "When an atom loses an electron, it becomes:",
+                        "options": [
+                            "Positively charged",
+                            "Negatively charged",
+                            "Neutral",
+                            "Radioactive"
+                        ],
+                        "correct": "Positively charged"
+                    },
+                    {
+                        "text": "Isotopes of Uranium used in nuclear reactors is:",
+                        "options": [
+                            "U-238",
+                            "U-235",
+                            "U-234",
+                            "U-236"
+                        ],
+                        "correct": "U-235"
+                    },
+                    {
+                        "text": "Nuclear fusion requires very high:",
+                        "options": [
+                            "Pressure only",
+                            "Temperature",
+                            "Humidity",
+                            "Darkness"
+                        ],
+                        "correct": "Temperature"
+                    },
+                    {
+                        "text": "The isotope used to detect leaks in underground pipes is:",
+                        "options": [
+                            "Sodium-24",
+                            "Iodine-131",
+                            "Carbon-14",
+                            "Cobalt-60"
+                        ],
+                        "correct": "Sodium-24"
+                    },
+                    {
+                        "text": "Which shell has the highest energy (among K,L,M,N)?",
+                        "options": [
+                            "K",
+                            "L",
+                            "M",
+                            "N"
+                        ],
+                        "correct": "N"
+                    },
+                    {
+                        "text": "The discovery of the electron proved that the atom is:",
+                        "options": [
+                            "Indivisible",
+                            "Divisible",
+                            "Solid",
+                            "Square-shaped"
+                        ],
+                        "correct": "Divisible"
+                    },
+                    {
+                        "text": "The central part of the atom is called:",
+                        "options": [
+                            "Proton",
+                            "Electron",
+                            "Nucleus",
+                            "Neutron"
+                        ],
+                        "correct": "Nucleus"
+                    },
+                    {
+                        "text": "In a neutral atom, the number of protons is always equal to the number of:",
+                        "options": [
+                            "Neutrons",
+                            "Electrons",
+                            "Positrons",
+                            "Alpha particles"
+                        ],
+                        "correct": "Electrons"
+                    },
+                    {
+                        "text": "The isotopes of Chlorine are:",
+                        "options": [
+                            "Cl-35 and Cl-37",
+                            "Cl-34 and Cl-36",
+                            "Cl-35 and Cl-36",
+                            "Cl-37 and Cl-38"
+                        ],
+                        "correct": "Cl-35 and Cl-37"
+                    },
+                    {
+                        "text": "The radioactive gas used in the treatment of cancer is:",
+                        "options": [
+                            "Helium",
+                            "Neon",
+                            "Radon",
+                            "Argon"
+                        ],
+                        "correct": "Radon"
+                    },
+                    {
+                        "text": "The splitting of a nucleus was first observed by:",
+                        "options": [
+                            "Otto Hahn and Fritz Strassman",
+                            "Newton",
+                            "Einstein",
+                            "Dalton"
+                        ],
+                        "correct": "Otto Hahn and Fritz Strassman"
+                    },
+                    {
+                        "text": "Alpha rays consist of a stream of:",
+                        "options": [
+                            "Electrons",
+                            "Protons",
+                            "Helium nuclei",
+                            "Neutrons"
+                        ],
+                        "correct": "Helium nuclei"
+                    },
+                    {
+                        "text": "What is the charge of a neutron?",
+                        "options": [
+                            "0",
+                            "+1",
+                            "-1",
+                            "+2"
+                        ],
+                        "correct": "0"
+                    },
+                    {
+                        "text": "Radioactivity is a:",
+                        "options": [
+                            "Chemical change",
+                            "Nuclear change",
+                            "Physical change",
+                            "Biological change"
+                        ],
+                        "correct": "Nuclear change"
+                    },
+                    {
+                        "text": "The most common isotope of Hydrogen is:",
+                        "options": [
+                            "Protium",
+                            "Deuterium",
+                            "Tritium",
+                            "Helium"
+                        ],
+                        "correct": "Protium"
+                    },
+                    {
+                        "text": "Valency of noble gases (like Neon) is:",
+                        "options": [
+                            "0",
+                            "1",
+                            "2",
+                            "8"
+                        ],
+                        "correct": "0"
+                    },
+                    {
+                        "text": "Which rays have the highest velocity (equal to light)?",
+                        "options": [
+                            "Alpha",
+                            "Beta",
+                            "Gamma",
+                            "Cathode"
+                        ],
+                        "correct": "Gamma"
+                    },
+                    {
+                        "text": "Isotopes have different:",
+                        "options": [
+                            "Atomic numbers",
+                            "Physical properties",
+                            "Chemical properties",
+                            "Electron counts"
+                        ],
+                        "correct": "Physical properties"
+                    },
+                    {
+                        "text": "The moderator in a reactor slows down:",
+                        "options": [
+                            "Electrons",
+                            "Protons",
+                            "Neutrons",
+                            "Atoms"
+                        ],
+                        "correct": "Neutrons"
+                    },
+                    {
+                        "text": "An example of a natural radioactive element is:",
+                        "options": [
+                            "Iron",
+                            "Gold",
+                            "Uranium",
+                            "Aluminum"
+                        ],
+                        "correct": "Uranium"
                     }
                 ]
             },
-            "computer": {
-                "title": "Computer & Laser",
+            "lab_elements": {
+                "title": "Elements Created in Laboratories",
+                "questions": [
+                    {
+                        "text": "First artificially produced element was?",
+                        "options": [
+                            "Plutonium",
+                            "Technetium",
+                            "Neptunium",
+                            "Curium"
+                        ],
+                        "correct": "Technetium"
+                    },
+                    {
+                        "text": "Atomic number of Oganesson is?",
+                        "options": [
+                            "114",
+                            "116",
+                            "118",
+                            "120"
+                        ],
+                        "correct": "118"
+                    },
+                    {
+                        "text": "Which synthetic element is used in smoke detectors?",
+                        "options": [
+                            "Curium",
+                            "Americium-241",
+                            "Berkelium",
+                            "Californium"
+                        ],
+                        "correct": "Americium-241"
+                    }
+                ]
+            },
+            "computer_major": {
+                "title": "Major Components of Computer",
                 "questions": [
                     {
                         "text": "Brain of computer is?",
@@ -426,8 +1481,1096 @@
                             "Keyboard",
                             "Mouse"
                         ],
-                        "correct": "CPU",
-                        "tag": "computer"
+                        "correct": "CPU"
+                    },
+                    {
+                        "text": "ALU stands for?",
+                        "options": [
+                            "Arithmetic Logic Unit",
+                            "Array Logic Unit",
+                            "Automatic Logic Unit",
+                            "Address Logic Unit"
+                        ],
+                        "correct": "Arithmetic Logic Unit"
+                    },
+                    {
+                        "text": "Volatile memory that loses data when power off is?",
+                        "options": [
+                            "ROM",
+                            "RAM",
+                            "Hard disk",
+                            "SSD"
+                        ],
+                        "correct": "RAM"
+                    },
+                    {
+                        "text": "Smallest unit of data is?",
+                        "options": [
+                            "Byte",
+                            "Bit",
+                            "Nibble",
+                            "Word"
+                        ],
+                        "correct": "Bit"
+                    },
+                    {
+                        "text": "1 Byte = ? bits",
+                        "options": [
+                            "4",
+                            "8",
+                            "16",
+                            "32"
+                        ],
+                        "correct": "8"
+                    }
+                ]
+            },
+            "laser_types": {
+                "title": "Types of Laser and Uses",
+                "questions": [
+                    {
+                        "text": "LASER stands for?",
+                        "options": [
+                            "Light Amplification by Stimulated Emission of Radiation",
+                            "Light Amplitude by Stimulated Energy",
+                            "Laser Amplification of Solar Energy",
+                            "Light Absorption by Stimulated Emission"
+                        ],
+                        "correct": "Light Amplification by Stimulated Emission of Radiation"
+                    },
+                    {
+                        "text": "First working laser (1960) was?",
+                        "options": [
+                            "He-Ne",
+                            "Ruby",
+                            "CO2",
+                            "Diode"
+                        ],
+                        "correct": "Ruby"
+                    },
+                    {
+                        "text": "Which laser is used in barcode scanners?",
+                        "options": [
+                            "CO2",
+                            "Ruby",
+                            "He-Ne",
+                            "Excimer"
+                        ],
+                        "correct": "He-Ne"
+                    },
+                    {
+                        "text": "Which laser is used for industrial cutting and welding?",
+                        "options": [
+                            "He-Ne",
+                            "Ruby",
+                            "CO2",
+                            "Dye"
+                        ],
+                        "correct": "CO2"
+                    }
+                ]
+            },
+            "health_dev": {
+                "title": "Human Health and Physical Development",
+                "questions": [
+                    {
+                        "text": "Who proposed the Theory of Spontaneous Generation?",
+                        "options": [
+                            "Redi",
+                            "Pasteur",
+                            "Aristotle",
+                            "Miller"
+                        ],
+                        "correct": "Aristotle"
+                    },
+                    {
+                        "text": "Miller's experiment (1953) produced?",
+                        "options": [
+                            "Proteins",
+                            "Amino Acids",
+                            "Nucleic Acids",
+                            "Glucose"
+                        ],
+                        "correct": "Amino Acids"
+                    },
+                    {
+                        "text": "Earth's early atmosphere contained?",
+                        "options": [
+                            "Oxygen",
+                            "Nitrogen",
+                            "Methane",
+                            "Ammonia",
+                            "Water vapor",
+                            "Carbon dioxide only",
+                            "Helium"
+                        ],
+                        "correct": "Methane, Ammonia, Water vapor"
+                    },
+                    {
+                        "text": "Basic structural unit of all living organisms is?",
+                        "options": [
+                            "Tissue",
+                            "Organ",
+                            "Cell",
+                            "Organelle"
+                        ],
+                        "correct": "Cell"
+                    },
+                    {
+                        "text": "Semi-permeable membrane allows passage by?",
+                        "options": [
+                            "Active transport only",
+                            "Osmosis/Diffusion",
+                            "Phagocytosis",
+                            "Endocytosis"
+                        ],
+                        "correct": "Osmosis/Diffusion"
+                    },
+                    {
+                        "text": "Movement of water across a membrane is called?",
+                        "options": [
+                            "Diffusion",
+                            "Osmosis",
+                            "Active transport",
+                            "Phagocytosis"
+                        ],
+                        "correct": "Osmosis"
+                    },
+                    {
+                        "text": "WHO defines health as state of complete?",
+                        "options": [
+                            "Absence of disease",
+                            "Physical",
+                            "mental",
+                            "social well-being",
+                            "Physical fitness",
+                            "Mental stability"
+                        ],
+                        "correct": "Physical, mental, social well-being"
+                    },
+                    {
+                        "text": "Deficiency of Vitamin A causes?",
+                        "options": [
+                            "Rickets",
+                            "Scurvy",
+                            "Night blindness",
+                            "Anemia"
+                        ],
+                        "correct": "Night blindness"
+                    },
+                    {
+                        "text": "Vitamin C deficiency causes?",
+                        "options": [
+                            "Beri-beri",
+                            "Scurvy",
+                            "Pellagra",
+                            "Goiter"
+                        ],
+                        "correct": "Scurvy"
+                    },
+                    {
+                        "text": "Vitamin D is essential for absorption of?",
+                        "options": [
+                            "Iron",
+                            "Calcium & Phosphorus",
+                            "Iodine",
+                            "Sodium"
+                        ],
+                        "correct": "Calcium & Phosphorus"
+                    },
+                    {
+                        "text": "Insulin is secreted by?",
+                        "options": [
+                            "Thyroid",
+                            "Pancreas",
+                            "Adrenal",
+                            "Pituitary"
+                        ],
+                        "correct": "Pancreas"
+                    },
+                    {
+                        "text": "Master gland (pituitary) is located?",
+                        "options": [
+                            "Neck",
+                            "Above kidneys",
+                            "Below brain",
+                            "Chest"
+                        ],
+                        "correct": "Below brain"
+                    },
+                    {
+                        "text": "Normal human body temperature is?",
+                        "options": [
+                            "36°C",
+                            "37°C",
+                            "38°C",
+                            "39°C"
+                        ],
+                        "correct": "37°C"
+                    },
+                    {
+                        "text": "Universal Donor blood group is?",
+                        "options": [
+                            "A+",
+                            "O-",
+                            "AB+",
+                            "B-"
+                        ],
+                        "correct": "O-"
+                    },
+                    {
+                        "text": "The basic structural and functional unit of all living organisms is the:",
+                        "options": [
+                            "Tissue",
+                            "Cell",
+                            "Organ",
+                            "Atom"
+                        ],
+                        "correct": "Cell"
+                    },
+                    {
+                        "text": "Bacteria are an example of:",
+                        "options": [
+                            "Prokaryotic cells",
+                            "Eukaryotic cells",
+                            "Viruses",
+                            "Fungi"
+                        ],
+                        "correct": "Prokaryotic cells"
+                    },
+                    {
+                        "text": "The network of channels involved in the transport of materials is the:",
+                        "options": [
+                            "Endoplasmic Reticulum (ER)",
+                            "Golgi Apparatus",
+                            "Mitochondria",
+                            "Nucleus"
+                        ],
+                        "correct": "Endoplasmic Reticulum (ER)"
+                    },
+                    {
+                        "text": "Large central vacuoles are a characteristic feature of:",
+                        "options": [
+                            "Plant cells",
+                            "Animal cells",
+                            "Bacterial cells",
+                            "Human blood cells"
+                        ],
+                        "correct": "Plant cells"
+                    },
+                    {
+                        "text": "Rough Endoplasmic Reticulum (RER) is called 'rough' because of:",
+                        "options": [
+                            "Its shape",
+                            "Attached Ribosomes",
+                            "Attached Mitochondria",
+                            "Thick walls"
+                        ],
+                        "correct": "Attached Ribosomes"
+                    },
+                    {
+                        "text": "The movement of water from high concentration to low concentration through a membrane is:",
+                        "options": [
+                            "Diffusion",
+                            "Osmosis",
+                            "Active Transport",
+                            "Circulation"
+                        ],
+                        "correct": "Osmosis"
+                    },
+                    {
+                        "text": "Unit of inheritance?",
+                        "options": [
+                            "Gene",
+                            "DNA",
+                            "Chromosome",
+                            "Allele"
+                        ],
+                        "correct": "Gene"
+                    },
+                    {
+                        "text": "Fluid mosaic model describes what?",
+                        "options": [
+                            "Cell Membrane",
+                            "Cell Wall",
+                            "Nucleus",
+                            "Mitochondria"
+                        ],
+                        "correct": "Cell Membrane"
+                    },
+                    {
+                        "text": "Division of the nucleus is called?",
+                        "options": [
+                            "Karyokinesis",
+                            "Cytokinesis",
+                            "Mitosis",
+                            "Meiosis"
+                        ],
+                        "correct": "Karyokinesis"
+                    },
+                    {
+                        "text": "Who discovered the nucleus?",
+                        "options": [
+                            "Robert Brown",
+                            "Robert Hooke",
+                            "Leeuwenhoek",
+                            "Virchow"
+                        ],
+                        "correct": "Robert Brown"
+                    },
+                    {
+                        "text": "Sister chromatids separate during?",
+                        "options": [
+                            "Prophase",
+                            "Metaphase",
+                            "Anaphase",
+                            "Telophase"
+                        ],
+                        "correct": "Anaphase"
+                    },
+                    {
+                        "text": "Colorless plastids are?",
+                        "options": [
+                            "Leucoplasts",
+                            "Chloroplasts",
+                            "Chromoplasts",
+                            "Amyloplasts"
+                        ],
+                        "correct": "Leucoplasts"
+                    },
+                    {
+                        "text": "Does osmosis require energy?",
+                        "options": [
+                            "Yes",
+                            "No",
+                            "Sometimes",
+                            "Only in plants"
+                        ],
+                        "correct": "No"
+                    },
+                    {
+                        "text": "Active transport requires?",
+                        "options": [
+                            "Energy/ATP",
+                            "Water",
+                            "No energy",
+                            "Diffusion gradient"
+                        ],
+                        "correct": "Energy/ATP"
+                    },
+                    {
+                        "text": "Physical basis of life?",
+                        "options": [
+                            "Protoplasm",
+                            "Nucleus",
+                            "Cell membrane",
+                            "Mitochondria"
+                        ],
+                        "correct": "Protoplasm"
+                    },
+                    {
+                        "text": "What creates the spindle fibers?",
+                        "options": [
+                            "Centrioles",
+                            "Nucleolus",
+                            "Cytoplasm",
+                            "Lysosomes"
+                        ],
+                        "correct": "Centrioles"
+                    },
+                    {
+                        "text": "Primary pigment in chloroplasts?",
+                        "options": [
+                            "Chlorophyll",
+                            "Carotene",
+                            "Xanthophyll",
+                            "Anthocyanin"
+                        ],
+                        "correct": "Chlorophyll"
+                    }
+                ]
+            },
+            "cellular_life": {
+                "title": "The Cellular Basis of Life",
+                "questions": [
+                    {
+                        "text": "Protoplasm is found in?",
+                        "options": [
+                            "Non-living matter",
+                            "Outside the cell",
+                            "Inside the cell",
+                            "Nucleus only"
+                        ],
+                        "correct": "Inside the cell"
+                    },
+                    {
+                        "text": "Sum of constructive and destructive reactions in protoplasm is?",
+                        "options": [
+                            "Growth",
+                            "Metabolism",
+                            "Respiration",
+                            "Reproduction"
+                        ],
+                        "correct": "Metabolism"
+                    },
+                    {
+                        "text": "Powerhouse of the cell is?",
+                        "options": [
+                            "Nucleus",
+                            "Ribosome",
+                            "Mitochondria",
+                            "Lysosome"
+                        ],
+                        "correct": "Mitochondria"
+                    },
+                    {
+                        "text": "DNA is found exclusively in?",
+                        "options": [
+                            "Cytoplasm",
+                            "Nucleus",
+                            "Cell wall",
+                            "Vacuole"
+                        ],
+                        "correct": "Nucleus"
+                    },
+                    {
+                        "text": "Human chromosomes number is?",
+                        "options": [
+                            "23",
+                            "46",
+                            "48",
+                            "24"
+                        ],
+                        "correct": "46"
+                    },
+                    {
+                        "text": "Which organelle is absent in plant cells but present in animal cells?",
+                        "options": [
+                            "Plastids",
+                            "Centrosome",
+                            "Vacuole",
+                            "Cell wall"
+                        ],
+                        "correct": "Centrosome"
+                    },
+                    {
+                        "text": "Who was the first scientist to observe 'cells' in a piece of cork?",
+                        "options": [
+                            "Robert Hooke",
+                            "Antonie van Leeuwenhoek",
+                            "Robert Brown",
+                            "Rudolf Virchow"
+                        ],
+                        "correct": "Robert Hooke"
+                    },
+                    {
+                        "text": "The Cell Theory was primarily proposed by:",
+                        "options": [
+                            "Watson and Crick",
+                            "Schleiden and Schwann",
+                            "Darwin and Lamarck",
+                            "Mendel and Morgan"
+                        ],
+                        "correct": "Schleiden and Schwann"
+                    },
+                    {
+                        "text": "According to Cell Theory, all cells arise from:",
+                        "options": [
+                            "Non-living matter",
+                            "Spontaneous generation",
+                            "Pre-existing cells",
+                            "Only air and water"
+                        ],
+                        "correct": "Pre-existing cells"
+                    },
+                    {
+                        "text": "Which instrument is essential for studying the internal structure of a cell?",
+                        "options": [
+                            "Telescope",
+                            "Stethoscope",
+                            "Microscope",
+                            "Periscope"
+                        ],
+                        "correct": "Microscope"
+                    },
+                    {
+                        "text": "Organisms consisting of only one cell are called:",
+                        "options": [
+                            "Unicellular",
+                            "Multicellular",
+                            "Acellular",
+                            "B cellular"
+                        ],
+                        "correct": "Unicellular"
+                    },
+                    {
+                        "text": "Cells that lack a defined nucleus and membrane-bound organelles are:",
+                        "options": [
+                            "Prokaryotic",
+                            "Eukaryotic",
+                            "Animal cells",
+                            "Plant cells"
+                        ],
+                        "correct": "Prokaryotic"
+                    },
+                    {
+                        "text": "The study of cells is known as:",
+                        "options": [
+                            "Histology",
+                            "Cytology (Cell Biology)",
+                            "Physiology",
+                            "Anatomy"
+                        ],
+                        "correct": "Cytology (Cell Biology)"
+                    },
+                    {
+                        "text": "The 'living' substance within the cell membrane is called:",
+                        "options": [
+                            "Cytoskeleton",
+                            "Protoplasm",
+                            "Nucleoplasm",
+                            "Ectoplasm"
+                        ],
+                        "correct": "Protoplasm"
+                    },
+                    {
+                        "text": "The outer boundary of an animal cell is the:",
+                        "options": [
+                            "Cell Membrane",
+                            "Cell Wall",
+                            "Nuclear Envelope",
+                            "Cytoplasm"
+                        ],
+                        "correct": "Cell Membrane"
+                    },
+                    {
+                        "text": "The rigid outer layer found only in plant cells is the:",
+                        "options": [
+                            "Cell Membrane",
+                            "Cell Wall",
+                            "Vacuole",
+                            "Chloroplast"
+                        ],
+                        "correct": "Cell Wall"
+                    },
+                    {
+                        "text": "The jelly-like substance between the nucleus and cell membrane is:",
+                        "options": [
+                            "Cytoplasm",
+                            "Mitochondria",
+                            "Ribosome",
+                            "Lysosome"
+                        ],
+                        "correct": "Cytoplasm"
+                    },
+                    {
+                        "text": "Which organelle is known as the 'Powerhouse of the cell'?",
+                        "options": [
+                            "Nucleus",
+                            "Golgi Body",
+                            "Mitochondrion",
+                            "Ribosome"
+                        ],
+                        "correct": "Mitochondrion"
+                    },
+                    {
+                        "text": "The 'Control Center' of the cell containing genetic material is the:",
+                        "options": [
+                            "Nucleus",
+                            "Nucleolus",
+                            "Centriole",
+                            "Vacuole"
+                        ],
+                        "correct": "Nucleus"
+                    },
+                    {
+                        "text": "Green-colored organelles found in plants for photosynthesis are:",
+                        "options": [
+                            "Leucoplasts",
+                            "Chromoplasts",
+                            "Chloroplasts",
+                            "Amyloplasts"
+                        ],
+                        "correct": "Chloroplasts"
+                    },
+                    {
+                        "text": "Protein synthesis occurs in which organelle?",
+                        "options": [
+                            "Lysosome",
+                            "Ribosome",
+                            "Smooth ER",
+                            "Vacuole"
+                        ],
+                        "correct": "Ribosome"
+                    },
+                    {
+                        "text": "Organelles containing digestive enzymes, often called 'Suicide Bags':",
+                        "options": [
+                            "Lysosomes",
+                            "Peroxisomes",
+                            "Ribosomes",
+                            "Centrioles"
+                        ],
+                        "correct": "Lysosomes"
+                    },
+                    {
+                        "text": "The process by which a cell divides into two identical daughter cells is:",
+                        "options": [
+                            "Mitosis",
+                            "Meiosis",
+                            "Fertilization",
+                            "Osmosis"
+                        ],
+                        "correct": "Mitosis"
+                    },
+                    {
+                        "text": "Meiosis results in the formation of:",
+                        "options": [
+                            "Somatic cells",
+                            "Gametes (Sperm/Egg cells)",
+                            "Nerve cells",
+                            "Bone cells"
+                        ],
+                        "correct": "Gametes (Sperm/Egg cells)"
+                    },
+                    {
+                        "text": "The number of chromosomes in a human somatic cell is:",
+                        "options": [
+                            "23",
+                            "46",
+                            "44",
+                            "48"
+                        ],
+                        "correct": "46"
+                    },
+                    {
+                        "text": "Chromosomes are made up of:",
+                        "options": [
+                            "DNA and Proteins",
+                            "RNA only",
+                            "Fats and Carbohydrates",
+                            "Enzymes"
+                        ],
+                        "correct": "DNA and Proteins"
+                    },
+                    {
+                        "text": "The thread-like structures seen in the nucleus during cell division are:",
+                        "options": [
+                            "Ribosomes",
+                            "Chromosomes",
+                            "Mitochondria",
+                            "Nucleoli"
+                        ],
+                        "correct": "Chromosomes"
+                    },
+                    {
+                        "text": "Which organelle packages and secretes chemical substances?",
+                        "options": [
+                            "Mitochondria",
+                            "Golgi Apparatus",
+                            "Ribosome",
+                            "Vacuole"
+                        ],
+                        "correct": "Golgi Apparatus"
+                    },
+                    {
+                        "text": "ATP is generated in which organelle?",
+                        "options": [
+                            "Mitochondria",
+                            "Nucleus",
+                            "Chloroplast",
+                            "Ribosome"
+                        ],
+                        "correct": "Mitochondria"
+                    },
+                    {
+                        "text": "Which structure is found in animal cells but usually not in plant cells?",
+                        "options": [
+                            "Centrioles",
+                            "Cell wall",
+                            "Large vacuole",
+                            "Chloroplast"
+                        ],
+                        "correct": "Centrioles"
+                    },
+                    {
+                        "text": "Main component of plant cell wall?",
+                        "options": [
+                            "Cellulose",
+                            "Chitin",
+                            "Peptidoglycan",
+                            "Lignin"
+                        ],
+                        "correct": "Cellulose"
+                    },
+                    {
+                        "text": "Phase where chromosomes align in the center?",
+                        "options": [
+                            "Prophase",
+                            "Metaphase",
+                            "Anaphase",
+                            "Telophase"
+                        ],
+                        "correct": "Metaphase"
+                    },
+                    {
+                        "text": "Organelle responsible for lipid synthesis?",
+                        "options": [
+                            "Smooth ER",
+                            "Rough ER",
+                            "Golgi",
+                            "Ribosome"
+                        ],
+                        "correct": "Smooth ER"
+                    },
+                    {
+                        "text": "Do plant cells have mitochondria?",
+                        "options": [
+                            "Yes",
+                            "No",
+                            "Only in roots",
+                            "Only in leaves"
+                        ],
+                        "correct": "Yes"
+                    },
+                    {
+                        "text": "Substance that makes up the cell wall of fungi?",
+                        "options": [
+                            "Cellulose",
+                            "Chitin",
+                            "Pectin",
+                            "Silica"
+                        ],
+                        "correct": "Chitin"
+                    },
+                    {
+                        "text": "Is the cell wall living?",
+                        "options": [
+                            "Yes",
+                            "No",
+                            "Sometimes",
+                            "Only in algae"
+                        ],
+                        "correct": "No, it is non-living"
+                    },
+                    {
+                        "text": "Smallest living cell?",
+                        "options": [
+                            "Mycoplasma",
+                            "Bacteria",
+                            "Virus",
+                            "Red blood cell"
+                        ],
+                        "correct": "Mycoplasma"
+                    },
+                    {
+                        "text": "Who said 'omnis cellula e cellula'?",
+                        "options": [
+                            "Rudolf Virchow",
+                            "Schleiden",
+                            "Schwann",
+                            "Hooke"
+                        ],
+                        "correct": "Rudolf Virchow"
+                    }
+                ]
+            },
+            "renewable_energy": {
+                "title": "Renewable Energy and its Sources",
+                "questions": [
+                    {
+                        "text": "Which is a renewable energy source?",
+                        "options": [
+                            "Coal",
+                            "Natural gas",
+                            "Solar",
+                            "Petroleum"
+                        ],
+                        "correct": "Solar"
+                    },
+                    {
+                        "text": "Photovoltaic cells convert solar energy into?",
+                        "options": [
+                            "Heat",
+                            "Electrical",
+                            "Chemical",
+                            "Mechanical"
+                        ],
+                        "correct": "Electrical"
+                    },
+                    {
+                        "text": "Wind turbines convert kinetic energy into?",
+                        "options": [
+                            "Heat",
+                            "Electrical",
+                            "Sound",
+                            "Light"
+                        ],
+                        "correct": "Electrical"
+                    }
+                ]
+            },
+            "natural_gas": {
+                "title": "Natural Gas & Reserves in Pakistan",
+                "questions": [
+                    {
+                        "text": "Biogas is produced from?",
+                        "options": [
+                            "Plastic",
+                            "Animal dung",
+                            "Metal",
+                            "Glass"
+                        ],
+                        "correct": "Animal dung"
+                    },
+                    {
+                        "text": "Primary component of natural gas is?",
+                        "options": [
+                            "Ethane",
+                            "Propane",
+                            "Methane",
+                            "Butane"
+                        ],
+                        "correct": "Methane"
+                    },
+                    {
+                        "text": "Largest gas field in Pakistan is?",
+                        "options": [
+                            "Mari",
+                            "Sui",
+                            "Qadirpur",
+                            "Uch"
+                        ],
+                        "correct": "Sui"
+                    },
+                    {
+                        "text": "Sui gas field discovered in?",
+                        "options": [
+                            "1947",
+                            "1952",
+                            "1955",
+                            "1960"
+                        ],
+                        "correct": "1952"
+                    },
+                    {
+                        "text": "Which city first received Sui gas in 1956?",
+                        "options": [
+                            "Lahore",
+                            "Karachi",
+                            "Quetta",
+                            "Islamabad"
+                        ],
+                        "correct": "Karachi"
+                    }
+                ]
+            },
+            "energy_sectors": {
+                "title": "Energy Consuming Sectors in Pakistan",
+                "questions": []
+            },
+            "water_resources": {
+                "title": "Water Resources of Pakistan",
+                "questions": [
+                    {
+                        "text": "Manchar Lake is located near?",
+                        "options": [
+                            "Karachi",
+                            "Dadu",
+                            "Quetta",
+                            "Islamabad"
+                        ],
+                        "correct": "Dadu"
+                    },
+                    {
+                        "text": "Tarbela Dam built on river?",
+                        "options": [
+                            "Jhelum",
+                            "Chenab",
+                            "Indus",
+                            "Ravi"
+                        ],
+                        "correct": "Indus"
+                    }
+                ]
+            },
+            "tidal_astronomy": {
+                "title": "Tidal Force and Astronomical Sciences",
+                "questions": [
+                    {
+                        "text": "The periodic rise and fall of sea levels is called?",
+                        "options": [
+                            "Waves",
+                            "Tides",
+                            "Currents",
+                            "Tsunami"
+                        ],
+                        "correct": "Tides"
+                    },
+                    {
+                        "text": "Which celestial body has greatest influence on Earth's tides?",
+                        "options": [
+                            "Sun",
+                            "Moon",
+                            "Mars",
+                            "Jupiter"
+                        ],
+                        "correct": "Moon"
+                    },
+                    {
+                        "text": "Spring tides occur during?",
+                        "options": [
+                            "New & Full Moon",
+                            "First & Third Quarter",
+                            "Waxing Gibbous",
+                            "Waning Crescent"
+                        ],
+                        "correct": "New & Full Moon"
+                    },
+                    {
+                        "text": "Neap tides occur when Sun and Moon are at?",
+                        "options": [
+                            "0°",
+                            "90°",
+                            "180°",
+                            "45°"
+                        ],
+                        "correct": "90°"
+                    },
+                    {
+                        "text": "Which planet is known as Red Planet?",
+                        "options": [
+                            "Venus",
+                            "Mars",
+                            "Jupiter",
+                            "Saturn"
+                        ],
+                        "correct": "Mars"
+                    },
+                    {
+                        "text": "Largest planet in solar system is?",
+                        "options": [
+                            "Saturn",
+                            "Jupiter",
+                            "Neptune",
+                            "Uranus"
+                        ],
+                        "correct": "Jupiter"
+                    },
+                    {
+                        "text": "Planet with prominent ring system is?",
+                        "options": [
+                            "Jupiter",
+                            "Saturn",
+                            "Uranus",
+                            "Neptune"
+                        ],
+                        "correct": "Saturn"
+                    },
+                    {
+                        "text": "Which planet was demoted to dwarf planet in 2006?",
+                        "options": [
+                            "Ceres",
+                            "Pluto",
+                            "Eris",
+                            "Makemake"
+                        ],
+                        "correct": "Pluto"
+                    }
+                ]
+            },
+            "quantum_photoelectric": {
+                "title": "Photoelectric and Quantum Theory",
+                "questions": [
+                    {
+                        "text": "Discrete packets of light energy are called?",
+                        "options": [
+                            "Electrons",
+                            "Photons",
+                            "Protons",
+                            "Neutrons"
+                        ],
+                        "correct": "Photons"
+                    },
+                    {
+                        "text": "Energy of a photon is given by?",
+                        "options": [
+                            "E = mc²",
+                            "E = hf",
+                            "E = 1/2 mv²",
+                            "E = hλ"
+                        ],
+                        "correct": "E = hf"
+                    },
+                    {
+                        "text": "Planck's constant (h) value is?",
+                        "options": [
+                            "6.63 × 10⁻³⁴ J·s",
+                            "3 × 10⁸ m/s",
+                            "1.6 × 10⁻¹⁹ J",
+                            "9.1 × 10⁻³¹ kg"
+                        ],
+                        "correct": "6.63 × 10⁻³⁴ J·s"
+                    },
+                    {
+                        "text": "Photoelectric effect was explained by Einstein in?",
+                        "options": [
+                            "1895",
+                            "1905",
+                            "1915",
+                            "1921"
+                        ],
+                        "correct": "1905"
+                    },
+                    {
+                        "text": "Work function is minimum energy to?",
+                        "options": [
+                            "Absorb photon",
+                            "Emit electron",
+                            "Split atom",
+                            "Create nucleus"
+                        ],
+                        "correct": "Emit electron"
+                    },
+                    {
+                        "text": "De Broglie wavelength formula is?",
+                        "options": [
+                            "λ = h/p",
+                            "λ = hf",
+                            "λ = c/f",
+                            "λ = mv/h"
+                        ],
+                        "correct": "λ = h/p"
+                    },
+                    {
+                        "text": "Heisenberg uncertainty principle relates?",
+                        "options": [
+                            "Mass & Energy",
+                            "Position & Momentum",
+                            "Time & Distance",
+                            "Force & Acceleration"
+                        ],
+                        "correct": "Position & Momentum"
+                    },
+                    {
+                        "text": "X-rays were discovered by?",
+                        "options": [
+                            "Becquerel",
+                            "Roentgen",
+                            "Curie",
+                            "Rutherford"
+                        ],
+                        "correct": "Roentgen"
+                    },
+                    {
+                        "text": "The wave nature of electrons was confirmed by?",
+                        "options": [
+                            "Davisson-Germer experiment",
+                            "Millikan oil drop",
+                            "Young's double slit",
+                            "Compton scattering"
+                        ],
+                        "correct": "Davisson-Germer experiment"
                     }
                 ]
             }
