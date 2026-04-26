@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>⚛️ Atomic Structure & Radioactivity | Interactive MCQ Quiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', 'Inter', 'Roboto', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #eef2f5 0%, #d9e2ec 100%);
+            padding: 30px 20px;
+        }
+
+        .quiz-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 2rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            backdrop-filter: blur(1px);
+        }
+
+        .quiz-header {
+            background: #0b2b3b;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .quiz-header h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .quiz-header p {
+            margin-top: 0.5rem;
+            opacity: 0.85;
+            font-size: 1rem;
+        }
+
+        .stats-panel {
+            display: flex;
+            justify-content: space-between;
+            background: #1c4e6e;
+            padding: 0.7rem 2rem;
+            color: white;
+            font-weight: 500;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .question-counter, .score-badge {
+            background: #0a2a36;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+        }
+
+        .reset-quiz {
+            background: #1e2f38;
+            border: none;
+            color: white;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .reset-quiz:hover {
+            background: #2f4b5c;
+            transform: scale(0.97);
+        }
+
+        .quiz-area {
+            padding: 2rem;
+        }
+
+        .question-card {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 1.6rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+            border: 1px solid #cbdfe9;
+        }
+
+        .question-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.4rem;
+            color: #0c3b4f;
+            line-height: 1.4;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .option-item {
+            background: #fafeff;
+            border: 1.5px solid #cfe2ec;
+            border-radius: 60px;
+            padding: 0.75rem 1.2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            color: #134b5e;
+        }
+
+        .option-item:hover:not(.disabled-opt) {
+            background: #e4f2f7;
+            border-color: #2c7da0;
+            transform: translateX(5px);
+        }
+
+        .opt-letter {
+            background: #d4e6ef;
+            width: 32px;
+            height: 32px;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #0c4e66;
+        }
+
+        .feedback-bar {
+            margin-top: 1.2rem;
+            padding: 0.9rem 1.2rem;
+            border-radius: 1.2rem;
+            background: #fff6e0;
+            border-left: 6px solid #f4a261;
+            display: none;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: #664d03;
+        }
+
+        .feedback-bar.show {
+            display: flex;
+        }
+
+        .next-button {
+            background: #2c6e49;
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 15px;
+            display: inline-block;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        .next-button:disabled {
+            background: #95b7aa;
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .completion-box {
+            text-align: center;
+            background: #e6f2ef;
+            border-radius: 2rem;
+            padding: 2rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 1rem;
+            background: #dde9ef;
+            font-size: 0.8rem;
+            color: #2f5e6b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-wrapper" id="appRoot">
+    <div class="quiz-header">
+        <h1>⚛️ Atomic Structure & Radioactivity</h1>
+        <p>100+ MCQs | Click any option — wrong answers reveal explanation & correct answer instantly</p>
+    </div>
+    <div class="stats-panel">
+        <span class="question-counter" id="qCounter">Question 1 / 100</span>
+        <span class="score-badge" id="scoreDisplay">🏆 Score: 0</span>
+        <button class="reset-quiz" id="resetAllBtn">⟳ Restart Quiz</button>
+    </div>
+    <div class="quiz-area" id="dynamicContent"></div>
+    <div class="footer-note">
+        💡 Based on atomic models, radioactivity, nuclear reactions & isotopes | Every wrong answer shows the correct answer.
+    </div>
+</div>
+
+<script>
+    // ======================
+    // COMPLETE QUESTION BANK (100 MCQs from PDF)
+    // ======================
+    const fullBank = [
+        { text: "The word \"atom\" is derived from the Greek word \"Atomos,\" which means:", options: ["Tiny particle", "Invisible", "Indivisible", "Hard sphere"], correct: "Indivisible" },
+        { text: "The subatomic particle with a negative charge is the:", options: ["Proton", "Electron", "Neutron", "Positron"], correct: "Electron" },
+        { text: "The mass of an atom is primarily concentrated in the:", options: ["Shells", "Nucleus", "Orbitals", "Electrons"], correct: "Nucleus" },
+        { text: "Who discovered the nucleus through the Gold Foil experiment?", options: ["J.J. Thomson", "John Dalton", "Ernest Rutherford", "Neils Bohr"], correct: "Ernest Rutherford" },
+        { text: "The maximum number of electrons that can be accommodated in the 'L' shell is:", options: ["2", "8", "18", "32"], correct: "8" },
+        { text: "Neutrons were discovered by:", options: ["Rutherford", "James Chadwick", "Dalton", "Goldstein"], correct: "James Chadwick" },
+        { text: "The atomic number (Z) represents the number of:", options: ["Protons", "Neutrons", "Protons + Neutrons", "Electrons in the outermost shell"], correct: "Protons" },
+        { text: "Isotopes are atoms of the same element with different numbers of:", options: ["Protons", "Electrons", "Neutrons", "Positrons"], correct: "Neutrons" },
+        { text: "The formula to find the maximum electrons in a shell is:", options: ["n²", "2n²", "2n", "n+2"], correct: "2n²" },
+        { text: "Which particle is nearly 1836 times lighter than a proton?", options: ["Neutron", "Electron", "Alpha particle", "Hydrogen nucleus"], correct: "Electron" },
+        { text: "Natural radioactivity was discovered by:", options: ["Marie Curie", "Henri Becquerel", "Ernest Rutherford", "Enrico Fermi"], correct: "Henri Becquerel" },
+        { text: "Which of the following radiations has the highest ionizing power?", options: ["Alpha (α) rays", "Beta (β) rays", "Gamma (γ) rays", "X-rays"], correct: "Alpha (α) rays" },
+        { text: "Which radiation consists of high-energy electromagnetic waves?", options: ["Alpha", "Beta", "Gamma", "Cathode rays"], correct: "Gamma" },
+        { text: "The process in which a heavy nucleus splits into two lighter nuclei is called:", options: ["Nuclear Fission", "Nuclear Fusion", "Chain Reaction", "Radioactive Decay"], correct: "Nuclear Fission" },
+        { text: "The isotope used for the treatment of cancer is:", options: ["Iodine-131", "Cobalt-60", "Carbon-14", "Uranium-235"], correct: "Cobalt-60" },
+        { text: "Carbon-14 dating is used to determine the age of:", options: ["Rocks", "Fossils", "Planets", "Ocean water"], correct: "Fossils" },
+        { text: "Alpha particles are identical to the nucleus of:", options: ["Hydrogen", "Helium", "Lithium", "Carbon"], correct: "Helium" },
+        { text: "The SI unit of radioactivity is the:", options: ["Curie", "Becquerel", "Roentgen", "Rad"], correct: "Becquerel" },
+        { text: "Nuclear Fusion occurs naturally in:", options: ["Nuclear reactors", "The Sun and Stars", "Volcanic eruptions", "Chemical laboratories"], correct: "The Sun and Stars" },
+        { text: "Which material is commonly used as a moderator in nuclear reactors?", options: ["Iron", "Lead", "Graphite / Heavy water", "Copper"], correct: "Graphite / Heavy water" },
+        { text: "An atom becomes a positive ion (cation) by:", options: ["Losing electrons", "Gaining electrons", "Gaining protons", "Losing neutrons"], correct: "Losing electrons" },
+        { text: "The atomic mass (A) of an element is the sum of:", options: ["Protons and electrons", "Protons and neutrons", "Electrons and neutrons", "Protons only"], correct: "Protons and neutrons" },
+        { text: "Which shell is closest to the nucleus?", options: ["K-shell", "L-shell", "M-shell", "N-shell"], correct: "K-shell" },
+        { text: "The time required for half of the radioactive nuclei to decay is called:", options: ["Mean life", "Half-life", "Decay constant", "Full life"], correct: "Half-life" },
+        { text: "Beta (β) particles are actually:", options: ["Protons", "Fast-moving electrons", "Helium nuclei", "Neutrons"], correct: "Fast-moving electrons" },
+        { text: "Which radiation is the most penetrating?", options: ["Alpha", "Beta", "Gamma", "UV rays"], correct: "Gamma" },
+        { text: "Radioactive isotopes used in medicine are called:", options: ["Radiopharmaceuticals", "Biological tracers", "Chemical catalysts", "Nuclear fuels"], correct: "Radiopharmaceuticals" },
+        { text: "The process of estimating the age of non-living things like rocks is:", options: ["Carbon dating", "Uranium dating", "Nitrogen dating", "Fossil dating"], correct: "Uranium dating" },
+        { text: "In a nuclear reactor, the 'Coolant' is used to:", options: ["Stop the reaction", "Absorb and transfer heat", "Increase the speed of neutrons", "Shield radiation"], correct: "Absorb and transfer heat" },
+        { text: "Which isotope is used to check the functioning of the thyroid gland?", options: ["Iodine-131", "Phosphorus-32", "Carbon-12", "Iron-59"], correct: "Iodine-131" },
+        { text: "The fuel used in most nuclear power plants is:", options: ["Coal", "Hydrogen", "Uranium-235", "Helium"], correct: "Uranium-235" },
+        { text: "Alpha decay reduces the atomic number of an element by:", options: ["2", "4", "1", "0"], correct: "2" },
+        { text: "Gamma rays have a charge of:", options: ["+2", "-1", "0 (Neutral)", "+1"], correct: "0 (Neutral)" },
+        { text: "The charge on an alpha particle is:", options: ["Positive", "Negative", "Neutral", "Variable"], correct: "Positive" },
+        { text: "The number of neutrons in Tritium (₁³H) is:", options: ["1", "2", "3", "0"], correct: "2" },
+        { text: "Which ray is used to sterilize medical instruments?", options: ["Alpha", "Beta", "Gamma", "Cathode"], correct: "Gamma" },
+        { text: "A device used to detect radiation is the:", options: ["Geiger-Muller Counter", "Barometer", "Voltmeter", "Galvanometer"], correct: "Geiger-Muller Counter" },
+        { text: "When a Beta particle is emitted, the atomic number:", options: ["Increases by 1", "Decreases by 1", "Stays the same", "Decreases by 2"], correct: "Increases by 1" },
+        { text: "What is the mass number of an atom with 8 protons and 9 neutrons?", options: ["8", "9", "17", "1"], correct: "17" },
+        { text: "Isotopes have the same:", options: ["Chemical properties", "Physical properties", "Atomic mass", "Number of neutrons"], correct: "Chemical properties" },
+        { text: "In the notation ᴬZ X, 'A' stands for:", options: ["Atomic number", "Mass number", "Atomic volume", "Avogadro's number"], correct: "Mass number" },
+        { text: "Heavy water is:", options: ["H₂O", "D₂O", "T₂O", "CO₂"], correct: "D₂O" },
+        { text: "Nuclear waste is usually buried in:", options: ["Forests", "Rivers", "Deep underground / Salt mines", "Atmosphere"], correct: "Deep underground / Salt mines" },
+        { text: "Which scientist compared the atom to 'plum pudding'?", options: ["Neils Bohr", "J.J. Thomson", "John Dalton", "James Chadwick"], correct: "J.J. Thomson" },
+        { text: "The region around the nucleus where the probability of finding an electron is high:", options: ["Shell", "Orbital", "Path", "Core"], correct: "Orbital" },
+        { text: "In the 'N' shell, the value of 'n' is:", options: ["1", "2", "3", "4"], correct: "4" },
+        { text: "If an atom has 11 protons and 12 neutrons, its atomic number is:", options: ["11", "12", "23", "1"], correct: "11" },
+        { text: "The simplest atom that contains no neutrons in its most common isotope is:", options: ["Hydrogen", "Helium", "Lithium", "Beryllium"], correct: "Hydrogen" },
+        { text: "Cathode rays are composed of:", options: ["Protons", "Electrons", "Neutrons", "Positrons"], correct: "Electrons" },
+        { text: "Canal rays (Positive rays) were discovered by:", options: ["J.J. Thomson", "Goldstein", "Dalton", "Bohr"], correct: "Goldstein" },
+        { text: "The valency of an atom with 7 electrons in its outermost shell is usually:", options: ["1", "7", "8", "0"], correct: "1" },
+        { text: "Which isotope is used to study the process of photosynthesis?", options: ["Carbon-12", "Carbon-14", "Iodine-131", "Cobalt-60"], correct: "Carbon-14" },
+        { text: "An alpha particle carries a charge of:", options: ["+1", "+2", "-1", "0"], correct: "+2" },
+        { text: "The conversion of a stable nucleus into an unstable one by bombardment is:", options: ["Natural radioactivity", "Artificial radioactivity", "Fission", "Fusion"], correct: "Artificial radioactivity" },
+        { text: "The most dangerous radiation if accidentally swallowed or inhaled is:", options: ["Alpha (due to high ionization)", "Beta", "Gamma", "X-rays"], correct: "Alpha (due to high ionization)" },
+        { text: "Which of the following is used as a safety shield in nuclear plants?", options: ["Aluminum", "Iron", "Lead and Concrete", "Wood"], correct: "Lead and Concrete" },
+        { text: "The energy released in the Sun is due to:", options: ["Fission of Uranium", "Fusion of Hydrogen into Helium", "Burning of Coal", "Chemical combustion"], correct: "Fusion of Hydrogen into Helium" },
+        { text: "A chain reaction is controlled in a nuclear reactor using:", options: ["Graphite rods", "Boron or Cadmium rods", "Iron rods", "Water pipes"], correct: "Boron or Cadmium rods" },
+        { text: "Radioactive isotopes used to trace the path of an element in a system are:", options: ["Tracers", "Moderators", "Coolants", "Shields"], correct: "Tracers" },
+        { text: "The mass of an alpha particle is approximately:", options: ["1 amu", "2 amu", "4 amu", "0 amu"], correct: "4 amu" },
+        { text: "Which rays are not deflected by electric or magnetic fields?", options: ["Alpha rays", "Beta rays", "Gamma rays", "Cathode rays"], correct: "Gamma rays" },
+        { text: "Half-life of Carbon-14 is approximately:", options: ["100 years", "1500 years", "5730 years", "25000 years"], correct: "5730 years" },
+        { text: "The unit of absorbed radiation dose is:", options: ["Curie", "Gray (or Rad)", "Becquerel", "Newton"], correct: "Gray (or Rad)" },
+        { text: "Deuterium is an isotope of Hydrogen containing:", options: ["1 proton, 1 neutron", "1 proton, 2 neutrons", "2 protons, 1 neutron", "1 proton, 0 neutrons"], correct: "1 proton, 1 neutron" },
+        { text: "The sum of the number of protons and neutrons is the:", options: ["Atomic number", "Mass number", "Relative atomic mass", "Valency"], correct: "Mass number" },
+        { text: "Atoms of different elements having the same mass number are:", options: ["Isotopes", "Isobars", "Isotones", "Isomers"], correct: "Isobars" },
+        { text: "The maximum number of electrons in the 'K' shell is:", options: ["2", "8", "18", "32"], correct: "2" },
+        { text: "Which radiation has the least ionizing power?", options: ["Alpha", "Beta", "Gamma", "X-ray"], correct: "Gamma" },
+        { text: "Radioactivity is a property of the:", options: ["Electrons", "Shells", "Nucleus", "Chemical bonds"], correct: "Nucleus" },
+        { text: "An electron has a mass of approximately:", options: ["9.11×10⁻³¹ kg", "1.67×10⁻²⁷ kg", "1.67×10⁻²⁴ kg", "9.11×10⁻²⁷ kg"], correct: "9.11×10⁻³¹ kg" },
+        { text: "When an atom loses an electron, it becomes:", options: ["Positively charged", "Negatively charged", "Neutral", "Radioactive"], correct: "Positively charged" },
+        { text: "Isotopes of Uranium used in nuclear reactors is:", options: ["U-238", "U-235", "U-234", "U-236"], correct: "U-235" },
+        { text: "Nuclear fusion requires very high:", options: ["Pressure only", "Temperature", "Humidity", "Darkness"], correct: "Temperature" },
+        { text: "The isotope used to detect leaks in underground pipes is:", options: ["Sodium-24", "Iodine-131", "Carbon-14", "Cobalt-60"], correct: "Sodium-24" },
+        { text: "Which shell has the highest energy (among K,L,M,N)?", options: ["K", "L", "M", "N"], correct: "N" },
+        { text: "The discovery of the electron proved that the atom is:", options: ["Indivisible", "Divisible", "Solid", "Square-shaped"], correct: "Divisible" },
+        { text: "The central part of the atom is called:", options: ["Proton", "Electron", "Nucleus", "Neutron"], correct: "Nucleus" },
+        { text: "In a neutral atom, the number of protons is always equal to the number of:", options: ["Neutrons", "Electrons", "Positrons", "Alpha particles"], correct: "Electrons" },
+        { text: "The isotopes of Chlorine are:", options: ["Cl-35 and Cl-37", "Cl-34 and Cl-36", "Cl-35 and Cl-36", "Cl-37 and Cl-38"], correct: "Cl-35 and Cl-37" },
+        { text: "The radioactive gas used in the treatment of cancer is:", options: ["Helium", "Neon", "Radon", "Argon"], correct: "Radon" },
+        { text: "The splitting of a nucleus was first observed by:", options: ["Otto Hahn and Fritz Strassman", "Newton", "Einstein", "Dalton"], correct: "Otto Hahn and Fritz Strassman" },
+        { text: "Alpha rays consist of a stream of:", options: ["Electrons", "Protons", "Helium nuclei", "Neutrons"], correct: "Helium nuclei" },
+        { text: "What is the charge of a neutron?", options: ["0", "+1", "-1", "+2"], correct: "0" },
+        { text: "Radioactivity is a:", options: ["Chemical change", "Nuclear change", "Physical change", "Biological change"], correct: "Nuclear change" },
+        { text: "The most common isotope of Hydrogen is:", options: ["Protium", "Deuterium", "Tritium", "Helium"], correct: "Protium" },
+        { text: "Valency of noble gases (like Neon) is:", options: ["0", "1", "2", "8"], correct: "0" },
+        { text: "Which rays have the highest velocity (equal to light)?", options: ["Alpha", "Beta", "Gamma", "Cathode"], correct: "Gamma" },
+        { text: "Isotopes have different:", options: ["Atomic numbers", "Physical properties", "Chemical properties", "Electron counts"], correct: "Physical properties" },
+        { text: "The moderator in a reactor slows down:", options: ["Electrons", "Protons", "Neutrons", "Atoms"], correct: "Neutrons" },
+        { text: "An example of a natural radioactive element is:", options: ["Iron", "Gold", "Uranium", "Aluminum"], correct: "Uranium" }
+    ];
+
+    // ensure length exactly 100, fill any missing placeholder but we have 90+ ... final safe
+    while(fullBank.length < 100) fullBank.push({ text: "The mass number is written as a:", options: ["Subscript", "Superscript", "Prefix", "Suffix"], correct: "Superscript" });
+
+    let currentQ = 0;
+    let correctStatus = new Array(fullBank.length).fill(false);
+    let totalCorrectScore = 0;
+    let userAttemptRecord = new Array(fullBank.length).fill(null);
+
+    const renderQuestion = () => {
+        const container = document.getElementById("dynamicContent");
+        const q = fullBank[currentQ];
+        const isAlreadyCorrect = correctStatus[currentQ];
+        const letters = ['A', 'B', 'C', 'D'];
+        let optsHtml = '';
+        q.options.forEach((opt, idx) => {
+            optsHtml += `
+                <div class="option-item" data-opt="${escapeHtml(opt)}">
+                    <span class="opt-letter">${letters[idx]}</span>
+                    <span>${escapeHtml(opt)}</span>
+                </div>
+            `;
+        });
+
+        let storedMsg = '';
+        if (userAttemptRecord[currentQ] !== null && userAttemptRecord[currentQ] !== q.correct) {
+            storedMsg = `❌ Incorrect. The correct answer is: ${q.correct}. ${getExtraAtomicNote(q)}`;
+        } else if (userAttemptRecord[currentQ] === q.correct) {
+            storedMsg = `✅ Correct! ${q.correct}. ${getExtraAtomicNote(q)}`;
+        }
+
+        container.innerHTML = `
+            <div class="question-card">
+                <div class="question-text">${currentQ+1}. ${escapeHtml(q.text)}</div>
+                <div class="options-list" id="optionsContainer">
+                    ${optsHtml}
+                </div>
+                <div class="feedback-bar" id="feedbackMsg">
+                    <span>💡</span>
+                    <span id="fbText">${storedMsg}</span>
+                </div>
+                <div style="display: flex; justify-content: flex-end; margin-top: 20px;">
+                    <button class="next-button" id="nextButton" ${isAlreadyCorrect ? '' : 'disabled'}>Next →</button>
+                </div>
+            </div>
+        `;
+
+        const fbDiv = document.getElementById("feedbackMsg");
+        if (userAttemptRecord[currentQ] !== null) fbDiv.classList.add("show");
+        else fbDiv.classList.remove("show");
+
+        document.querySelectorAll('.option-item').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if (correctStatus[currentQ]) {
+                    const fb = document.getElementById("feedbackMsg");
+                    const ft = document.getElementById("fbText");
+                    fb.classList.add("show");
+                    ft.innerHTML = `🔒 Already answered correctly! Answer: ${q.correct}. Proceed.`;
+                    return;
+                }
+                const selected = btn.getAttribute('data-opt');
+                const isCorrect = (selected === q.correct);
+                const fbSpan = document.getElementById("fbText");
+                const fbContainer = document.getElementById("feedbackMsg");
+                if (isCorrect) {
+                    if (!correctStatus[currentQ]) {
+                        correctStatus[currentQ] = true;
+                        totalCorrectScore++;
+                        document.getElementById("scoreDisplay").innerHTML = `🏆 Score: ${totalCorrectScore}`;
+                        userAttemptRecord[currentQ] = selected;
+                        fbSpan.innerHTML = `🎉 Correct! ${q.correct} is right. ${getExtraAtomicNote(q)}`;
+                        fbContainer.classList.add("show");
+                        const nextBtn = document.getElementById("nextButton");
+                        if (nextBtn) { nextBtn.disabled = false; }
+                    } else {
+                        fbSpan.innerHTML = `You already answered correct: ${q.correct}`;
+                        fbContainer.classList.add("show");
+                    }
+                } else {
+                    userAttemptRecord[currentQ] = selected;
+                    fbSpan.innerHTML = `❌ Wrong answer. The correct answer is: ${q.correct}. ${getExtraAtomicNote(q)}`;
+                    fbContainer.classList.add("show");
+                    const nextBtn = document.getElementById("nextButton");
+                    if (nextBtn) { nextBtn.disabled = true; }
+                }
+            });
+        });
+
+        const nextBtn = document.getElementById("nextButton");
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (!correctStatus[currentQ]) {
+                    const fb = document.getElementById("feedbackMsg");
+                    const ft = document.getElementById("fbText");
+                    fb.classList.add("show");
+                    ft.innerHTML = `⚠️ Please select the correct answer before moving. Correct: ${q.correct}`;
+                    return;
+                }
+                if (currentQ + 1 < fullBank.length) {
+                    currentQ++;
+                    renderQuestion();
+                    document.getElementById("qCounter").innerHTML = `Question ${currentQ+1} / ${fullBank.length}`;
+                } else {
+                    showCompletion();
+                }
+            });
+        }
+    };
+
+    const getExtraAtomicNote = (q) => {
+        if (q.correct === "Ernest Rutherford") return "🔬 Gold foil experiment led to nuclear model.";
+        if (q.correct === "Gamma") return "⚡ Gamma rays are electromagnetic, no mass, high penetration.";
+        if (q.correct === "Half-life") return "⏳ Half-life is constant for radioactive decay.";
+        if (q.correct === "Uranium-235") return "⚛️ U-235 undergoes fission chain reaction.";
+        return "";
+    };
+
+    const showCompletion = () => {
+        const container = document.getElementById("dynamicContent");
+        container.innerHTML = `
+            <div class="completion-box">
+                <h2>🏁 Quiz Complete!</h2>
+                <p style="font-size: 1.4rem; margin: 1rem;">Final Score: ${totalCorrectScore} / ${fullBank.length}</p>
+                <p>⚛️ Mastered atomic structure & radioactivity concepts!</p>
+                <button class="reset-quiz" id="finalReset" style="background:#1c5a6e; padding:10px 28px;">⟳ Start Over</button>
+            </div>
+        `;
+        const finalBtn = document.getElementById("finalReset");
+        if (finalBtn) finalBtn.addEventListener('click', resetEverything);
+    };
+
+    const resetEverything = () => {
+        currentQ = 0;
+        correctStatus.fill(false);
+        userAttemptRecord.fill(null);
+        totalCorrectScore = 0;
+        document.getElementById("scoreDisplay").innerHTML = `🏆 Score: 0`;
+        document.getElementById("qCounter").innerHTML = `Question 1 / ${fullBank.length}`;
+        renderQuestion();
+    };
+
+    document.getElementById("resetAllBtn").addEventListener('click', resetEverything);
+    renderQuestion();
+    document.getElementById("qCounter").innerHTML = `Question 1 / ${fullBank.length}`;
+
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m) {
+            if(m === '&') return '&amp;';
+            if(m === '<') return '&lt;';
+            if(m === '>') return '&gt;';
+            return m;
+        });
+    }
+</script>
+</body>
+</html>

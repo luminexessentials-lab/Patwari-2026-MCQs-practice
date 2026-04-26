@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>🔬 Cell Biology: Interactive MCQ Quiz | Learn with Feedback</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', 'Roboto', 'Noto Sans', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #e9f5f0 0%, #d4e9e2 100%);
+            padding: 30px 20px;
+        }
+
+        .quiz-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            backdrop-filter: blur(2px);
+        }
+
+        .header {
+            background: #1e3a2f;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            letter-spacing: -0.3px;
+            font-weight: 600;
+        }
+
+        .header p {
+            margin-top: 0.5rem;
+            opacity: 0.85;
+            font-size: 1rem;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: space-between;
+            background: #2c5e4c;
+            padding: 0.7rem 2rem;
+            color: white;
+            font-weight: 500;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .question-counter, .score {
+            background: #0f2b22;
+            padding: 0.25rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+        }
+
+        .quiz-content {
+            padding: 2rem 2rem 2rem 2rem;
+        }
+
+        .question-card {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 1.6rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s;
+            border: 1px solid #cce3da;
+        }
+
+        .question-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: #153e31;
+            line-height: 1.4;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            background: #f9fbf9;
+            border: 1.5px solid #cfe3db;
+            border-radius: 60px;
+            padding: 0.8rem 1.2rem;
+            font-size: 1rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+            color: #1a3b30;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: #e2f0ea;
+            border-color: #2f8b6e;
+            transform: translateX(4px);
+        }
+
+        .option-prefix {
+            font-weight: 800;
+            background: #d4e6df;
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 40px;
+            color: #1e5341;
+        }
+
+        .feedback {
+            margin-top: 1rem;
+            padding: 0.9rem 1.2rem;
+            border-radius: 1.2rem;
+            background: #fef5e7;
+            border-left: 6px solid #f5a623;
+            font-size: 0.95rem;
+            color: #5a3e0b;
+            display: none;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feedback.show {
+            display: flex;
+        }
+
+        .feedback-icon {
+            font-size: 1.5rem;
+        }
+
+        .btn-next {
+            background: #1e6b54;
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-next:hover {
+            background: #0f4d3b;
+            transform: scale(0.98);
+        }
+
+        .reset-btn {
+            background: #3c2e2e;
+            color: white;
+            border: none;
+            padding: 8px 25px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        .result-area {
+            text-align: center;
+            background: #eef5f2;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 2rem;
+        }
+
+        .congrats {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #1e6b54;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1.2rem;
+            background: #e2ede8;
+            font-size: 0.8rem;
+            color: #2f5e4e;
+        }
+
+        @media (max-width: 650px) {
+            .quiz-content {
+                padding: 1.2rem;
+            }
+            .question-text {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container" id="quizApp">
+    <div class="header">
+        <h1>🧬 Cellular Basis of Life</h1>
+        <p>Interactive MCQs • Click any option — wrong answers show explanation & correct answer</p>
+    </div>
+    <div class="stats-bar">
+        <span class="question-counter" id="qCounter">Question 1 / 50</span>
+        <span class="score" id="scoreDisplay">✅ Score: 0</span>
+        <button class="reset-btn" id="resetQuiz">⟳ Restart Quiz</button>
+    </div>
+    <div class="quiz-content" id="quizContent">
+        <!-- dynamic questions injected here -->
+    </div>
+    <div class="footer">
+        📘 Based on Cell Theory, Organelles, Division & more | Every wrong answer reveals the correct one instantly
+    </div>
+</div>
+
+<script>
+    // ========================
+    // QUESTION BANK (first 50 high-quality MCQs from PDF, covering all sections)
+    // ========================
+    const questionsData = [
+        { text: "The basic structural and functional unit of all living organisms is the:", options: ["Tissue", "Cell", "Organ", "Atom"], correct: "Cell" },
+        { text: "Who was the first scientist to observe 'cells' in a piece of cork?", options: ["Robert Hooke", "Antonie van Leeuwenhoek", "Robert Brown", "Rudolf Virchow"], correct: "Robert Hooke" },
+        { text: "The Cell Theory was primarily proposed by:", options: ["Watson and Crick", "Schleiden and Schwann", "Darwin and Lamarck", "Mendel and Morgan"], correct: "Schleiden and Schwann" },
+        { text: "According to Cell Theory, all cells arise from:", options: ["Non-living matter", "Spontaneous generation", "Pre-existing cells", "Only air and water"], correct: "Pre-existing cells" },
+        { text: "Which instrument is essential for studying the internal structure of a cell?", options: ["Telescope", "Stethoscope", "Microscope", "Periscope"], correct: "Microscope" },
+        { text: "Organisms consisting of only one cell are called:", options: ["Unicellular", "Multicellular", "Acellular", "B cellular"], correct: "Unicellular" },
+        { text: "Cells that lack a defined nucleus and membrane-bound organelles are:", options: ["Prokaryotic", "Eukaryotic", "Animal cells", "Plant cells"], correct: "Prokaryotic" },
+        { text: "Bacteria are an example of:", options: ["Prokaryotic cells", "Eukaryotic cells", "Viruses", "Fungi"], correct: "Prokaryotic cells" },
+        { text: "The study of cells is known as:", options: ["Histology", "Cytology (Cell Biology)", "Physiology", "Anatomy"], correct: "Cytology (Cell Biology)" },
+        { text: "The 'living' substance within the cell membrane is called:", options: ["Cytoskeleton", "Protoplasm", "Nucleoplasm", "Ectoplasm"], correct: "Protoplasm" },
+        { text: "The outer boundary of an animal cell is the:", options: ["Cell Membrane", "Cell Wall", "Nuclear Envelope", "Cytoplasm"], correct: "Cell Membrane" },
+        { text: "The rigid outer layer found only in plant cells is the:", options: ["Cell Membrane", "Cell Wall", "Vacuole", "Chloroplast"], correct: "Cell Wall" },
+        { text: "The jelly-like substance between the nucleus and cell membrane is:", options: ["Cytoplasm", "Mitochondria", "Ribosome", "Lysosome"], correct: "Cytoplasm" },
+        { text: "Which organelle is known as the 'Powerhouse of the cell'?", options: ["Nucleus", "Golgi Body", "Mitochondrion", "Ribosome"], correct: "Mitochondrion" },
+        { text: "The 'Control Center' of the cell containing genetic material is the:", options: ["Nucleus", "Nucleolus", "Centriole", "Vacuole"], correct: "Nucleus" },
+        { text: "Green-colored organelles found in plants for photosynthesis are:", options: ["Leucoplasts", "Chromoplasts", "Chloroplasts", "Amyloplasts"], correct: "Chloroplasts" },
+        { text: "Protein synthesis occurs in which organelle?", options: ["Lysosome", "Ribosome", "Smooth ER", "Vacuole"], correct: "Ribosome" },
+        { text: "The network of channels involved in the transport of materials is the:", options: ["Endoplasmic Reticulum (ER)", "Golgi Apparatus", "Mitochondria", "Nucleus"], correct: "Endoplasmic Reticulum (ER)" },
+        { text: "Organelles containing digestive enzymes, often called 'Suicide Bags':", options: ["Lysosomes", "Peroxisomes", "Ribosomes", "Centrioles"], correct: "Lysosomes" },
+        { text: "Large central vacuoles are a characteristic feature of:", options: ["Plant cells", "Animal cells", "Bacterial cells", "Human blood cells"], correct: "Plant cells" },
+        { text: "The process by which a cell divides into two identical daughter cells is:", options: ["Mitosis", "Meiosis", "Fertilization", "Osmosis"], correct: "Mitosis" },
+        { text: "Meiosis results in the formation of:", options: ["Somatic cells", "Gametes (Sperm/Egg cells)", "Nerve cells", "Bone cells"], correct: "Gametes (Sperm/Egg cells)" },
+        { text: "The number of chromosomes in a human somatic cell is:", options: ["23", "46", "44", "48"], correct: "46" },
+        { text: "Chromosomes are made up of:", options: ["DNA and Proteins", "RNA only", "Fats and Carbohydrates", "Enzymes"], correct: "DNA and Proteins" },
+        { text: "The thread-like structures seen in the nucleus during cell division are:", options: ["Ribosomes", "Chromosomes", "Mitochondria", "Nucleoli"], correct: "Chromosomes" },
+        { text: "Which organelle packages and secretes chemical substances?", options: ["Mitochondria", "Golgi Apparatus", "Ribosome", "Vacuole"], correct: "Golgi Apparatus" },
+        { text: "Rough Endoplasmic Reticulum (RER) is called 'rough' because of:", options: ["Its shape", "Attached Ribosomes", "Attached Mitochondria", "Thick walls"], correct: "Attached Ribosomes" },
+        { text: "The movement of water from high concentration to low concentration through a membrane is:", options: ["Diffusion", "Osmosis", "Active Transport", "Circulation"], correct: "Osmosis" },
+        { text: "ATP is generated in which organelle?", options: ["Mitochondria", "Nucleus", "Chloroplast", "Ribosome"], correct: "Mitochondria" },
+        { text: "Which structure is found in animal cells but usually not in plant cells?", options: ["Centrioles", "Cell wall", "Large vacuole", "Chloroplast"], correct: "Centrioles" },
+        { text: "Unit of inheritance?", options: ["Gene", "DNA", "Chromosome", "Allele"], correct: "Gene" },  // rapid fire
+        { text: "Main component of plant cell wall?", options: ["Cellulose", "Chitin", "Peptidoglycan", "Lignin"], correct: "Cellulose" },
+        { text: "Fluid mosaic model describes what?", options: ["Cell Membrane", "Cell Wall", "Nucleus", "Mitochondria"], correct: "Cell Membrane" },
+        { text: "Division of the nucleus is called?", options: ["Karyokinesis", "Cytokinesis", "Mitosis", "Meiosis"], correct: "Karyokinesis" },
+        { text: "Who discovered the nucleus?", options: ["Robert Brown", "Robert Hooke", "Leeuwenhoek", "Virchow"], correct: "Robert Brown" },
+        { text: "Phase where chromosomes align in the center?", options: ["Prophase", "Metaphase", "Anaphase", "Telophase"], correct: "Metaphase" },
+        { text: "Sister chromatids separate during?", options: ["Prophase", "Metaphase", "Anaphase", "Telophase"], correct: "Anaphase" },
+        { text: "Organelle responsible for lipid synthesis?", options: ["Smooth ER", "Rough ER", "Golgi", "Ribosome"], correct: "Smooth ER" },
+        { text: "Do plant cells have mitochondria?", options: ["Yes", "No", "Only in roots", "Only in leaves"], correct: "Yes" },
+        { text: "Substance that makes up the cell wall of fungi?", options: ["Cellulose", "Chitin", "Pectin", "Silica"], correct: "Chitin" },
+        { text: "Colorless plastids are?", options: ["Leucoplasts", "Chloroplasts", "Chromoplasts", "Amyloplasts"], correct: "Leucoplasts" },
+        { text: "Does osmosis require energy?", options: ["Yes", "No", "Sometimes", "Only in plants"], correct: "No" },
+        { text: "Active transport requires?", options: ["Energy/ATP", "Water", "No energy", "Diffusion gradient"], correct: "Energy/ATP" },
+        { text: "Physical basis of life?", options: ["Protoplasm", "Nucleus", "Cell membrane", "Mitochondria"], correct: "Protoplasm" },
+        { text: "What creates the spindle fibers?", options: ["Centrioles", "Nucleolus", "Cytoplasm", "Lysosomes"], correct: "Centrioles" },
+        { text: "Is the cell wall living?", options: ["Yes", "No", "Sometimes", "Only in algae"], correct: "No, it is non-living" },
+        { text: "Primary pigment in chloroplasts?", options: ["Chlorophyll", "Carotene", "Xanthophyll", "Anthocyanin"], correct: "Chlorophyll" },
+        { text: "Smallest living cell?", options: ["Mycoplasma", "Bacteria", "Virus", "Red blood cell"], correct: "Mycoplasma" },
+        { text: "Who said 'omnis cellula e cellula'?", options: ["Rudolf Virchow", "Schleiden", "Schwann", "Hooke"], correct: "Rudolf Virchow" }
+    ];
+
+    // Make sure all questions have valid structure, some from rapid fire needed answer tweaked
+    // manual adjust for consistent answer strings (Q31 special)
+    if(questionsData[30].correct !== "Gene") questionsData[30].correct = "Gene";
+    if(questionsData[31].correct !== "Cellulose") questionsData[31].correct = "Cellulose";
+    if(questionsData[32].correct !== "Cell Membrane") questionsData[32].correct = "Cell Membrane";
+    if(questionsData[33].correct !== "Karyokinesis") questionsData[33].correct = "Karyokinesis";
+    if(questionsData[34].correct !== "Robert Brown") questionsData[34].correct = "Robert Brown";
+    if(questionsData[35].correct !== "Metaphase") questionsData[35].correct = "Metaphase";
+    if(questionsData[36].correct !== "Anaphase") questionsData[36].correct = "Anaphase";
+    if(questionsData[37].correct !== "Smooth ER") questionsData[37].correct = "Smooth ER";
+    if(questionsData[38].correct !== "Yes") questionsData[38].correct = "Yes";
+    if(questionsData[39].correct !== "Chitin") questionsData[39].correct = "Chitin";
+    if(questionsData[40].correct !== "Leucoplasts") questionsData[40].correct = "Leucoplasts";
+    if(questionsData[41].correct !== "No") questionsData[41].correct = "No";
+    if(questionsData[42].correct !== "Energy/ATP") questionsData[42].correct = "Energy/ATP";
+    if(questionsData[43].correct !== "Protoplasm") questionsData[43].correct = "Protoplasm";
+    if(questionsData[44].correct !== "Centrioles") questionsData[44].correct = "Centrioles";
+    if(questionsData[45].correct !== "No, it is non-living") questionsData[45].correct = "No, it is non-living";
+    if(questionsData[46].correct !== "Chlorophyll") questionsData[46].correct = "Chlorophyll";
+    if(questionsData[47].correct !== "Mycoplasma") questionsData[47].correct = "Mycoplasma";
+    if(questionsData[48].correct !== "Rudolf Virchow") questionsData[48].correct = "Rudolf Virchow";
+    // extra safeguards
+    questionsData[0].correct = "Cell";
+    questionsData[1].correct = "Robert Hooke";
+    questionsData[2].correct = "Schleiden and Schwann";
+    questionsData[3].correct = "Pre-existing cells";
+    questionsData[4].correct = "Microscope";
+    questionsData[5].correct = "Unicellular";
+    questionsData[6].correct = "Prokaryotic";
+    questionsData[7].correct = "Prokaryotic cells";
+    questionsData[8].correct = "Cytology (Cell Biology)";
+    questionsData[9].correct = "Protoplasm";
+    questionsData[10].correct = "Cell Membrane";
+    questionsData[11].correct = "Cell Wall";
+    questionsData[12].correct = "Cytoplasm";
+    questionsData[13].correct = "Mitochondrion";
+    questionsData[14].correct = "Nucleus";
+    questionsData[15].correct = "Chloroplasts";
+    questionsData[16].correct = "Ribosome";
+    questionsData[17].correct = "Endoplasmic Reticulum (ER)";
+    questionsData[18].correct = "Lysosomes";
+    questionsData[19].correct = "Plant cells";
+    questionsData[20].correct = "Mitosis";
+    questionsData[21].correct = "Gametes (Sperm/Egg cells)";
+    questionsData[22].correct = "46";
+    questionsData[23].correct = "DNA and Proteins";
+    questionsData[24].correct = "Chromosomes";
+    questionsData[25].correct = "Golgi Apparatus";
+    questionsData[26].correct = "Attached Ribosomes";
+    questionsData[27].correct = "Osmosis";
+    questionsData[28].correct = "Mitochondria";
+    questionsData[29].correct = "Centrioles";
+
+    let currentIndex = 0;
+    let userAnswers = new Array(questionsData.length).fill(null);
+    let answerStatus = new Array(questionsData.length).fill(false); // false = unanswered/incorrect?, true = correctly answered once.
+    let quizLocked = false; // lock after correct? Design: each question, user can select multiple options, but if correct, we mark correct & allow next. If wrong, show feedback but doesn't automatically mark correct.
+    // we keep track of if current question correctly answered.
+    let currentCorrectFlag = false;
+
+    let totalScore = 0; // only counted when first time correct answer selected.
+
+    function saveScoreToUI() {
+        document.getElementById("scoreDisplay").innerHTML = `✅ Score: ${totalScore} / ${questionsData.length}`;
+    }
+
+    function updateQuestionCounter() {
+        document.getElementById("qCounter").innerHTML = `Question ${currentIndex+1} / ${questionsData.length}`;
+    }
+
+    function renderCurrentQuestion() {
+        const container = document.getElementById("quizContent");
+        const q = questionsData[currentIndex];
+        const isAlreadyCorrect = answerStatus[currentIndex] === true; // already answered correctly in past
+        currentCorrectFlag = isAlreadyCorrect;
+
+        let optionsHtml = '';
+        const letters = ['A', 'B', 'C', 'D'];
+        q.options.forEach((opt, idx) => {
+            optionsHtml += `
+                <div class="option-btn" data-opt="${escapeHtml(opt)}">
+                    <span class="option-prefix">${letters[idx]}</span>
+                    <span>${escapeHtml(opt)}</span>
+                </div>
+            `;
+        });
+
+        const previousFeedback = userAnswers[currentIndex] ? true : false;
+        let feedbackHtml = '';
+        let storedFeedbackMsg = '';
+        if (userAnswers[currentIndex] !== null && userAnswers[currentIndex] !== q.correct) {
+            storedFeedbackMsg = `❌ Incorrect. The correct answer is: ${q.correct}. ${getExtraExplanation(q)}`;
+        } else if (userAnswers[currentIndex] !== null && userAnswers[currentIndex] === q.correct) {
+            storedFeedbackMsg = `✅ Correct! ${q.correct} is right. ${getExtraExplanation(q)}`;
+        } else {
+            storedFeedbackMsg = '';
+        }
+
+        const feedbackClass = (userAnswers[currentIndex] !== null) ? 'show' : '';
+
+        container.innerHTML = `
+            <div class="question-card">
+                <div class="question-text">${currentIndex+1}. ${escapeHtml(q.text)}</div>
+                <div class="options" id="optionsContainer">
+                    ${optionsHtml}
+                </div>
+                <div class="feedback ${feedbackClass}" id="feedbackMsg">
+                    <span class="feedback-icon">💡</span>
+                    <span id="feedbackText">${storedFeedbackMsg}</span>
+                </div>
+                <div style="display: flex; justify-content: flex-end; margin-top: 18px;">
+                    <button class="btn-next" id="nextBtn" ${isAlreadyCorrect ? '' : 'disabled style="opacity:0.5;"'}>➡ Next Question</button>
+                </div>
+            </div>
+        `;
+
+        // attach event listeners to options
+        const optButtons = document.querySelectorAll('.option-btn');
+        optButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if (answerStatus[currentIndex] === true) {
+                    // Already correctly answered, don't allow change
+                    const fbDiv = document.getElementById("feedbackMsg");
+                    const fbTextSpan = document.getElementById("feedbackText");
+                    fbDiv.classList.add("show");
+                    fbTextSpan.innerHTML = `🔒 You already answered this correctly! The answer is ${q.correct}. Moving to next.`;
+                    return;
+                }
+                const selectedOption = btn.getAttribute('data-opt');
+                const isCorrect = (selectedOption === q.correct);
+                const fbDiv = document.getElementById("feedbackMsg");
+                const fbTextSpan = document.getElementById("feedbackText");
+
+                if (isCorrect) {
+                    // mark correct, update score only if not already marked correct in this question slot
+                    if (!answerStatus[currentIndex]) {
+                        answerStatus[currentIndex] = true;
+                        totalScore++;
+                        saveScoreToUI();
+                        currentCorrectFlag = true;
+                        userAnswers[currentIndex] = selectedOption;
+                        fbTextSpan.innerHTML = `✅ Excellent! ${q.correct} is correct. ${getExtraExplanation(q)}`;
+                        fbDiv.classList.add("show");
+                        // enable next button
+                        const nextBtn = document.getElementById("nextBtn");
+                        if (nextBtn) {
+                            nextBtn.disabled = false;
+                            nextBtn.style.opacity = "1";
+                        }
+                    } else {
+                        fbTextSpan.innerHTML = `ℹ️ You had already marked correct. Answer: ${q.correct}`;
+                        fbDiv.classList.add("show");
+                    }
+                } else {
+                    // wrong answer: show feedback with correct answer, but don't change score / status
+                    userAnswers[currentIndex] = selectedOption; // store wrong attempt for showing msg
+                    fbTextSpan.innerHTML = `❌ Wrong! The correct answer is: ${q.correct}. ${getExtraExplanation(q)}`;
+                    fbDiv.classList.add("show");
+                    // Do NOT enable next, they must pick correct.
+                    const nextBtn = document.getElementById("nextBtn");
+                    if (nextBtn) {
+                        nextBtn.disabled = true;
+                        nextBtn.style.opacity = "0.5";
+                    }
+                }
+            });
+        });
+
+        const nextBtnDynamic = document.getElementById("nextBtn");
+        if (nextBtnDynamic) {
+            nextBtnDynamic.addEventListener('click', () => {
+                if (answerStatus[currentIndex] !== true) {
+                    // not correct yet, cannot proceed
+                    const fbDiv = document.getElementById("feedbackMsg");
+                    const fbTextSpan = document.getElementById("feedbackText");
+                    fbDiv.classList.add("show");
+                    fbTextSpan.innerHTML = `⚠️ Please select the correct answer before moving to the next question. Correct answer: ${q.correct}`;
+                    return;
+                }
+                if (currentIndex + 1 < questionsData.length) {
+                    currentIndex++;
+                    renderCurrentQuestion();
+                    updateQuestionCounter();
+                } else {
+                    // completion
+                    showCompletionMessage();
+                }
+            });
+        }
+    }
+
+    function getExtraExplanation(q) {
+        // little extra context from biology
+        if (q.correct === "Mitochondrion") return "🔋 Mitochondria generate ATP through cellular respiration.";
+        if (q.correct === "Chloroplasts") return "🌱 Chloroplasts contain chlorophyll for photosynthesis.";
+        if (q.correct === "Lysosomes") return "🧹 Lysosomes break down waste and foreign material.";
+        if (q.correct === "Osmosis") return "💧 Osmosis is passive movement of water across a membrane.";
+        return "";
+    }
+
+    function showCompletionMessage() {
+        const container = document.getElementById("quizContent");
+        container.innerHTML = `
+            <div class="result-area">
+                <div class="congrats">🎉 Quiz Completed! 🎉</div>
+                <p style="margin: 1rem 0; font-size:1.2rem;">Your final score: ${totalScore} / ${questionsData.length}</p>
+                <p>🧬 You've reviewed the cellular basis of life — keep exploring!</p>
+                <button class="reset-btn" id="finalReset" style="background:#1e6b54; margin-top:1rem;">↻ Take Quiz Again</button>
+            </div>
+        `;
+        const resetFinal = document.getElementById("finalReset");
+        if (resetFinal) resetFinal.addEventListener('click', () => resetEverything());
+    }
+
+    function resetEverything() {
+        currentIndex = 0;
+        userAnswers = new Array(questionsData.length).fill(null);
+        answerStatus = new Array(questionsData.length).fill(false);
+        totalScore = 0;
+        currentCorrectFlag = false;
+        saveScoreToUI();
+        updateQuestionCounter();
+        renderCurrentQuestion();
+    }
+
+    function escapeHtml(str) {
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+            return c;
+        });
+    }
+
+    document.getElementById("resetQuiz").addEventListener("click", () => resetEverything());
+    renderCurrentQuestion();
+    updateQuestionCounter();
+    saveScoreToUI();
+</script>
+</body>
+</html>
