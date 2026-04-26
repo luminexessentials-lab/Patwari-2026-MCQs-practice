@@ -3,95 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patwari Prep Hub | Premium MCQs</title>
-    <!-- Google Fonts -->
+    <title>Patwari Prep Hub | MCQ Master</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
             --secondary: #ec4899;
             --accent: #f59e0b;
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
             --success: #10b981;
             --error: #ef4444;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --glass: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
+            user-select: none;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-gradient);
-            background-attachment: fixed;
+            background-color: var(--bg-dark);
             color: var(--text-main);
+            font-family: 'Inter', sans-serif;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
             overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
         }
 
-        h1, h2, h3, .font-outfit {
-            font-family: 'Outfit', sans-serif;
-        }
+        .font-outfit { font-family: 'Outfit', sans-serif; }
 
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 1rem;
-            width: 100%;
-            flex-grow: 1;
+            padding: 2rem 1.5rem;
         }
 
-        /* Header Styles */
+        /* Header & Dashboard */
         header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             animation: fadeInDown 0.8s ease-out;
         }
 
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-text {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, #818cf8, #f472b6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 0.5rem;
-            cursor: pointer;
         }
 
-        .subtitle {
-            color: var(--text-dim);
-            font-size: 1.1rem;
-            font-weight: 400;
-        }
-
-        /* Dashboard Styles */
         .dashboard {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
-            animation: fadeIn 1s ease-out;
+            margin-bottom: 3rem;
         }
 
         .subject-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
             padding: 2rem;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
             display: flex;
@@ -101,273 +95,262 @@
 
         .subject-card:hover {
             transform: translateY(-10px) scale(1.02);
-            background: rgba(255, 255, 255, 0.08);
             border-color: var(--primary);
-            box-shadow: 0 20px 40px -20px var(--primary);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
+            background: rgba(30, 41, 59, 0.8);
         }
 
-        .subject-icon {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .subject-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .subject-meta {
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            display: flex;
-            justify-content: space-between;
-            margin-top: auto;
-        }
-
-        .subject-badge {
-            background: var(--primary);
-            color: white;
-            padding: 0.2rem 0.8rem;
-            border-radius: 2rem;
-            font-weight: 600;
-            font-size: 0.75rem;
-        }
-
-        /* Stats Bar */
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-bottom: 2rem;
-            animation: fadeIn 1s ease-out;
-            display: none; /* Hidden on dashboard */
-        }
-
-        .stat-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            padding: 1rem;
-            border-radius: 1rem;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .stat-value {
-            display: block;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Quiz Card */
-        .quiz-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 2rem;
-            padding: 2.5rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            display: none; /* Hidden on dashboard */
-        }
-
-        .progress-bar-container {
+        .subject-card::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.05);
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 100%);
+            pointer-events: none;
+        }
+
+        .subject-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subject-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .subject-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        .subject-badge {
+            background: var(--glass);
+            padding: 0.4rem 0.8rem;
+            border-radius: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        /* Quiz UI */
+        .quiz-card {
+            display: none;
+            background: var(--bg-card);
+            border-radius: 2rem;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 8px;
+            background: var(--glass);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 1rem;
         }
 
         .progress-bar {
             height: 100%;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             width: 0%;
-            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: width 0.4s ease;
         }
 
         .question-number {
             color: var(--primary);
-            font-weight: 600;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             font-size: 0.9rem;
-            margin-bottom: 1rem;
-            display: block;
         }
 
         .question-text {
-            font-size: 1.4rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            line-height: 1.3;
             font-weight: 600;
-            line-height: 1.4;
-            margin-bottom: 2rem;
         }
 
         .options-grid {
             display: grid;
+            grid-template-columns: 1fr;
             gap: 1rem;
         }
 
         .option {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass-border);
-            padding: 1.2rem 1.5rem;
+            background: var(--glass);
+            border: 1px solid var(--border);
             border-radius: 1rem;
+            padding: 1.25rem 1.5rem;
             cursor: pointer;
             transition: all 0.2s ease;
             display: flex;
             align-items: center;
             gap: 1rem;
-            position: relative;
-            overflow: hidden;
+            font-size: 1.1rem;
         }
 
         .option:hover {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: var(--primary);
-            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--text-dim);
+            transform: translateX(5px);
         }
 
         .option.correct {
-            background: rgba(16, 185, 129, 0.1);
+            background: rgba(16, 185, 129, 0.2);
             border-color: var(--success);
-            color: var(--success);
+            color: #d1fae5;
         }
 
         .option.wrong {
-            background: rgba(239, 68, 68, 0.1);
+            background: rgba(239, 68, 68, 0.2);
             border-color: var(--error);
-            color: var(--error);
+            color: #fee2e2;
         }
 
         .option-letter {
             width: 32px;
             height: 32px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 0.5rem;
+            background: var(--border);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-        }
-
-        .option:hover .option-letter {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Feedback Area */
-        .feedback-area {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass-border);
-            display: none;
-            animation: fadeIn 0.4s ease-out;
-        }
-
-        .feedback-area.show {
-            display: block;
-        }
-
-        .feedback-title {
             font-weight: 700;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-size: 0.9rem;
         }
 
-        .explanation {
-            font-size: 0.95rem;
-            color: var(--text-dim);
-            line-height: 1.5;
-        }
+        .option.correct .option-letter { background: var(--success); }
+        .option.wrong .option-letter { background: var(--error); }
 
         /* Controls */
         .controls {
-            margin-top: auto;
-            display: flex;
+            display: none;
             justify-content: space-between;
             align-items: center;
-            padding-top: 2rem;
+            margin-top: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn {
-            padding: 0.8rem 1.5rem;
-            border-radius: 0.8rem;
-            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            border: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-family: 'Inter', sans-serif;
         }
 
         .btn-primary {
             background: var(--primary);
             color: white;
+            box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.39);
         }
 
         .btn-primary:hover {
             background: var(--primary-dark);
-            transform: scale(1.02);
-            box-shadow: 0 10px 20px -10px var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.23);
+        }
+
+        .btn-primary:disabled {
+            background: var(--text-dim);
+            cursor: not-allowed;
+            transform: none;
         }
 
         .btn-outline {
             background: transparent;
-            border: 1px solid var(--glass-border);
+            border: 1px solid var(--border);
             color: var(--text-main);
         }
 
         .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.05);
+            background: var(--glass);
+            border-color: var(--text-dim);
         }
 
-        .btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none !important;
-        }
-
-        /* Result Screen */
-        .result-screen {
-            text-align: center;
+        /* Stats & Feedback */
+        .stats-container {
             display: none;
-            animation: zoomIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .result-score {
-            font-size: 4rem;
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 1.5rem;
             font-weight: 800;
-            color: var(--primary);
-            margin: 1rem 0;
+            color: var(--accent);
         }
 
-        .confetti-canvas {
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .feedback-area {
+            display: none;
+            background: var(--glass);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .feedback-area.show { display: block; }
+
+        .feedback-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .explanation {
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Confetti Canvas */
+        #confetti {
             position: fixed;
             top: 0;
             left: 0;
@@ -377,65 +360,185 @@
             z-index: 100;
         }
 
-        /* Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Module View */
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            animation: fadeIn 0.5s ease-out;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .module-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
+        .module-card:hover {
+            border-color: var(--secondary);
+            transform: scale(1.02);
         }
 
-        @keyframes zoomIn {
-            from { opacity: 0; transform: scale(0.9); }
+        .module-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .module-progress {
+            height: 4px;
+            background: var(--glass);
+            border-radius: 2px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+
+        .module-progress-fill {
+            height: 100%;
+            background: var(--secondary);
+            width: 0%;
+            transition: width 0.6s ease;
+        }
+
+        /* Result Screen */
+        .result-screen {
+            display: none;
+            text-align: center;
+            animation: scaleUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes scaleUp {
+            from { opacity: 0; transform: scale(0.8); }
             to { opacity: 1; transform: scale(1); }
         }
 
+        .result-score {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin: 1.5rem 0;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Progress Card in Dashboard */
+        .progress-card {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            grid-column: 1 / -1;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .progress-info h2 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .progress-info p { opacity: 0.9; font-size: 1.1rem; }
+
+        .progress-button {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .progress-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Mobile Adjustments */
         @media (max-width: 640px) {
-            .container { padding: 1rem; }
+            .logo-text { font-size: 2.2rem; }
             .quiz-card { padding: 1.5rem; }
-            .logo { font-size: 2rem; }
-            .stats-container { grid-template-columns: 1fr; }
-            .question-text { font-size: 1.2rem; }
-            .dashboard { grid-template-columns: 1fr; }
+            .question-text { font-size: 1.4rem; }
+            .progress-card { flex-direction: column; text-align: center; gap: 1.5rem; }
         }
     </style>
 </head>
 <body>
-    <canvas id="confetti" class="confetti-canvas"></canvas>
+    <canvas id="confetti"></canvas>
 
     <div class="container">
         <header>
-            <div class="logo" onclick="goHome()">Patwari Prep Hub</div>
-            <div class="subtitle" id="hub-subtitle">Premium MCQ Portal</div>
+            <div class="logo-text font-outfit">PATWARI HUB</div>
+            <p id="hub-subtitle" style="color: var(--text-dim); font-size: 1.1rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 500;">Premium MCQ Portal</p>
         </header>
 
+        <!-- Progress Tracking Dashboard (Syllabus Card) -->
+        <div class="progress-card" id="overall-progress-card">
+            <div class="progress-info font-outfit">
+                <h2 id="overall-completion">0% Mastered</h2>
+                <p>Complete your syllabus to be 100% Exam-Ready!</p>
+            </div>
+            <button class="progress-button" onclick="showOverallProgress()">Track Progress</button>
+        </div>
+
+        <!-- Subject Selection View -->
         <div class="dashboard" id="subject-dashboard">
-            <div class="subject-card" onclick="startQuiz('bio')">
-                <div class="subject-icon">🧬</div>
-                <h3 class="subject-title">Cell Biology</h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem;">Master the cellular basis of life, organelles, and division.</p>
+            <div class="subject-card" onclick="showModules('english')">
+                <div class="subject-icon">📘</div>
+                <h3 class="subject-title">English Grammar</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Nouns, Verbs, Idioms, Letter Writing, and more.</p>
                 <div class="subject-meta">
-                    <span>50 Questions</span>
-                    <span class="subject-badge" id="badge-bio">New</span>
+                    <span>150+ Questions</span>
+                    <span class="subject-badge">High Weightage</span>
                 </div>
             </div>
 
-            <div class="subject-card" onclick="startQuiz('atomic')">
-                <div class="subject-icon">⚛️</div>
-                <h3 class="subject-title">Atomic Structure</h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem;">Explore atoms, radioactivity, and nuclear reactions.</p>
+            <div class="subject-card" onclick="showModules('islamiyat')">
+                <div class="subject-icon">📖</div>
+                <h3 class="subject-title">Islamiyat</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Quran, Seerat, Prophets, and Islamic History.</p>
                 <div class="subject-meta">
-                    <span>90 Questions</span>
-                    <span class="subject-badge" id="badge-atomic">New</span>
+                    <span>120+ Questions</span>
                 </div>
+            </div>
+
+            <div class="subject-card" onclick="showModules('pak_studies')">
+                <div class="subject-icon">🇵🇰</div>
+                <h3 class="subject-title">Pakistan Studies</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Pre-partition, Constitution, and Geography.</p>
+                <div class="subject-meta">
+                    <span>Coming Soon</span>
+                </div>
+            </div>
+
+            <div class="subject-card" onclick="showModules('math')">
+                <div class="subject-icon">🧮</div>
+                <h3 class="subject-title">Mathematics</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Arithmetic, Algebra, and Geometry basics.</p>
+                <div class="subject-meta">
+                    <span>Coming Soon</span>
+                </div>
+            </div>
+
+            <div class="subject-card" onclick="showModules('science')">
+                <div class="subject-icon">🔬</div>
+                <h3 class="subject-title">General Science</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Atomic Structure, Cellular Life, and Information Tech.</p>
+                <div class="subject-meta">
+                    <span>200+ Questions</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module Selection View -->
+        <div id="module-view" style="display: none;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                <button class="btn btn-outline" onclick="goHome()">← Back</button>
+                <h2 id="module-view-title" class="font-outfit" style="font-size: 2rem;">Modules</h2>
+            </div>
+            <div class="module-grid" id="module-grid" style="display: grid;">
+                <!-- Modules injected here -->
             </div>
         </div>
 
@@ -474,22 +577,23 @@
             </div>
 
             <div class="result-screen" id="result-screen">
-                <h2 class="font-outfit" style="font-size: 2rem;">Quiz Completed!</h2>
-                <div class="result-score" id="final-score">0/50</div>
-                <p id="result-msg" style="color: var(--text-dim); margin-bottom: 2rem;">Keep studying to reach perfection!</p>
+                <h2 class="font-outfit" style="font-size: 2.5rem; margin-bottom: 0.5rem;">Quiz Completed!</h2>
+                <div class="result-score" id="final-score">0/0</div>
+                <p id="result-msg" style="color: var(--text-dim); margin-bottom: 2.5rem; font-size: 1.1rem;">Keep studying to reach perfection!</p>
+                
                 <div style="display: flex; gap: 1rem; justify-content: center;">
-                    <button class="btn btn-outline" onclick="goHome()">
-                        <span>Dashboard</span>
+                    <button class="btn btn-primary" onclick="goHome()">
+                        <span>Return to Dashboard</span>
                     </button>
-                    <button class="btn btn-primary" onclick="restartQuiz()">
-                        <span>Try Again</span>
+                    <button class="btn btn-outline" onclick="restartModule()">
+                        <span>Restart Module</span>
                     </button>
                 </div>
             </div>
 
             <div class="controls" id="controls">
                 <button class="btn btn-outline" id="restart-btn" onclick="confirmHome()">
-                    <span>Back</span>
+                    <span>Exit Quiz</span>
                 </button>
                 <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()" disabled>
                     <span>Next Question</span>
@@ -498,341 +602,378 @@
         </div>
     </div>
 
-    <script>
-        // Question Data Hub
-        const quizData = {
-            bio: {
-                title: "Cell Biology",
-                questions: [
-                    { text: "The basic structural and functional unit of all living organisms is the:", options: ["Tissue", "Cell", "Organ", "Atom"], correct: "Cell" },
-                    { text: "Who was the first scientist to observe 'cells' in a piece of cork?", options: ["Robert Hooke", "Antonie van Leeuwenhoek", "Robert Brown", "Rudolf Virchow"], correct: "Robert Hooke" },
-                    { text: "The Cell Theory was primarily proposed by:", options: ["Watson and Crick", "Schleiden and Schwann", "Darwin and Lamarck", "Mendel and Morgan"], correct: "Schleiden and Schwann" },
-                    { text: "According to Cell Theory, all cells arise from:", options: ["Non-living matter", "Spontaneous generation", "Pre-existing cells", "Only air and water"], correct: "Pre-existing cells" },
-                    { text: "Which instrument is essential for studying the internal structure of a cell?", options: ["Telescope", "Stethoscope", "Microscope", "Periscope"], correct: "Microscope" },
-                    { text: "Organisms consisting of only one cell are called:", options: ["Unicellular", "Multicellular", "Acellular", "B cellular"], correct: "Unicellular" },
-                    { text: "Cells that lack a defined nucleus and membrane-bound organelles are:", options: ["Prokaryotic", "Eukaryotic", "Animal cells", "Plant cells"], correct: "Prokaryotic" },
-                    { text: "Bacteria are an example of:", options: ["Prokaryotic cells", "Eukaryotic cells", "Viruses", "Fungi"], correct: "Prokaryotic cells" },
-                    { text: "The study of cells is known as:", options: ["Histology", "Cytology (Cell Biology)", "Physiology", "Anatomy"], correct: "Cytology (Cell Biology)" },
-                    { text: "The 'living' substance within the cell membrane is called:", options: ["Cytoskeleton", "Protoplasm", "Nucleoplasm", "Ectoplasm"], correct: "Protoplasm" },
-                    { text: "The outer boundary of an animal cell is the:", options: ["Cell Membrane", "Cell Wall", "Nuclear Envelope", "Cytoplasm"], correct: "Cell Membrane" },
-                    { text: "The rigid outer layer found only in plant cells is the:", options: ["Cell Membrane", "Cell Wall", "Vacuole", "Chloroplast"], correct: "Cell Wall" },
-                    { text: "The jelly-like substance between the nucleus and cell membrane is:", options: ["Cytoplasm", "Mitochondria", "Ribosome", "Lysosome"], correct: "Cytoplasm" },
-                    { text: "Which organelle is known as the 'Powerhouse of the cell'?", options: ["Nucleus", "Golgi Body", "Mitochondrion", "Ribosome"], correct: "Mitochondrion" },
-                    { text: "The 'Control Center' of the cell containing genetic material is the:", options: ["Nucleus", "Nucleolus", "Centriole", "Vacuole"], correct: "Nucleus" },
-                    { text: "Green-colored organelles found in plants for photosynthesis are:", options: ["Leucoplasts", "Chromoplasts", "Chloroplasts", "Amyloplasts"], correct: "Chloroplasts" },
-                    { text: "Protein synthesis occurs in which organelle?", options: ["Lysosome", "Ribosome", "Smooth ER", "Vacuole"], correct: "Ribosome" },
-                    { text: "The network of channels involved in the transport of materials is the:", options: ["Endoplasmic Reticulum (ER)", "Golgi Apparatus", "Mitochondria", "Nucleus"], correct: "Endoplasmic Reticulum (ER)" },
-                    { text: "Organelles containing digestive enzymes, often called 'Suicide Bags':", options: ["Lysosomes", "Peroxisomes", "Ribosomes", "Centrioles"], correct: "Lysosomes" },
-                    { text: "Large central vacuoles are a characteristic feature of:", options: ["Plant cells", "Animal cells", "Bacterial cells", "Human blood cells"], correct: "Plant cells" },
-                    { text: "The process by which a cell divides into two identical daughter cells is:", options: ["Mitosis", "Meiosis", "Fertilization", "Osmosis"], correct: "Mitosis" },
-                    { text: "Meiosis results in the formation of:", options: ["Somatic cells", "Gametes (Sperm/Egg cells)", "Nerve cells", "Bone cells"], correct: "Gametes (Sperm/Egg cells)" },
-                    { text: "The number of chromosomes in a human somatic cell is:", options: ["23", "46", "44", "48"], correct: "46" },
-                    { text: "Chromosomes are made up of:", options: ["DNA and Proteins", "RNA only", "Fats and Carbohydrates", "Enzymes"], correct: "DNA and Proteins" },
-                    { text: "The thread-like structures seen in the nucleus during cell division are:", options: ["Ribosomes", "Chromosomes", "Mitochondria", "Nucleoli"], correct: "Chromosomes" },
-                    { text: "Which organelle packages and secretes chemical substances?", options: ["Mitochondria", "Golgi Apparatus", "Ribosome", "Vacuole"], correct: "Golgi Apparatus" },
-                    { text: "Rough Endoplasmic Reticulum (RER) is called 'rough' because of:", options: ["Its shape", "Attached Ribosomes", "Attached Mitochondria", "Thick walls"], correct: "Attached Ribosomes" },
-                    { text: "The movement of water from high concentration to low concentration through a membrane is:", options: ["Diffusion", "Osmosis", "Active Transport", "Circulation"], correct: "Osmosis" },
-                    { text: "ATP is generated in which organelle?", options: ["Mitochondria", "Nucleus", "Chloroplast", "Ribosome"], correct: "Mitochondria" },
-                    { text: "Which structure is found in animal cells but usually not in plant cells?", options: ["Centrioles", "Cell wall", "Large vacuole", "Chloroplast"], correct: "Centrioles" },
-                    { text: "What is the unit of inheritance?", options: ["Gene", "DNA", "Chromosome", "Allele"], correct: "Gene" },
-                    { text: "What is the main component of a plant cell wall?", options: ["Cellulose", "Chitin", "Peptidoglycan", "Lignin"], correct: "Cellulose" },
-                    { text: "The 'Fluid Mosaic Model' describes which structure?", options: ["Cell Membrane", "Cell Wall", "Nucleus", "Mitochondria"], correct: "Cell Membrane" },
-                    { text: "The division of the nucleus is called:", options: ["Karyokinesis", "Cytokinesis", "Mitosis", "Meiosis"], correct: "Karyokinesis" },
-                    { text: "Who discovered the nucleus?", options: ["Robert Brown", "Robert Hooke", "Leeuwenhoek", "Virchow"], correct: "Robert Brown" },
-                    { text: "The phase where chromosomes align in the center is:", options: ["Prophase", "Metaphase", "Anaphase", "Telophase"], correct: "Metaphase" },
-                    { text: "Sister chromatids separate during which phase?", options: ["Prophase", "Metaphase", "Anaphase", "Telophase"], correct: "Anaphase" },
-                    { text: "Which organelle is responsible for lipid synthesis?", options: ["Smooth ER", "Rough ER", "Golgi", "Ribosome"], correct: "Smooth ER" },
-                    { text: "Do plant cells have mitochondria?", options: ["Yes", "No", "Only in roots", "Only in leaves"], correct: "Yes" },
-                    { text: "What substance makes up the cell wall of fungi?", options: ["Cellulose", "Chitin", "Pectin", "Silica"], correct: "Chitin" },
-                    { text: "Colorless plastids are known as:", options: ["Leucoplasts", "Chloroplasts", "Chromoplasts", "Amyloplasts"], correct: "Leucoplasts" },
-                    { text: "Does osmosis require cellular energy (ATP)?", options: ["Yes", "No", "Sometimes", "Only in plants"], correct: "No" },
-                    { text: "Active transport through a membrane requires:", options: ["Energy/ATP", "Water", "No energy", "Diffusion gradient"], correct: "Energy/ATP" },
-                    { text: "What is considered the 'Physical Basis of Life'?", options: ["Protoplasm", "Nucleus", "Cell membrane", "Mitochondria"], correct: "Protoplasm" },
-                    { text: "What structures create the spindle fibers during division?", options: ["Centrioles", "Nucleolus", "Cytoplasm", "Lysosomes"], correct: "Centrioles" },
-                    { text: "Is the cell wall a living part of the cell?", options: ["Yes", "No, it is non-living", "Sometimes", "Only in algae"], correct: "No, it is non-living" },
-                    { text: "What is the primary pigment in chloroplasts?", options: ["Chlorophyll", "Carotene", "Xanthophyll", "Anthocyanin"], correct: "Chlorophyll" },
-                    { text: "What is the smallest known living cell?", options: ["Mycoplasma", "Bacteria", "Virus", "Red blood cell"], correct: "Mycoplasma" },
-                    { text: "Who famously stated 'omnis cellula e cellula'?", options: ["Rudolf Virchow", "Schleiden", "Schwann", "Hooke"], correct: "Rudolf Virchow" }
-                ]
-            },
-            atomic: {
-                title: "Atomic Structure",
-                questions: [
-                    { text: "The word \"atom\" is derived from the Greek word \"Atomos,\" which means:", options: ["Tiny particle", "Invisible", "Indivisible", "Hard sphere"], correct: "Indivisible" },
-                    { text: "The subatomic particle with a negative charge is the:", options: ["Proton", "Electron", "Neutron", "Positron"], correct: "Electron" },
-                    { text: "The mass of an atom is primarily concentrated in the:", options: ["Shells", "Nucleus", "Orbitals", "Electrons"], correct: "Nucleus" },
-                    { text: "Who discovered the nucleus through the Gold Foil experiment?", options: ["J.J. Thomson", "John Dalton", "Ernest Rutherford", "Neils Bohr"], correct: "Ernest Rutherford" },
-                    { text: "The maximum number of electrons that can be accommodated in the 'L' shell is:", options: ["2", "8", "18", "32"], correct: "8" },
-                    { text: "Neutrons were discovered by:", options: ["Rutherford", "James Chadwick", "Dalton", "Goldstein"], correct: "James Chadwick" },
-                    { text: "The atomic number (Z) represents the number of:", options: ["Protons", "Neutrons", "Protons + Neutrons", "Electrons in the outermost shell"], correct: "Protons" },
-                    { text: "Isotopes are atoms of the same element with different numbers of:", options: ["Protons", "Electrons", "Neutrons", "Positrons"], correct: "Neutrons" },
-                    { text: "The formula to find the maximum electrons in a shell is:", options: ["n²", "2n²", "2n", "n+2"], correct: "2n²" },
-                    { text: "Which particle is nearly 1836 times lighter than a proton?", options: ["Neutron", "Electron", "Alpha particle", "Hydrogen nucleus"], correct: "Electron" },
-                    { text: "Natural radioactivity was discovered by:", options: ["Marie Curie", "Henri Becquerel", "Ernest Rutherford", "Enrico Fermi"], correct: "Henri Becquerel" },
-                    { text: "Which of the following radiations has the highest ionizing power?", options: ["Alpha (α) rays", "Beta (β) rays", "Gamma (γ) rays", "X-rays"], correct: "Alpha (α) rays" },
-                    { text: "Which radiation consists of high-energy electromagnetic waves?", options: ["Alpha", "Beta", "Gamma", "Cathode rays"], correct: "Gamma" },
-                    { text: "The process in which a heavy nucleus splits into two lighter nuclei is called:", options: ["Nuclear Fission", "Nuclear Fusion", "Chain Reaction", "Radioactive Decay"], correct: "Nuclear Fission" },
-                    { text: "The isotope used for the treatment of cancer is:", options: ["Iodine-131", "Cobalt-60", "Carbon-14", "Uranium-235"], correct: "Cobalt-60" },
-                    { text: "Carbon-14 dating is used to determine the age of:", options: ["Rocks", "Fossils", "Planets", "Ocean water"], correct: "Fossils" },
-                    { text: "Alpha particles are identical to the nucleus of:", options: ["Hydrogen", "Helium", "Lithium", "Carbon"], correct: "Helium" },
-                    { text: "The SI unit of radioactivity is the:", options: ["Curie", "Becquerel", "Roentgen", "Rad"], correct: "Becquerel" },
-                    { text: "Nuclear Fusion occurs naturally in:", options: ["Nuclear reactors", "The Sun and Stars", "Volcanic eruptions", "Chemical laboratories"], correct: "The Sun and Stars" },
-                    { text: "Which material is commonly used as a moderator in nuclear reactors?", options: ["Iron", "Lead", "Graphite / Heavy water", "Copper"], correct: "Graphite / Heavy water" },
-                    { text: "An atom becomes a positive ion (cation) by:", options: ["Losing electrons", "Gaining electrons", "Gaining protons", "Losing neutrons"], correct: "Losing electrons" },
-                    { text: "The atomic mass (A) of an element is the sum of:", options: ["Protons and electrons", "Protons and neutrons", "Electrons and neutrons", "Protons only"], correct: "Protons and neutrons" },
-                    { text: "Which shell is closest to the nucleus?", options: ["K-shell", "L-shell", "M-shell", "N-shell"], correct: "K-shell" },
-                    { text: "The time required for half of the radioactive nuclei to decay is called:", options: ["Mean life", "Half-life", "Decay constant", "Full life"], correct: "Half-life" },
-                    { text: "Beta (β) particles are actually:", options: ["Protons", "Fast-moving electrons", "Helium nuclei", "Neutrons"], correct: "Fast-moving electrons" },
-                    { text: "Which radiation is the most penetrating?", options: ["Alpha", "Beta", "Gamma", "UV rays"], correct: "Gamma" },
-                    { text: "Radioactive isotopes used in medicine are called:", options: ["Radiopharmaceuticals", "Biological tracers", "Chemical catalysts", "Nuclear fuels"], correct: "Radiopharmaceuticals" },
-                    { text: "The process of estimating the age of non-living things like rocks is:", options: ["Carbon dating", "Uranium dating", "Nitrogen dating", "Fossil dating"], correct: "Uranium dating" },
-                    { text: "In a nuclear reactor, the 'Coolant' is used to:", options: ["Stop the reaction", "Absorb and transfer heat", "Increase the speed of neutrons", "Shield radiation"], correct: "Absorb and transfer heat" },
-                    { text: "Which isotope is used to check the functioning of the thyroid gland?", options: ["Iodine-131", "Phosphorus-32", "Carbon-12", "Iron-59"], correct: "Iodine-131" },
-                    { text: "The fuel used in most nuclear power plants is:", options: ["Coal", "Hydrogen", "Uranium-235", "Helium"], correct: "Uranium-235" },
-                    { text: "Alpha decay reduces the atomic number of an element by:", options: ["2", "4", "1", "0"], correct: "2" },
-                    { text: "Gamma rays have a charge of:", options: ["+2", "-1", "0 (Neutral)", "+1"], correct: "0 (Neutral)" },
-                    { text: "The charge on an alpha particle is:", options: ["Positive", "Negative", "Neutral", "Variable"], correct: "Positive" },
-                    { text: "The number of neutrons in Tritium (₁³H) is:", options: ["1", "2", "3", "0"], correct: "2" },
-                    { text: "Which ray is used to sterilize medical instruments?", options: ["Alpha", "Beta", "Gamma", "Cathode"], correct: "Gamma" },
-                    { text: "A device used to detect radiation is the:", options: ["Geiger-Muller Counter", "Barometer", "Voltmeter", "Galvanometer"], correct: "Geiger-Muller Counter" },
-                    { text: "When a Beta particle is emitted, the atomic number:", options: ["Increases by 1", "Decreases by 1", "Stays the same", "Decreases by 2"], correct: "Increases by 1" },
-                    { text: "What is the mass number of an atom with 8 protons and 9 neutrons?", options: ["8", "9", "17", "1"], correct: "17" },
-                    { text: "Isotopes have the same:", options: ["Chemical properties", "Physical properties", "Atomic mass", "Number of neutrons"], correct: "Chemical properties" },
-                    { text: "In the notation ᴬZ X, 'A' stands for:", options: ["Atomic number", "Mass number", "Atomic volume", "Avogadro's number"], correct: "Mass number" },
-                    { text: "Heavy water is:", options: ["H₂O", "D₂O", "T₂O", "CO₂"], correct: "D₂O" },
-                    { text: "Nuclear waste is usually buried in:", options: ["Forests", "Rivers", "Deep underground / Salt mines", "Atmosphere"], correct: "Deep underground / Salt mines" },
-                    { text: "Which scientist compared the atom to 'plum pudding'?", options: ["Neils Bohr", "J.J. Thomson", "John Dalton", "James Chadwick"], correct: "J.J. Thomson" },
-                    { text: "The region around the nucleus where the probability of finding an electron is high:", options: ["Shell", "Orbital", "Path", "Core"], correct: "Orbital" },
-                    { text: "In the 'N' shell, the value of 'n' is:", options: ["1", "2", "3", "4"], correct: "4" },
-                    { text: "If an atom has 11 protons and 12 neutrons, its atomic number is:", options: ["11", "12", "23", "1"], correct: "11" },
-                    { text: "The simplest atom that contains no neutrons in its most common isotope is:", options: ["Hydrogen", "Helium", "Lithium", "Beryllium"], correct: "Hydrogen" },
-                    { text: "Cathode rays are composed of:", options: ["Protons", "Electrons", "Neutrons", "Positrons"], correct: "Electrons" },
-                    { text: "Canal rays (Positive rays) were discovered by:", options: ["J.J. Thomson", "Goldstein", "Dalton", "Bohr"], correct: "Goldstein" },
-                    { text: "The valency of an atom with 7 electrons in its outermost shell is usually:", options: ["1", "7", "8", "0"], correct: "1" },
-                    { text: "Which isotope is used to study the process of photosynthesis?", options: ["Carbon-12", "Carbon-14", "Iodine-131", "Cobalt-60"], correct: "Carbon-14" },
-                    { text: "An alpha particle carries a charge of:", options: ["+1", "+2", "-1", "0"], correct: "+2" },
-                    { text: "The conversion of a stable nucleus into an unstable one by bombardment is:", options: ["Natural radioactivity", "Artificial radioactivity", "Fission", "Fusion"], correct: "Artificial radioactivity" },
-                    { text: "The most dangerous radiation if accidentally swallowed or inhaled is:", options: ["Alpha (due to high ionization)", "Beta", "Gamma", "X-rays"], correct: "Alpha (due to high ionization)" },
-                    { text: "Which of the following is used as a safety shield in nuclear plants?", options: ["Aluminum", "Iron", "Lead and Concrete", "Wood"], correct: "Lead and Concrete" },
-                    { text: "The energy released in the Sun is due to:", options: ["Fission of Uranium", "Fusion of Hydrogen into Helium", "Burning of Coal", "Chemical combustion"], correct: "Fusion of Hydrogen into Helium" },
-                    { text: "A chain reaction is controlled in a nuclear reactor using:", options: ["Graphite rods", "Boron or Cadmium rods", "Iron rods", "Water pipes"], correct: "Boron or Cadmium rods" },
-                    { text: "Radioactive isotopes used to trace the path of an element in a system are:", options: ["Tracers", "Moderators", "Coolants", "Shields"], correct: "Tracers" },
-                    { text: "The mass of an alpha particle is approximately:", options: ["1 amu", "2 amu", "4 amu", "0 amu"], correct: "4 amu" },
-                    { text: "Which rays are not deflected by electric or magnetic fields?", options: ["Alpha rays", "Beta rays", "Gamma rays", "Cathode rays"], correct: "Gamma rays" },
-                    { text: "Half-life of Carbon-14 is approximately:", options: ["100 years", "1500 years", "5730 years", "25000 years"], correct: "5730 years" },
-                    { text: "The unit of absorbed radiation dose is:", options: ["Curie", "Gray (or Rad)", "Becquerel", "Newton"], correct: "Gray (or Rad)" },
-                    { text: "Deuterium is an isotope of Hydrogen containing:", options: ["1 proton, 1 neutron", "1 proton, 2 neutrons", "2 protons, 1 neutron", "1 proton, 0 neutrons"], correct: "1 proton, 1 neutron" },
-                    { text: "The sum of the number of protons and neutrons is the:", options: ["Atomic number", "Mass number", "Relative atomic mass", "Valency"], correct: "Mass number" },
-                    { text: "Atoms of different elements having the same mass number are:", options: ["Isotopes", "Isobars", "Isotones", "Isomers"], correct: "Isobars" },
-                    { text: "The maximum number of electrons in the 'K' shell is:", options: ["2", "8", "18", "32"], correct: "2" },
-                    { text: "Which radiation has the least ionizing power?", options: ["Alpha", "Beta", "Gamma", "X-ray"], correct: "Gamma" },
-                    { text: "Radioactivity is a property of the:", options: ["Electrons", "Shells", "Nucleus", "Chemical bonds"], correct: "Nucleus" },
-                    { text: "An electron has a mass of approximately:", options: ["9.11×10⁻³¹ kg", "1.67×10⁻²⁷ kg", "1.67×10⁻²⁴ kg", "9.11×10⁻²⁷ kg"], correct: "9.11×10⁻³¹ kg" },
-                    { text: "When an atom loses an electron, it becomes:", options: ["Positively charged", "Negatively charged", "Neutral", "Radioactive"], correct: "Positively charged" },
-                    { text: "Isotopes of Uranium used in nuclear reactors is:", options: ["U-238", "U-235", "U-234", "U-236"], correct: "U-235" },
-                    { text: "Nuclear fusion requires very high:", options: ["Pressure only", "Temperature", "Humidity", "Darkness"], correct: "Temperature" },
-                    { text: "The isotope used to detect leaks in underground pipes is:", options: ["Sodium-24", "Iodine-131", "Carbon-14", "Cobalt-60"], correct: "Sodium-24" },
-                    { text: "Which shell has the highest energy (among K,L,M,N)?", options: ["K", "L", "M", "N"], correct: "N" },
-                    { text: "The discovery of the electron proved that the atom is:", options: ["Indivisible", "Divisible", "Solid", "Square-shaped"], correct: "Divisible" },
-                    { text: "The central part of the atom is called:", options: ["Proton", "Electron", "Nucleus", "Neutron"], correct: "Nucleus" },
-                    { text: "In a neutral atom, the number of protons is always equal to the number of:", options: ["Neutrons", "Electrons", "Positrons", "Alpha particles"], correct: "Electrons" },
-                    { text: "The isotopes of Chlorine are:", options: ["Cl-35 and Cl-37", "Cl-34 and Cl-36", "Cl-35 and Cl-36", "Cl-37 and Cl-38"], correct: "Cl-35 and Cl-37" },
-                    { text: "The radioactive gas used in the treatment of cancer is:", options: ["Helium", "Neon", "Radon", "Argon"], correct: "Radon" },
-                    { text: "The splitting of a nucleus was first observed by:", options: ["Otto Hahn and Fritz Strassman", "Newton", "Einstein", "Dalton"], correct: "Otto Hahn and Fritz Strassman" },
-                    { text: "Alpha rays consist of a stream of:", options: ["Electrons", "Protons", "Helium nuclei", "Neutrons"], correct: "Helium nuclei" },
-                    { text: "What is the charge of a neutron?", options: ["0", "+1", "-1", "+2"], correct: "0" },
-                    { text: "Radioactivity is a:", options: ["Chemical change", "Nuclear change", "Physical change", "Biological change"], correct: "Nuclear change" },
-                    { text: "The most common isotope of Hydrogen is:", options: ["Protium", "Deuterium", "Tritium", "Helium"], correct: "Protium" },
-                    { text: "Valency of noble gases (like Neon) is:", options: ["0", "1", "2", "8"], correct: "0" },
-                    { text: "Which rays have the highest velocity (equal to light)?", options: ["Alpha", "Beta", "Gamma", "Cathode"], correct: "Gamma" },
-                    { text: "Isotopes have different:", options: ["Atomic numbers", "Physical properties", "Chemical properties", "Electron counts"], correct: "Physical properties" },
-                    { text: "The moderator in a reactor slows down:", options: ["Electrons", "Protons", "Neutrons", "Atoms"], correct: "Neutrons" },
-                    { text: "An example of a natural radioactive element is:", options: ["Iron", "Gold", "Uranium", "Aluminum"], correct: "Uranium" }
-                ]
-            }
-        };
+    <!-- Progress Analysis Overlay (New) -->
+    <div id="progress-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.95); z-index: 1000; backdrop-filter: blur(10px); overflow-y: auto; padding: 2rem 1rem;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 class="font-outfit" style="font-size: 2.5rem;">Performance Analysis</h2>
+                <button class="btn btn-outline" onclick="closeProgress()">Close</button>
+            </div>
 
-        // State Management
+            <div class="dashboard">
+                <div class="subject-card" style="grid-column: 1 / -1; background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%);">
+                    <div style="font-size: 0.9rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Overall Mastery</div>
+                    <div style="font-size: 4rem; font-weight: 800; font-family: 'Outfit';" id="analysis-overall-percent">0%</div>
+                    <div class="module-progress" style="height: 12px; border-radius: 6px;">
+                        <div class="module-progress-fill" id="analysis-overall-bar" style="width: 0%"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 1rem; color: var(--text-dim);">
+                        <span id="analysis-total-solved">0 Questions Solved</span>
+                        <span id="analysis-total-questions">Total Questions: 0</span>
+                    </div>
+                </div>
+
+                <div class="subject-card">
+                    <h3 class="subject-title">Subject Mastery</h3>
+                    <div id="subject-breakdown" style="display: flex; flex-direction: column; gap: 1rem;">
+                        <!-- Subject breakdown injected here -->
+                    </div>
+                </div>
+
+                <div class="subject-card">
+                    <h3 class="subject-title">Strength Areas</h3>
+                    <div id="strength-areas" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <!-- Strengths injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global State
+        let quizData = {};
         let currentSubject = null;
+        let currentModule = null;
+        let currentQuestions = [];
         let currentQuestionIndex = 0;
         let score = 0;
-        let attempts = 0;
-        let isLocked = false;
+        let sessionStartTime = null;
 
-        // Initialize High Scores on Dashboard
-        updateDashboardBadges();
+        // Initialize App
+        async function initApp() {
+            try {
+                const response = await fetch('master_data.json');
+                quizData = await response.json();
+                console.log('Quiz data loaded:', quizData);
+                updateOverallProgress();
+                goHome();
+            } catch (error) {
+                console.error('Failed to load quiz data:', error);
+                document.getElementById('hub-subtitle').innerText = "Please run this file through a local server to load MCQs.";
+                document.getElementById('hub-subtitle').style.color = "var(--error)";
+            }
+        }
 
-        function updateDashboardBadges() {
-            Object.keys(quizData).forEach(key => {
-                const hs = localStorage.getItem(`patwari_${key}_highscore`);
-                if (hs) {
-                    document.getElementById(`badge-${key}`).textContent = `Best: ${hs}/${quizData[key].questions.length}`;
-                    document.getElementById(`badge-${key}`).style.background = 'var(--success)';
-                }
+        // Progress Management
+        function getModuleProgress(subjectKey, moduleKey) {
+            if (!quizData[subjectKey] || !quizData[subjectKey].modules[moduleKey]) return 0;
+            const solved = JSON.parse(localStorage.getItem(`solved_${subjectKey}_${moduleKey}`) || "[]");
+            const total = quizData[subjectKey].modules[moduleKey].questions.length;
+            return total > 0 ? (solved.length / total) * 100 : 0;
+        }
+
+        function updateOverallProgress() {
+            if (!quizData || Object.keys(quizData).length === 0) return;
+            let totalQuestions = 0;
+            let totalSolved = 0;
+
+            Object.keys(quizData).forEach(sKey => {
+                if (!quizData[sKey].modules) return;
+                Object.keys(quizData[sKey].modules).forEach(mKey => {
+                    const questions = quizData[sKey].modules[mKey].questions;
+                    totalQuestions += questions.length;
+                    const solved = JSON.parse(localStorage.getItem(`solved_${sKey}_${mKey}`) || "[]");
+                    totalSolved += solved.length;
+                });
             });
+
+            const percent = totalQuestions > 0 ? Math.round((totalSolved / totalQuestions) * 100) : 0;
+            const overallElem = document.getElementById('overall-completion');
+            if (overallElem) overallElem.innerText = `${percent}% Mastered`;
+            
+            // Analysis stats
+            const analysisPercent = document.getElementById('analysis-overall-percent');
+            const analysisBar = document.getElementById('analysis-overall-bar');
+            const analysisSolved = document.getElementById('analysis-total-solved');
+            const analysisTotal = document.getElementById('analysis-total-questions');
+
+            if (analysisPercent) analysisPercent.innerText = `${percent}%`;
+            if (analysisBar) analysisBar.style.width = `${percent}%`;
+            if (analysisSolved) analysisSolved.innerText = `${totalSolved} Questions Solved`;
+            if (analysisTotal) analysisTotal.innerText = `Total Questions: ${totalQuestions}`;
+        }
+
+        function markQuestionSolved(subjectKey, moduleKey, questionIndex) {
+            const key = `solved_${subjectKey}_${moduleKey}`;
+            let solved = JSON.parse(localStorage.getItem(key) || "[]");
+            if (!solved.includes(questionIndex)) {
+                solved.push(questionIndex);
+                localStorage.setItem(key, JSON.stringify(solved));
+            }
+        }
+
+        // Navigation
+        function showModules(subjectKey) {
+            currentSubject = subjectKey;
+            const subject = quizData[subjectKey];
+            if (!subject) return;
+
+            document.getElementById('subject-dashboard').style.display = 'none';
+            document.getElementById('overall-progress-card').style.display = 'none';
+            document.getElementById('module-view').style.display = 'block';
+            document.getElementById('module-view-title').innerText = `${subject.icon} ${subject.title} Modules`;
+            
+            const grid = document.getElementById('module-grid');
+            grid.innerHTML = '';
+            
+            Object.keys(subject.modules).forEach(mKey => {
+                const module = subject.modules[mKey];
+                const progress = getModuleProgress(subjectKey, mKey);
+                const card = document.createElement('div');
+                card.className = 'module-card';
+                card.onclick = () => startModuleQuiz(subjectKey, mKey);
+                card.innerHTML = `
+                    <div class="module-title">${module.title}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-dim)">${module.questions.length} Questions</div>
+                    <div class="module-progress">
+                        <div class="module-progress-fill" style="width: ${progress}%"></div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function goHome() {
             document.getElementById('subject-dashboard').style.display = 'grid';
+            document.getElementById('overall-progress-card').style.display = 'flex';
+            document.getElementById('module-view').style.display = 'none';
             document.getElementById('quiz-container').style.display = 'none';
             document.getElementById('stats-bar').style.display = 'none';
-            document.getElementById('hub-subtitle').textContent = "Premium MCQ Portal";
-            updateDashboardBadges();
+            document.getElementById('progress-overlay').style.display = 'none';
+            document.getElementById('hub-subtitle').innerText = "Premium MCQ Portal";
+            document.getElementById('hub-subtitle').style.color = "var(--text-dim)";
+            updateOverallProgress();
         }
 
-        function startQuiz(subjectKey) {
-            currentSubject = subjectKey;
-            currentQuestionIndex = 0;
-            score = 0;
-            attempts = 0;
+        function showOverallProgress() {
+            document.getElementById('progress-overlay').style.display = 'block';
+            renderSubjectBreakdown();
+            renderStrengths();
+        }
+
+        function closeProgress() {
+            document.getElementById('progress-overlay').style.display = 'none';
+        }
+
+        function renderSubjectBreakdown() {
+            const container = document.getElementById('subject-breakdown');
+            container.innerHTML = '';
             
-            document.getElementById('subject-dashboard').style.display = 'none';
+            Object.keys(quizData).forEach(sKey => {
+                const subject = quizData[sKey];
+                let sTotal = 0;
+                let sSolved = 0;
+                
+                Object.keys(subject.modules).forEach(mKey => {
+                    sTotal += subject.modules[mKey].questions.length;
+                    sSolved += JSON.parse(localStorage.getItem(`solved_${sKey}_${mKey}`) || "[]").length;
+                });
+                
+                const percent = sTotal > 0 ? Math.round((sSolved / sTotal) * 100) : 0;
+                
+                const item = document.createElement('div');
+                item.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;">
+                        <span>${subject.icon} ${subject.title}</span>
+                        <span>${percent}%</span>
+                    </div>
+                    <div class="module-progress">
+                        <div class="module-progress-fill" style="width: ${percent}%"></div>
+                    </div>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function renderStrengths() {
+            const container = document.getElementById('strength-areas');
+            container.innerHTML = '';
+            
+            Object.keys(quizData).forEach(sKey => {
+                Object.keys(quizData[sKey].modules).forEach(mKey => {
+                    const percent = getModuleProgress(sKey, mKey);
+                    if (percent >= 80) {
+                        const badge = document.createElement('span');
+                        badge.className = 'subject-badge';
+                        badge.style.background = 'var(--success)';
+                        badge.innerText = quizData[sKey].modules[mKey].title;
+                        container.appendChild(badge);
+                    }
+                });
+            });
+            
+            if (container.innerHTML === '') {
+                container.innerHTML = '<p style="color: var(--text-dim); font-size: 0.9rem;">Complete modules with 80%+ mastery to see strengths.</p>';
+            }
+        }
+
+        // Quiz Logic
+        function startModuleQuiz(subjectKey, moduleKey) {
+            currentSubject = subjectKey;
+            currentModule = moduleKey;
+            const module = quizData[subjectKey].modules[moduleKey];
+            currentQuestions = [...module.questions];
+            
+            // Checkpoint loading
+            const savedIndex = parseInt(localStorage.getItem(`checkpoint_${subjectKey}_${moduleKey}`)) || 0;
+            currentQuestionIndex = savedIndex >= currentQuestions.length ? 0 : savedIndex;
+            score = 0;
+            sessionStartTime = Date.now();
+
+            document.getElementById('module-view').style.display = 'none';
+            document.getElementById('overall-progress-card').style.display = 'none';
             document.getElementById('quiz-container').style.display = 'flex';
             document.getElementById('stats-bar').style.display = 'grid';
             document.getElementById('question-area').style.display = 'block';
             document.getElementById('result-screen').style.display = 'none';
             document.getElementById('controls').style.display = 'flex';
-            
-            document.getElementById('hub-subtitle').textContent = quizData[subjectKey].title;
+            document.getElementById('hub-subtitle').innerText = `${quizData[subjectKey].title} > ${module.title}`;
             
             loadQuestion();
             updateStats();
         }
 
         function loadQuestion() {
-            isLocked = false;
-            const q = quizData[currentSubject].questions[currentQuestionIndex];
+            const q = currentQuestions[currentQuestionIndex];
+            document.getElementById('q-number').innerText = `Question ${currentQuestionIndex + 1} of ${currentQuestions.length}`;
+            document.getElementById('q-text').innerText = q.text;
             
-            document.getElementById('q-number').textContent = `Question ${currentQuestionIndex + 1} of ${quizData[currentSubject].questions.length}`;
-            document.getElementById('q-text').textContent = q.text;
-            document.getElementById('progress').style.width = `${((currentQuestionIndex) / quizData[currentSubject].questions.length) * 100}%`;
-            
-            const optionsGrid = document.getElementById('options-grid');
-            optionsGrid.innerHTML = '';
+            const grid = document.getElementById('options-grid');
+            grid.innerHTML = '';
             
             const letters = ['A', 'B', 'C', 'D'];
-            q.options.forEach((opt, index) => {
+            q.options.forEach((opt, i) => {
                 const div = document.createElement('div');
                 div.className = 'option';
                 div.innerHTML = `
-                    <span class="option-letter">${letters[index]}</span>
-                    <span>${opt}</span>
+                    <div class="option-letter">${letters[i]}</div>
+                    <div class="option-text">${opt}</div>
                 `;
-                div.onclick = () => selectOption(opt, div);
-                optionsGrid.appendChild(div);
+                div.onclick = () => selectOption(div, opt);
+                grid.appendChild(div);
             });
 
             document.getElementById('feedback').classList.remove('show');
             document.getElementById('next-btn').disabled = true;
+            updateProgressBar();
+            
+            localStorage.setItem(`checkpoint_${currentSubject}_${currentModule}`, currentQuestionIndex);
         }
 
-        function selectOption(selected, element) {
-            if (isLocked) return;
-            isLocked = true;
-            attempts++;
+        function selectOption(element, selected) {
+            if (document.getElementById('next-btn').disabled === false) return;
 
-            const q = quizData[currentSubject].questions[currentQuestionIndex];
-            const isCorrect = selected === q.correct;
+            const q = currentQuestions[currentQuestionIndex];
+            const isCorrect = selected.trim() === q.correct.trim();
             
             if (isCorrect) {
-                score++;
                 element.classList.add('correct');
-                showFeedback(true);
-                if (currentQuestionIndex === quizData[currentSubject].questions.length - 1) {
-                    launchConfetti();
-                }
+                score++;
+                markQuestionSolved(currentSubject, currentModule, currentQuestionIndex);
+                showFeedback(true, "Correct!");
             } else {
                 element.classList.add('wrong');
-                const options = document.querySelectorAll('.option');
-                options.forEach(opt => {
-                    if (opt.textContent.includes(q.correct)) {
+                Array.from(document.querySelectorAll('.option')).forEach(opt => {
+                    const textElem = opt.querySelector('.option-text');
+                    if (textElem && textElem.innerText.trim() === q.correct.trim()) {
                         opt.classList.add('correct');
                     }
                 });
-                showFeedback(false);
+                showFeedback(false, `Incorrect. Answer: ${q.correct}`);
             }
 
-            updateStats();
             document.getElementById('next-btn').disabled = false;
+            updateStats();
         }
 
-        function showFeedback(isCorrect) {
-            const feedback = document.getElementById('feedback');
-            const title = document.getElementById('feedback-title');
-            const explanation = document.getElementById('explanation');
-            const q = quizData[currentSubject].questions[currentQuestionIndex];
-
-            feedback.classList.add('show');
-            
-            if (isCorrect) {
-                title.innerHTML = '✨ Correct!';
-                title.style.color = 'var(--success)';
-            } else {
-                title.innerHTML = '❌ Incorrect';
-                title.style.color = 'var(--error)';
-            }
-
-            explanation.textContent = getExplanation(q.correct);
-        }
-
-        function getExplanation(correctAnswer) {
-            const explanations = {
-                "Cell": "The cell is the basic building block of all life.",
-                "Ernest Rutherford": "Rutherford discovered the nucleus using alpha particles.",
-                "Gamma": "Gamma rays are high-energy photons with no charge or mass.",
-                "Indivisible": "The word 'atom' comes from 'atomos', meaning uncuttable or indivisible.",
-                "Electron": "Electrons are negatively charged subatomic particles orbiting the nucleus."
-            };
-            return explanations[correctAnswer] || `The correct answer is ${correctAnswer}. Focus on this concept for better results!`;
+        function showFeedback(isCorrect, title) {
+            const fb = document.getElementById('feedback');
+            const q = currentQuestions[currentQuestionIndex];
+            fb.classList.add('show');
+            document.getElementById('feedback-title').innerHTML = isCorrect ? `✅ ${title}` : `❌ ${title}`;
+            document.getElementById('explanation').innerText = q.explanation || q.explain || "Great job! Keep moving forward.";
         }
 
         function nextQuestion() {
             currentQuestionIndex++;
-            if (currentQuestionIndex < quizData[currentSubject].questions.length) {
+            if (currentQuestionIndex < currentQuestions.length) {
                 loadQuestion();
             } else {
-                showResults();
+                showResult();
             }
+        }
+
+        function updateProgressBar() {
+            const progress = ((currentQuestionIndex + 1) / currentQuestions.length) * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
         }
 
         function updateStats() {
-            const hs = localStorage.getItem(`patwari_${currentSubject}_highscore`) || 0;
-            document.getElementById('current-score').textContent = score;
-            document.getElementById('high-score').textContent = hs;
-            const acc = attempts > 0 ? Math.round((score / attempts) * 100) : 0;
-            document.getElementById('accuracy').textContent = `${acc}%`;
+            document.getElementById('current-score').innerText = score;
+            const accuracy = (currentQuestionIndex + 1) > 0 ? Math.round((score / (currentQuestionIndex + 1)) * 100) : 0;
+            document.getElementById('accuracy').innerText = `${accuracy}%`;
+            
+            // Per-module high score (accuracy based)
+            const key = `mastery_${currentSubject}_${currentModule}`;
+            const existing = parseFloat(localStorage.getItem(key)) || 0;
+            const currentAccuracy = (score / (currentQuestionIndex + 1)) * 100;
+            if (currentAccuracy > existing) localStorage.setItem(key, currentAccuracy);
+            
+            document.getElementById('high-score').innerText = score; // Current session high
         }
 
-        function showResults() {
+        function showResult() {
             document.getElementById('question-area').style.display = 'none';
             document.getElementById('controls').style.display = 'none';
-            document.getElementById('result-screen').style.display = 'block';
-            document.getElementById('final-score').textContent = `${score}/${quizData[currentSubject].questions.length}`;
-            document.getElementById('progress').style.width = '100%';
-
-            const hsKey = `patwari_${currentSubject}_highscore`;
-            const prevHS = localStorage.getItem(hsKey) || 0;
-            if (score > prevHS) {
-                localStorage.setItem(hsKey, score);
-                document.getElementById('result-msg').textContent = "🏆 New High Score! You're mastering this subject!";
+            const resultScreen = document.getElementById('result-screen');
+            resultScreen.style.display = 'block';
+            
+            const finalScoreElem = document.getElementById('final-score');
+            finalScoreElem.innerText = `${score} / ${currentQuestions.length}`;
+            
+            const percent = (score / currentQuestions.length) * 100;
+            if (percent >= 80) {
+                document.getElementById('result-msg').innerText = "Outstanding! You've mastered this module.";
+                triggerConfetti();
             } else {
-                document.getElementById('result-msg').textContent = "Quiz Completed! Keep practicing to improve.";
+                document.getElementById('result-msg').innerText = "Good effort! Practice more to achieve mastery.";
             }
+
+            // Clear checkpoint on completion
+            localStorage.removeItem(`checkpoint_${currentSubject}_${currentModule}`);
         }
 
-        function restartQuiz() {
-            startQuiz(currentSubject);
+        function restartModule() {
+            currentQuestionIndex = 0;
+            score = 0;
+            document.getElementById('question-area').style.display = 'block';
+            document.getElementById('controls').style.display = 'flex';
+            document.getElementById('result-screen').style.display = 'none';
+            loadQuestion();
+            updateStats();
         }
 
         function confirmHome() {
-            if (confirm("Return to Dashboard? Your current progress will be lost.")) {
+            if (confirm("Are you sure you want to exit the quiz? Your progress is saved.")) {
                 goHome();
             }
         }
 
-        // Simple Confetti Effect
-        function launchConfetti() {
+        function triggerConfetti() {
             const canvas = document.getElementById('confetti');
+            if (!canvas) return;
             const ctx = canvas.getContext('2d');
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -842,28 +983,31 @@
                 particles.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height - canvas.height,
-                    size: Math.random() * 8 + 4,
+                    size: Math.random() * 7 + 3,
                     color: `hsl(${Math.random() * 360}, 70%, 60%)`,
                     speed: Math.random() * 3 + 2,
                     angle: Math.random() * 6.28
                 });
             }
 
-            function update() {
+            function draw() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 particles.forEach(p => {
+                    ctx.fillStyle = p.color;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, 6.28);
+                    ctx.fill();
                     p.y += p.speed;
                     p.x += Math.sin(p.angle) * 2;
-                    ctx.fillStyle = p.color;
-                    ctx.fillRect(p.x, p.y, p.size, p.size);
                 });
-
-                if (particles[0].y < canvas.height) {
-                    requestAnimationFrame(update);
-                }
+                if (particles.length > 0 && particles[0].y < canvas.height * 2) requestAnimationFrame(draw);
             }
-            update();
+            draw();
+            setTimeout(() => { particles = []; ctx.clearRect(0, 0, canvas.width, canvas.height); }, 5000);
         }
+
+        // App Start
+        window.onload = initApp;
     </script>
 </body>
 </html>
